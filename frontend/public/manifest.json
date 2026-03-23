@@ -1,0 +1,16 @@
+{
+  "name": "Sumit Dangi — Portfolio",
+  "short_name": "Sumit Dangi",
+  "description": "Full Stack Developer & AI/ML Engineer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
