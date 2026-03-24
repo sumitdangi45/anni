@@ -20,7 +20,7 @@ const ContactModal = ({ open, onClose }: Props) => {
 
   useEffect(() => {
     if (!window.emailjsInitialized) {
-      emailjs.init("DagoXFCgNREcqLAAG");
+      emailjs.init("DageXFCgNREGqLAAG");
       window.emailjsInitialized = true;
     }
   }, []);
@@ -38,7 +38,7 @@ const ContactModal = ({ open, onClose }: Props) => {
     setErrors({});
     try {
       // Send email via EmailJS
-      await emailjs.send("service_wnxliaj", "template_chydzfn", {
+      await emailjs.send("service_wnxliaj", "template_4mftgma", {
         name: formData.name,
         email: formData.email,
         service: formData.service,
