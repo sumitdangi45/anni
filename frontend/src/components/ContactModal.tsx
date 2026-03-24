@@ -19,7 +19,10 @@ const ContactModal = ({ open, onClose }: Props) => {
   const [modalAvatar, setModalAvatar] = useState("");
 
   useEffect(() => {
-    emailjs.init("DagoXFCgNREcqLAAG");
+    if (!window.emailjsInitialized) {
+      emailjs.init("DagoXFCgNREcqLAAG");
+      window.emailjsInitialized = true;
+    }
   }, []);
 
   useEffect(() => {
