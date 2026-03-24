@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { apiFetch } from "@/lib/api";
+import emailjs from "@emailjs/browser";
 
 interface Props {
   open: boolean;
@@ -18,6 +19,10 @@ const ContactModal = ({ open, onClose }: Props) => {
   const [modalAvatar, setModalAvatar] = useState("");
 
   useEffect(() => {
+    emailjs.init("DagoXFCgNREcqLAAG");
+  }, []);
+
+  useEffect(() => {
     apiFetch("/api/site-images")
       .then(r => r.json())
       .then(data => { if (data.modal_avatar || data.navbar_avatar) setModalAvatar(data.modal_avatar || data.navbar_avatar); })
@@ -29,6 +34,16 @@ const ContactModal = ({ open, onClose }: Props) => {
     setStatus("loading");
     setErrors({});
     try {
+      // Send email via EmailJS
+      await emailjs.send("service_wnxliaj", "template_chydzfn", {
+        name: formData.name,
+        email: formData.email,
+        service: formData.service,
+        message: formData.message,
+        to_email: "sumitdangi8455@gmail.com",
+      });
+
+      // Save to database
       const res = await apiFetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
