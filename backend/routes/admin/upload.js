@@ -1,23 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 const multer = require("multer");
+const { v2: cloudinary } = require("cloudinary");
 const adminAuth = require("../../middleware/auth");
-const deleteUpload = require("../../utils/deleteUpload");
 const { SiteImage } = require("../../db");
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME || "ddetvaa8",
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const ALLOWED_MIMES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 const MAX_SIZE = 5 * 1024 * 1024; // 5 MB
 
-const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../uploads"),
-  filename: (req, file, cb) => {
-    const unique = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
-    const ext = path.extname(file.originalname);
-    cb(null, `${unique}${ext}`);
-  },
-});
-
+const storage = multer.memoryStorage();
 const upload = multer({
   storage,
   limits: { fileSize: MAX_SIZE },
@@ -30,15 +27,8 @@ const upload = multer({
   },
 });
 
-// PDF upload multer (10 MB limit)
-const pdfStorage = multer.diskStorage({
-  destination: path.join(__dirname, "../../uploads"),
-  filename: (req, file, cb) => {
-    cb(null, `resume-${Date.now()}.pdf`);
-  },
-});
 const uploadPdf = multer({
-  storage: pdfStorage,
+  storage,
   limits: { fileSize: 10 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     if (file.mimetype === "application/pdf") cb(null, true);
@@ -46,7 +36,7 @@ const uploadPdf = multer({
   },
 });
 
-// POST /api/admin/upload — image upload
+// POST /api/admin/upload — image upload to Cloudinary
 router.post(
   "/",
   adminAuth,
@@ -60,13 +50,27 @@ router.post(
       next();
     });
   },
-  (req, res) => {
+  async (req, res) => {
     if (!req.file) return res.status(400).json({ error: "No file uploaded." });
-    res.json({ url: `/uploads/${req.file.filename}` });
+    try {
+      const result = await new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          { folder: "portfolio", resource_type: "auto" },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        );
+        stream.end(req.file.buffer);
+      });
+      res.json({ url: result.secure_url });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
   }
 );
 
-// POST /api/admin/upload/resume — PDF upload, saves URL to DB
+// POST /api/admin/upload/resume — PDF upload to Cloudinary
 router.post(
   "/resume",
   adminAuth,
@@ -82,11 +86,18 @@ router.post(
   },
   async (req, res) => {
     if (!req.file) return res.status(400).json({ error: "No file uploaded." });
-    const newUrl = `/uploads/${req.file.filename}`;
     try {
-      // Delete old resume file if it was an upload
-      const existing = await SiteImage.findOne({ key: "resume" });
-      if (existing) deleteUpload(existing.url);
+      const result = await new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          { folder: "portfolio", resource_type: "auto" },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        );
+        stream.end(req.file.buffer);
+      });
+      const newUrl = result.secure_url;
       await SiteImage.findOneAndUpdate(
         { key: "resume" },
         { url: newUrl, label: "Resume PDF" },
