@@ -8,7 +8,7 @@ import { useLike } from "@/hooks/useLike";
 import { useCommentCount } from "@/hooks/useCommentCount";
 import { useSEO } from "@/hooks/useSEO";
 import { useSiteImages } from "@/hooks/useSiteImages";
-import { apiFetch } from "@/lib/api";
+import { apiFetch, API_BASE } from "@/lib/api";
 
 interface BlogLink {
   label: string;
@@ -154,7 +154,7 @@ const CommentSection = ({ blogId }: { blogId: string }) => {
 
   const fetchComments = async () => {
     try {
-      const res = await fetch(`/api/comments/${blogId}`);
+      const res = await fetch(`${API_BASE}/api/comments/${blogId}`);
       const data = await res.json();
       setComments(data);
     } catch {}
@@ -267,7 +267,7 @@ const BlogDetail = () => {
     if (!id) return;
     setLoading(true);
     setNotFound(false);
-    fetch(`/api/blogs/${id}`)
+    fetch(`${API_BASE}/api/blogs/${id}`)
       .then(async res => {
         if (res.status === 404) { setNotFound(true); return null; }
         if (!res.ok) throw new Error("Failed");

@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { API_BASE } from "@/lib/api";
 
 interface ImageUploaderProps {
   onUpload: (url: string) => void;
@@ -52,7 +53,7 @@ const ImageUploader = ({ onUpload, label = "Upload Image" }: ImageUploaderProps)
 
         xhr.addEventListener("error", () => reject(new Error("Network error during upload")));
 
-        xhr.open("POST", "/api/admin/upload");
+        xhr.open("POST", `${API_BASE}/api/admin/upload`);
         if (token) {
           xhr.setRequestHeader("Authorization", `Bearer ${token}`);
         }

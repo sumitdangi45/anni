@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { adminFetch } from "@/lib/adminFetch";
+import { API_BASE } from "@/lib/api";
 import ImageUploader from "@/components/admin/ImageUploader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -206,7 +207,7 @@ const AdminBlogs = () => {
       const token = localStorage.getItem("admin_token");
       const fd = new FormData();
       fd.append("pdf", file);
-      const res = await fetch(`/api/admin/blogs/${blogId}/ppt`, {
+      const res = await fetch(`${API_BASE}/api/admin/blogs/${blogId}/ppt`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: fd,
