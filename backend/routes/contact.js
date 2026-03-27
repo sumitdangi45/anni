@@ -1,5 +1,5 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 const { Contact } = require("../db");
 const adminAuth = require("../middleware/auth");
 const { validate } = require("../middleware/validate");
@@ -11,17 +11,12 @@ router.post("/", validate("contact"), asyncHandler(async (req, res) => {
   const { name, email, service, message } = req.validated;
   await Contact.create({ name, email, service, message });
 
-  if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  if (process.env.RESEND_API_KEY) {
     try {
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST || "smtp.gmail.com",
-        port: Number(process.env.SMTP_PORT) || 587,
-        secure: false,
-        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-      });
-      await transporter.sendMail({
-        from: `"Portfolio Contact" <${process.env.SMTP_USER}>`,
-        to: process.env.CONTACT_RECEIVER || process.env.SMTP_USER,
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      await resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: process.env.CONTACT_RECEIVER || "sumitdangi8455@gmail.com",
         subject: `New Contact: ${name} — ${service || "General"}`,
         html: `<h2>New Contact</h2>
                <p><b>Name:</b> ${name}</p>
