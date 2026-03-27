@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://sumitdangi.vercel.app/sitemap.xml
+Sitemap: https://sumitdangiportfolio.netlify.app/sitemap.xml
