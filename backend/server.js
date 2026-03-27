@@ -14,6 +14,7 @@ app.use(cors({
       "http://localhost:5173",
       "http://localhost:8080",
       "http://localhost:8081",
+      "http://localhost:8082",
     ].filter(Boolean);
     // allow requests with no origin (mobile apps, curl, etc.)
     if (!origin || allowed.some(o => origin.startsWith(o))) return callback(null, true);
