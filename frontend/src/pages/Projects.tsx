@@ -191,7 +191,7 @@ const Projects = () => {
   const moreProjects = filtered.slice(4);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground page-light">
       <Navbar />
 
       {/* Hero / Header */}

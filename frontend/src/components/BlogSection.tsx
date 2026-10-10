@@ -19,8 +19,8 @@ interface Blog {
 }
 
 const fallbackBlogs: Blog[] = [
-  { _id: "1", title: "How to Streamline Your Design Workflow", category: "Tutorials", date: "Apr 27, 2025", description: "Discover practical strategies to improve your design process, save time, and deliver quality work more efficiently.", images: [], live: true },
-  { _id: "2", title: "5 Design Trends That Will Define 2024", category: "Insights", date: "Apr 30, 2025", description: "Explore the top design trends for 2024 that will influence web, UI/UX, and branding projects, helping you stay ahead of the curve.", images: [] },
+  { _id: "1", title: "How We Built a SaaS MVP in 6 Weeks", category: "Case Study", date: "Sep 10, 2026", description: "A behind-the-scenes look at how our team took a founder's rough idea and shipped a live, paying-customer-ready product in under six weeks.", images: [], live: true },
+  { _id: "2", title: "Why Most AI Chatbots Fail (And How to Build One That Doesn't)", category: "AI & Tech", date: "Aug 28, 2026", description: "We've built dozens of AI chatbots for clients. Here's what separates the ones that actually work from the ones that quietly get turned off.", images: [] },
 ];
 
 const BlogCard = ({ blog, index, authorAvatar }: { blog: Blog; index: number; authorAvatar: string }) => {
@@ -121,11 +121,11 @@ const BlogCard = ({ blog, index, authorAvatar }: { blog: Blog; index: number; au
         <div className="flex items-center gap-2.5 mb-3">
           <div className="w-8 h-8 rounded-full p-[2px] bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex-shrink-0">
             <div className="w-full h-full rounded-full overflow-hidden border-2 border-background">
-              <img src={authorAvatar} alt="Sumit Dangi" className="w-full h-full object-cover" />
+              <img src={authorAvatar} alt="Anni Web Solutions" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold leading-none truncate">Sumit Dangi</p>
+            <p className="text-xs font-semibold leading-none truncate">Anni Web Solutions</p>
             <p className="text-[10px] text-muted-foreground mt-0.5">{blog.date}</p>
           </div>
         </div>
@@ -183,9 +183,9 @@ const BlogSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="heading-section mb-4">Latest Updates & Achievements</h2>
+          <h2 className="heading-section mb-4">Insights & Ideas</h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed">
-            A collection of my recent work, certifications, hackathons, and experiences as I grow as a Full Stack Developer with AI/ML.
+            Case studies, technical deep-dives and practical advice from the team building real digital products.
           </p>
         </motion.div>
 
@@ -204,7 +204,7 @@ const BlogSection = () => {
           className="text-center mt-12"
         >
           <a href="/blogs" className="btn-outline-indigo">
-            Browse All Insights
+            Browse the Journal
           </a>
         </motion.div>
       </div>

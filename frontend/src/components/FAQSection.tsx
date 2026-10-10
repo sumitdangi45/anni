@@ -1,210 +1,113 @@
+import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import { Plus, Minus } from "lucide-react";
-import { useSiteImages } from "@/hooks/useSiteImages";
+import { Plus, Minus, ArrowRight } from "lucide-react";
 
-const defaultFaqImages: string[] = [];
-
-const faqs = [
-  { num: "01", question: "WHAT SERVICES DO YOU OFFER?",                          answer: "I offer UI/UX design, graphic design, web design, and branding services. Each service is tailored to meet your specific needs and goals." },
-  { num: "02", question: "HOW DOES THE DESIGN PROCESS WORK?",                    answer: "My design process involves discovery, research, wireframing, prototyping, and final design delivery with iterative feedback at each stage." },
-  { num: "03", question: "HOW LONG DOES A PROJECT USUALLY TAKE?",                answer: "Project timelines vary based on scope and complexity. A typical project takes 2-6 weeks from kickoff to final delivery." },
-  { num: "04", question: "WHAT DO I NEED TO PROVIDE BEFORE STARTING A PROJECT?", answer: "I'll need a brief overview of your goals, any brand guidelines, content/copy, and references or inspiration you have in mind." },
-  { num: "05", question: "DO YOU OFFER REVISIONS?",                              answer: "Yes! I include multiple rounds of revisions in every project to ensure the final result aligns perfectly with your vision." },
-  { num: "06", question: "HOW DO I GET STARTED?",                                answer: "Simply reach out through the contact form or email me. We'll schedule a discovery call to discuss your project needs." },
+const FAQS = [
+  { q: "What services does Anni Web Solutions offer?",       a: "We offer end-to-end digital solutions including custom web development, mobile app development, AI/ML solutions, SaaS development, UI/UX design, AI automation, and digital growth & SEO." },
+  { q: "How does the project process work?",                 a: "We follow a simple 4-step process: Discovery → Design → Development → Deploy. You stay involved at every step with regular updates and milestone reviews." },
+  { q: "How fast can you start on a project?",               a: "We can typically onboard a new project within 3–5 business days. For urgent requirements, we offer fast-track onboarding. Reach out and we'll plan accordingly." },
+  { q: "What is included in a custom web development project?", a: "A typical project includes discovery & planning, UI/UX design, frontend & backend development, database setup, third-party integrations, testing, deployment, and 30 days of post-launch support." },
+  { q: "Do you work with startups and early-stage teams?",   a: "Absolutely. We specialize in working with startups and founder-led teams. We understand tight budgets and fast timelines — we'll work with you to deliver maximum value." },
+  { q: "Can you integrate AI into my existing product?",     a: "Yes. We can integrate AI capabilities — like intelligent search, chatbots, recommendation engines, workflow automation, or custom ML models — into your existing product or platform." },
+  { q: "What technologies do you use?",                      a: "We work with React, Next.js, Node.js, Python, React Native, Flutter, MongoDB, PostgreSQL, AWS, and more. For AI, we use OpenAI, LangChain, TensorFlow, and other modern ML frameworks." },
+  { q: "Do you offer post-launch support?",                  a: "Yes. All projects include 30 days of free post-launch support. We also offer ongoing maintenance and support packages if you need continued assistance after launch." },
+  { q: "Can you sign an NDA?",                               a: "Yes. We are happy to sign a Non-Disclosure Agreement before any project discussions. Your ideas and business information are always kept confidential." },
+  { q: "How do we get started?",                             a: "Simply reach out via our Contact page or email us at contact@anniwebsolutions.com. We'll schedule a free discovery call to understand your needs and provide a project proposal." },
 ];
 
-// Tracks which FAQ row is in the center of viewport while scrolling
-const useScrollActive = (refs: React.RefObject<HTMLDivElement>[]) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const vh = window.innerHeight;
-      let closest: number | null = null;
-      let closestDist = Infinity;
-
-      refs.forEach((ref, i) => {
-        if (!ref.current) return;
-        const rect = ref.current.getBoundingClientRect();
-        const center = rect.top + rect.height / 2;
-        const dist = Math.abs(center - vh / 2);
-        if (dist < closestDist && rect.top < vh * 0.75 && rect.bottom > vh * 0.25) {
-          closestDist = dist;
-          closest = i;
-        }
-      });
-
-      setActiveIndex(closest);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [refs]);
-
-  return activeIndex;
-};
-
-const FAQItem = ({
-  faq,
-  index,
-  openIndex,
-  setOpenIndex,
-  isInView,
-  scrollActive,
-  rowRef,
-  image,
-}: {
-  faq: typeof faqs[0];
-  index: number;
-  openIndex: number | null;
-  setOpenIndex: (i: number | null) => void;
-  isInView: boolean;
-  scrollActive: boolean;
-  rowRef: React.RefObject<HTMLDivElement>;
-  image: string;
-}) => {
-  const isOpen = openIndex === index;
-  const showImage = scrollActive;
-  const [hovered, setHovered] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePos({ x: e.clientX, y: e.clientY });
-  };
-
-  return (
-    <motion.div
-      ref={rowRef}
-      initial={{ opacity: 0, y: 16 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.4, delay: index * 0.07 }}
-      className="relative border-b border-border"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onMouseMove={handleMouseMove}
-    >
-      <button
-        onClick={() => setOpenIndex(isOpen ? null : index)}
-        className="w-full flex items-center gap-6 py-6 text-left group"
-      >
-        <span className="text-xs font-mono text-muted-foreground/40 w-6 flex-shrink-0">
-          {faq.num}
-        </span>
-        <span
-          className={`flex-1 font-serif font-bold text-base md:text-lg uppercase tracking-wide transition-colors duration-200 ${
-            showImage ? "text-primary" : ""
-          }`}
-        >
-          {faq.question}
-        </span>
-        <div
-          className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-colors duration-200 ${
-            showImage ? "border-primary text-primary" : "border-border text-foreground"
-          }`}
-        >
-          {isOpen ? <Minus size={14} /> : <Plus size={14} />}
-        </div>
-      </button>
-
-      {/* Answer */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 pl-6 md:pl-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-              {faq.answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Image — only on desktop: hover follows mouse, scroll = fixed right-center */}
-      <AnimatePresence>
-        {showImage && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.82, rotate: -6 }}
-            animate={{ opacity: 1, scale: 1, rotate: -6 }}
-            exit={{ opacity: 0, scale: 0.82, rotate: -6 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            style={
-              hovered
-                ? {
-                    position: "fixed",
-                    left: mousePos.x + 24,
-                    top: mousePos.y - 80,
-                    pointerEvents: "none",
-                    zIndex: 999,
-                  }
-                : {
-                    position: "fixed",
-                    right: "6vw",
-                    top: "50%",
-                    transform: "translateY(-50%) rotate(-6deg)",
-                    pointerEvents: "none",
-                    zIndex: 999,
-                  }
-            }
-            className="hidden lg:block w-52 h-36 rounded-2xl overflow-hidden shadow-2xl border border-white/10"
-          >
-            <img src={image} alt="" className="w-full h-full object-cover" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-};
-
-const FAQSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const siteImages = useSiteImages();
-  const faqImgsRaw = [1,2,3,4,5,6].map(i => siteImages[`faq_img_${i}`]).filter(Boolean);
-  const faqImages = faqImgsRaw.length === 6 ? faqImgsRaw : defaultFaqImages;
-
-  // Create refs for each row
-  const rowRefs = useRef(faqs.map(() => ({ current: null } as React.RefObject<HTMLDivElement>)));
-  const scrollActiveIndex = useScrollActive(rowRefs.current);
-
-  return (
-    <section className="section-padding" ref={ref}>
-      <div className="max-w-6xl mx-auto">
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="heading-section mb-4">Frequently Asked Questions</h2>
-          <p className="text-muted-foreground max-w-2xl leading-relaxed">
-            Answers to the most common questions I receive. Can't find what you're looking for? Feel free to reach out directly.
-          </p>
+// ── Row ───────────────────────────────────────────────────────
+const FAQRow = ({ faq, isOpen, onToggle }: { faq: typeof FAQS[0]; isOpen: boolean; onToggle: () => void }) => (
+  <div style={{ borderBottom: "1px solid #e8e8e8" }}>
+    <button onClick={onToggle} style={{ width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between", gap:"16px", padding:"22px 0", background:"transparent", border:"none", cursor:"pointer", textAlign:"left" as const }}>
+      <span style={{ fontSize:"15px", fontWeight:500, color:"#111", lineHeight:1.4 }}>{faq.q}</span>
+      <div style={{ width:"30px", height:"30px", borderRadius:"50%", flexShrink:0, border:"1.5px solid #e0e0e0", display:"flex", alignItems:"center", justifyContent:"center", background: isOpen ? "#111" : "transparent", transition:"background 0.2s, border-color 0.2s" }}>
+        {isOpen ? <Minus size={13} color="#fff" /> : <Plus size={13} color="#888" />}
+      </div>
+    </button>
+    <AnimatePresence initial={false}>
+      {isOpen && (
+        <motion.div initial={{ height:0, opacity:0 }} animate={{ height:"auto", opacity:1 }} exit={{ height:0, opacity:0 }} transition={{ duration:0.3, ease:[0.4,0,0.2,1] }} style={{ overflow:"hidden" }}>
+          <p style={{ fontSize:"14.5px", color:"#666", lineHeight:1.75, paddingBottom:"20px", maxWidth:"680px" }}>{faq.a}</p>
         </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+);
 
-        <div className="border-t border-border">
-          {faqs.map((faq, i) => (
-            <FAQItem
-              key={i}
-              faq={faq}
-              index={i}
-              openIndex={openIndex}
-              setOpenIndex={setOpenIndex}
-              isInView={isInView}
-              scrollActive={scrollActiveIndex === i}
-              rowRef={rowRefs.current[i]}
-              image={faqImages[i]}
-            />
-          ))}
+// ── Main ──────────────────────────────────────────────────────
+const FAQSection = ({ faqs, title, subtitle }: { faqs?: { q: string; a: string }[]; title?: string; subtitle?: string }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+
+  const items = faqs ?? FAQS;
+  const heading = title ?? "Frequently\nAsked\nQuestions";
+  const desc = subtitle ?? "Everything you need to know about working with Anni, from project timelines and pricing to AI solutions and collaboration.";
+
+  return (
+    <section style={{ background: "#fff", padding: "100px 20px" }}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={ref}>
+        <div style={{ display: "flex", gap: "80px", alignItems: "flex-start" }} className="faq-layout">
+
+          {/* Left sticky sidebar */}
+          <div style={{ width: "220px", flexShrink: 0, position: "sticky", top: "100px" }} className="faq-sidebar">
+            <motion.p initial={{ opacity:0, y:10 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5 }}
+              style={{ fontSize:"11px", fontWeight:700, letterSpacing:"0.22em", textTransform:"uppercase" as const, color:"#aaa", marginBottom:"16px" }}>
+              FAQ
+            </motion.p>
+            <motion.h2 initial={{ opacity:0, y:16 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:0.1 }}
+              style={{ fontSize:"2.2rem", fontWeight:800, color:"#111", lineHeight:1.1, letterSpacing:"-0.035em", marginBottom:"20px" }}>
+              {heading.split("\n").map((line, i) => <span key={i}>{line}<br /></span>)}
+            </motion.h2>
+            <motion.p initial={{ opacity:0, y:10 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:0.2 }}
+              style={{ fontSize:"13.5px", color:"#666", lineHeight:1.7, marginBottom:"28px" }}>
+              {desc}
+            </motion.p>
+
+            {/* CTA */}
+            <motion.a initial={{ opacity:0, y:10 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:0.25 }}
+              href="/faq"
+              style={{ display:"flex", alignItems:"center", gap:"10px", background:"#111", color:"#fff", borderRadius:"12px", padding:"11px 16px", fontSize:"14px", fontWeight:600, textDecoration:"none", marginBottom:"28px", transition:"background 0.2s" }}
+              
+            >
+              <span style={{ width:"26px", height:"26px", borderRadius:"8px", background:"#333", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                <ArrowRight size={12} color="#fff" />
+              </span>
+              View All FAQs
+            </motion.a>
+
+            {/* Contact card */}
+            <motion.div initial={{ opacity:0, y:10 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:0.3 }}
+              style={{ background:"#f7f7f7", borderRadius:"14px", padding:"18px", border:"1px solid #ebebeb" }}>
+              <p style={{ fontSize:"13.5px", fontWeight:700, color:"#111", marginBottom:"14px" }}>Have a different question?</p>
+              <div style={{ display:"flex", flexDirection:"column", gap:"10px" }}>
+                <a href="https://x.com/anniwebsolutions" target="_blank" rel="noopener noreferrer" style={{ display:"flex", alignItems:"center", gap:"8px", textDecoration:"none" }}>
+                  <span style={{ width:"26px", height:"26px", borderRadius:"6px", background:"#000", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </span>
+                  <span style={{ fontSize:"13px", color:"#555" }}>@anniwebsolutions</span>
+                </a>
+                <a href="mailto:contact@anniwebsolutions.com" style={{ display:"flex", alignItems:"center", gap:"8px", textDecoration:"none" }}>
+                  <span style={{ width:"26px", height:"26px", borderRadius:"6px", background:"#e8e8e8", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <span style={{ fontSize:"13px", color:"#555" }}>contact@anniwebsolutions.com</span>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right accordion */}
+          <div style={{ flex: 1 }}>
+            <motion.div initial={{ opacity:0 }} animate={inView?{opacity:1}:{}} transition={{ duration:0.5, delay:0.15 }}
+              style={{ borderTop:"1px solid #e8e8e8" }}>
+              {items.map((faq, i) => (
+                <FAQRow key={i} faq={faq} isOpen={openIdx === i} onToggle={() => setOpenIdx(openIdx === i ? null : i)} />
+              ))}
+            </motion.div>
+          </div>
+
         </div>
-
       </div>
     </section>
   );
