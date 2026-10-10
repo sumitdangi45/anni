@@ -20,8 +20,7 @@ const AdminLogin = () => {
     try {
       const res = await adminFetch("/api/admin/login", {
         method: "POST",
-        body: JSON.stringify({ email, password }),
-      });
+        body: JSON.stringify({ email, password }) });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         setError(data.error || "Invalid email or password.");

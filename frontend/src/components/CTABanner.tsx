@@ -1,5 +1,5 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import ctaVideo from "@/assets/hyperpixels9434_ssspin.io_1791462468.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -33,8 +33,7 @@ const CTABanner = () => {
           minHeight: "360px",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-        }}
+          justifyContent: "center" }}
       >
         {/* ── video background ── */}
         <video
@@ -55,8 +54,7 @@ const CTABanner = () => {
               fontSize: "clamp(1.8rem, 4vw, 3rem)",
               fontWeight: 800, color: "#fff",
               lineHeight: 1.15, letterSpacing: "-0.03em",
-              marginBottom: "16px",
-            }}
+              marginBottom: "16px" }}
           >
             Your project backlog
             <br />
@@ -86,8 +84,7 @@ const CTABanner = () => {
                 background: "#fff", color: "#111",
                 borderRadius: "999px", padding: "12px 22px",
                 fontSize: "16px", fontWeight: 700, textDecoration: "none",
-                transition: "background 0.2s",
-              }}
+                transition: "background 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#f0f0f0")}
               onMouseLeave={e => (e.currentTarget.style.background = "#fff")}
             >
@@ -105,8 +102,7 @@ const CTABanner = () => {
                 borderRadius: "999px", padding: "12px 22px",
                 fontSize: "16px", fontWeight: 600, textDecoration: "none",
                 border: "1px solid rgba(255,255,255,0.2)",
-                transition: "background 0.2s",
-              }}
+                transition: "background 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.2)")}
               onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
             >
@@ -122,8 +118,7 @@ const CTABanner = () => {
                 borderRadius: "999px", padding: "12px 22px",
                 fontSize: "16px", fontWeight: 600, textDecoration: "none",
                 border: "1px solid rgba(255,255,255,0.2)",
-                transition: "background 0.2s",
-              }}
+                transition: "background 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.2)")}
               onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
             >

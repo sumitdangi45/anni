@@ -30,8 +30,7 @@ interface Props {
 
 const SelectedWorkSection = ({
   label = "SELECTED WORK",
-  heading = "Projects built to deliver real results.",
-}: Props) => {
+  heading = "Projects built to deliver real results." }: Props) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const [projects, setProjects] = useState<Project[]>(FALLBACK);
@@ -109,8 +108,7 @@ const SelectedWorkSection = ({
                   height: "340px",
                   borderRadius: "20px",
                   overflow: "hidden",
-                  position: "relative",
-                }}
+                  position: "relative" }}
               >
                 <img
                   src={p.image_url}
@@ -136,8 +134,7 @@ const SelectedWorkSection = ({
               background: "#111", color: "#fff",
               borderRadius: "999px", padding: "12px 24px 12px 12px",
               fontSize: "15px", fontWeight: 700, textDecoration: "none",
-              transition: "background 0.2s",
-            }}
+              transition: "background 0.2s" }}
             
           >
             <span style={{ width: "30px", height: "30px", borderRadius: "50%", background: "#333", display: "flex", alignItems: "center", justifyContent: "center" }}>

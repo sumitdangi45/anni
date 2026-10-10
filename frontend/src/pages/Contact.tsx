@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Mail, MessageCircle, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -44,8 +44,7 @@ const TIMELINES = [
 const Contact = () => {
   useSEO({
     title: "Contact — Anni Web Solutions",
-    description: "Tell us what you're building. We'll recommend the best way to work together.",
-  });
+    description: "Tell us what you're building. We'll recommend the best way to work together." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -67,8 +66,7 @@ const Contact = () => {
       await apiFetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, service: selectedServices.join(", "), type: tab }),
-      });
+        body: JSON.stringify({ ...form, service: selectedServices.join(", "), type: tab }) });
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again or email us directly.");
@@ -160,8 +158,7 @@ const Contact = () => {
                     display: "flex", alignItems: "center", gap: "14px",
                     padding: "14px 16px", borderRadius: "14px",
                     background: card.bg, border: "1px solid rgba(0,0,0,0.06)",
-                    textDecoration: "none", transition: "box-shadow 0.2s",
-                  }}
+                    textDecoration: "none", transition: "box-shadow 0.2s" }}
                   onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)")}
                   onMouseLeave={e => (e.currentTarget.style.boxShadow = "none")}
                 >
@@ -210,8 +207,7 @@ const Contact = () => {
                         flex: 1, padding: "10px 8px", borderRadius: "9px", border: "none", cursor: "pointer",
                         background: tab === t.key ? "#fff" : "transparent",
                         boxShadow: tab === t.key ? "0 1px 6px rgba(0,0,0,0.1)" : "none",
-                        transition: "all 0.2s",
-                      }}
+                        transition: "all 0.2s" }}
                     >
                       <p style={{ fontSize: "16.5px", fontWeight: 700, color: tab === t.key ? "#111" : "#888", marginBottom: "2px" }}>{t.label}</p>
                       <p style={{ fontSize: "16px", color: tab === t.key ? "#666" : "#bbb" }}>{t.desc}</p>
@@ -229,8 +225,7 @@ const Contact = () => {
                           fontSize: "16.5px", fontWeight: 600, padding: "6px 14px", borderRadius: "999px", cursor: "pointer", transition: "all 0.15s",
                           background: selectedServices.includes(s) ? "#111" : "#f5f5f5",
                           color: selectedServices.includes(s) ? "#fff" : "#555",
-                          border: selectedServices.includes(s) ? "1.5px solid #111" : "1.5px solid #e8e8e8",
-                        }}
+                          border: selectedServices.includes(s) ? "1.5px solid #111" : "1.5px solid #e8e8e8" }}
                       >
                         {s}
                       </button>
@@ -312,8 +307,7 @@ const Contact = () => {
                     width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
                     background: submitting ? "#999" : "#111", color: "#fff",
                     borderRadius: "12px", padding: "14px", fontSize: "16px", fontWeight: 700,
-                    border: "none", cursor: submitting ? "not-allowed" : "pointer", transition: "background 0.2s",
-                  }}
+                    border: "none", cursor: submitting ? "not-allowed" : "pointer", transition: "background 0.2s" }}
                   onMouseEnter={e => { if (!submitting) (e.currentTarget as HTMLElement).style.background = "#333"; }}
                   onMouseLeave={e => { if (!submitting) (e.currentTarget as HTMLElement).style.background = "#111"; }}
                 >

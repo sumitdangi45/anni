@@ -11,8 +11,7 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+  DialogTitle } from "@/components/ui/dialog";
 import { Pencil, Trash2, Plus, X, Upload, FileText } from "lucide-react";
 
 interface BlogLink {
@@ -51,8 +50,7 @@ const emptyForm = (): Omit<Blog, "_id"> => ({
   live: false,
   images: [],
   pptSlides: [],
-  links: [],
-});
+  links: [] });
 
 const AdminBlogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -107,8 +105,7 @@ const AdminBlogs = () => {
       live: blog.live,
       images: blog.images ?? [],
       pptSlides: blog.pptSlides ?? [],
-      links: blog.links ?? [],
-    });
+      links: blog.links ?? [] });
     setError(null);
     setPdfStatus(null);
     setDialogOpen(true);
@@ -134,8 +131,7 @@ const AdminBlogs = () => {
       const url = editingId ? `/api/admin/blogs/${editingId}` : "/api/admin/blogs";
       const res = await adminFetch(url, {
         method,
-        body: JSON.stringify(form),
-      });
+        body: JSON.stringify(form) });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Save failed");
@@ -185,8 +181,7 @@ const AdminBlogs = () => {
       try {
         const res = await adminFetch("/api/admin/blogs", {
           method: "POST",
-          body: JSON.stringify(form),
-        });
+          body: JSON.stringify(form) });
         if (!res.ok) throw new Error("Could not save blog");
         const saved = await res.json();
         blogId = saved._id;
@@ -210,8 +205,7 @@ const AdminBlogs = () => {
       const res = await fetch(`${API_BASE}/api/admin/blogs/${blogId}/ppt`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
-        body: fd,
-      });
+        body: fd });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Upload failed");
       setField("pptSlides", data.pptSlides);

@@ -153,8 +153,7 @@ const AdminPhotos = () => {
     const slot = IMAGE_SLOTS.find(s => s.key === key);
     await adminFetch(`/api/admin/site-images/${key}`, {
       method: "PUT",
-      body: JSON.stringify({ url, label: slot?.label }),
-    });
+      body: JSON.stringify({ url, label: slot?.label }) });
     setImageMap(prev => ({ ...prev, [key]: url }));
   };
 

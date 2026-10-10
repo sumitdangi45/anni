@@ -17,8 +17,7 @@ const AdminDashboard = () => {
     projects: 0,
     testimonials: 0,
     contacts: 0,
-    unread: 0,
-  });
+    unread: 0 });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -46,8 +45,7 @@ const AdminDashboard = () => {
           contacts: Array.isArray(contacts) ? contacts.length : 0,
           unread: Array.isArray(contacts)
             ? contacts.filter((c: { read: boolean }) => c.read === false).length
-            : 0,
-        });
+            : 0 });
       } catch {
         // silently fail — stats stay at 0
       } finally {
@@ -64,30 +62,26 @@ const AdminDashboard = () => {
       value: stats.blogs,
       icon: FileText,
       color: "text-blue-600",
-      bg: "bg-blue-50",
-    },
+      bg: "bg-blue-50" },
     {
       label: "Projects",
       value: stats.projects,
       icon: FolderKanban,
       color: "text-purple-600",
-      bg: "bg-purple-50",
-    },
+      bg: "bg-purple-50" },
     {
       label: "Testimonials",
       value: stats.testimonials,
       icon: Star,
       color: "text-yellow-600",
-      bg: "bg-yellow-50",
-    },
+      bg: "bg-yellow-50" },
     {
       label: "Contacts",
       value: stats.contacts,
       icon: Mail,
       color: "text-green-600",
       bg: "bg-green-50",
-      sub: stats.unread > 0 ? `${stats.unread} unread` : undefined,
-    },
+      sub: stats.unread > 0 ? `${stats.unread} unread` : undefined },
   ];
 
   return (

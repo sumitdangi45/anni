@@ -42,8 +42,7 @@ const LogoMarquee = () => (
         borderTop: "1px solid #efefef",
         borderBottom: "1px solid #efefef",
         padding: "22px 0",
-        overflow: "hidden",
-      }}
+        overflow: "hidden" }}
     >
       <div className="logo-track">
         {TRACK.map((item, i) => (
@@ -55,8 +54,7 @@ const LogoMarquee = () => (
               gap: "10px",
               paddingLeft: "40px",
               paddingRight: "40px",
-              flexShrink: 0,
-            }}
+              flexShrink: 0 }}
           >
             {/* dot separator */}
             <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "#ddd", flexShrink: 0 }} />
@@ -66,8 +64,7 @@ const LogoMarquee = () => (
                 fontWeight: 600,
                 color: "#999",
                 letterSpacing: "-0.01em",
-                whiteSpace: "nowrap",
-              }}
+                whiteSpace: "nowrap" }}
             >
               {item.name}
             </span>

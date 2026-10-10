@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Search, Users, Video, Target, MessageCircle, Palette, TrendingUp, BarChart2, Zap, Globe } from "lucide-react";
+import { ArrowRight, Search, Users, Video, Target, BarChart2, Zap, Globe } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -50,8 +50,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Social Media Management & Account Handling",
     subtitle: "Build a consistent social presence that keeps your brand active.",
@@ -66,8 +65,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Content & Video Marketing",
     subtitle: "Turn your expertise into content people watch, read and share.",
@@ -82,8 +80,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Paid Ads & Performance Marketing",
     subtitle: "Put your budget behind campaigns designed around business goals.",
@@ -98,8 +95,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "WhatsApp Marketing & Customer Automation",
     subtitle: "Turn WhatsApp conversations into a complete customer journey.",
@@ -114,8 +110,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1a0a 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Brand Growth & Digital Presence",
     subtitle: "Create a consistent digital identity people recognize and trust.",
@@ -130,8 +125,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 // ── What we do grid ───────────────────────────────────────────
@@ -205,8 +199,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const DigitalMarketing = () => {
   useSEO({
     title: "Digital Marketing — Anni Web Solutions",
-    description: "SEO, social media, content marketing, paid ads, WhatsApp automation and brand growth — one connected digital growth system for startups and businesses.",
-  });
+    description: "SEO, social media, content marketing, paid ads, WhatsApp automation and brand growth — one connected digital growth system for startups and businesses." });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

@@ -60,8 +60,7 @@ const TOC_ITEMS = [
 const TermsConditions = () => {
   useSEO({
     title: "Terms & Conditions — Anni Web Solutions",
-    description: "Read the Terms and Conditions for engaging Anni Web Solutions for web, mobile, AI, and digital services.",
-  });
+    description: "Read the Terms and Conditions for engaging Anni Web Solutions for web, mobile, AI, and digital services." });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

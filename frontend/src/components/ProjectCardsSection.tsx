@@ -18,56 +18,49 @@ const PROJECTS: Project[] = [
     title: "AI-Powered\nBusiness Dashboard",
     highlight: { label: "CLIENT RAISED", accent: "US $2.1M" },
     tags: ["UI/UX DESIGN", "WEB APP", "AI INTEGRATION"],
-    image: "#f0efe9",
-  },
+    image: "#f0efe9" },
   {
     id: "2",
     category: ["MINDSPHERE", "AI / SAAS / WEB3"],
     title: "Blockchain AI\nAgent Platform",
     highlight: undefined,
     tags: ["UI/UX DESIGN", "BRANDING", "WEB DEVELOPMENT", "3D DESIGN"],
-    image: "#0d0d0d",
-  },
+    image: "#0d0d0d" },
   {
     id: "3",
     category: ["EFFICENSE", "SAAS / B2B"],
     title: "IT Performance\nOptimization Tools",
     highlight: undefined,
     tags: ["UI/UX DESIGN", "LANDING PAGE", "PRODUCT DESIGN"],
-    image: "#eef2ff",
-  },
+    image: "#eef2ff" },
   {
     id: "4",
     category: ["UPTECH", "AI / AUTOMATION"],
     title: "AI-First Automate\nTools & Tickets",
     highlight: { label: "PRODUCTIVITY UP", accent: "3.5X" },
     tags: ["WEB APP", "AI AGENTS", "AUTOMATION"],
-    image: "#0a0a1a",
-  },
+    image: "#0a0a1a" },
   {
     id: "5",
     category: ["FINTECH", "MOBILE APP"],
     title: "Next-Gen\nPayment Platform",
     highlight: { label: "TRANSACTIONS", accent: "$50M+" },
     tags: ["MOBILE APP", "UI/UX DESIGN", "BRANDING"],
-    image: "#f5f0ff",
-  },
+    image: "#f5f0ff" },
   {
     id: "6",
     category: ["EDTECH", "SAAS"],
     title: "Smart Learning\nManagement System",
     highlight: undefined,
     tags: ["SAAS", "WEB APP", "AI INTEGRATION"],
-    image: "#0d1a0d",
-  },
+    image: "#0d1a0d" },
   {
     id: "7",
     category: ["E-COMMERCE", "WEB"],
     title: "High-Conversion\nE-Commerce Platform",
     highlight: { label: "REVENUE BOOST", accent: "+180%" },
     tags: ["WEB DEVELOPMENT", "UI/UX DESIGN", "SEO"],
-    image: "#fff8f0",
-  },
+    image: "#fff8f0" },
 ];
 
 // ── Mock screenshot ───────────────────────────────────────────
@@ -126,8 +119,7 @@ const ProjectCard = ({ project, index, total }: { project: Project; index: numbe
           gridTemplateColumns: "1fr 1.85fr",
           minHeight: "600px",
           border: "1px solid #e8e8e8",
-          boxShadow: "0 2px 32px rgba(0,0,0,0.07)",
-        }}>
+          boxShadow: "0 2px 32px rgba(0,0,0,0.07)" }}>
 
           {/* ── LEFT: text ── */}
           <div style={{ padding: "44px 40px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid #f0f0f0" }}>

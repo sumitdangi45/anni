@@ -8,56 +8,47 @@ const SERVICES = [
     num: "01",
     title: "Custom Web Development",
     tags: ["Websites", "Web Applications", "Business Platforms", "E-commerce"],
-    desc: "From landing pages to complex web platforms — we build scalable, fast and production-ready digital products tailored to your goals.",
-  },
+    desc: "From landing pages to complex web platforms — we build scalable, fast and production-ready digital products tailored to your goals." },
   {
     num: "02",
     title: "AI & Automation",
     tags: ["AI Agents", "LLM Integration", "Workflow Automation", "Chatbots"],
-    desc: "Automate repetitive workflows, integrate intelligent AI agents and embed LLM-powered features directly into your product or operations.",
-  },
+    desc: "Automate repetitive workflows, integrate intelligent AI agents and embed LLM-powered features directly into your product or operations." },
   {
     num: "03",
     title: "Mobile App Development",
     tags: ["iOS", "Android", "React Native", "Flutter", "Cross-platform"],
-    desc: "Cross-platform mobile apps that deliver native-like performance and smooth user experiences on iOS and Android.",
-  },
+    desc: "Cross-platform mobile apps that deliver native-like performance and smooth user experiences on iOS and Android." },
   {
     num: "04",
     title: "SaaS Development",
     tags: ["SaaS Products", "Multi-tenant Apps", "Subscription Systems", "MVPs"],
-    desc: "End-to-end SaaS development — from MVP to scalable multi-tenant platforms with auth, billing and everything in between.",
-  },
+    desc: "End-to-end SaaS development — from MVP to scalable multi-tenant platforms with auth, billing and everything in between." },
   {
     num: "05",
     title: "UI/UX & Product Design",
     tags: ["UI Design", "UX Research", "Prototyping", "Design Systems", "Branding"],
-    desc: "User-centered design that converts — from wireframes to pixel-perfect interfaces, branding and scalable design systems.",
-  },
+    desc: "User-centered design that converts — from wireframes to pixel-perfect interfaces, branding and scalable design systems." },
   {
     num: "06",
     title: "Digital Growth & SEO",
     tags: ["SEO", "Google Ads", "Meta Ads", "Content Strategy", "Analytics"],
-    desc: "Data-driven SEO, performance marketing and digital strategy that brings real traffic, leads and measurable business growth.",
-  },
+    desc: "Data-driven SEO, performance marketing and digital strategy that brings real traffic, leads and measurable business growth." },
   {
     num: "07",
     title: "Cloud & DevOps",
     tags: ["AWS", "GCP", "CI/CD", "Docker", "Infrastructure"],
-    desc: "Scalable cloud infrastructure, automated deployments and DevOps pipelines so your product ships faster and stays reliable.",
-  },
+    desc: "Scalable cloud infrastructure, automated deployments and DevOps pipelines so your product ships faster and stays reliable." },
   {
     num: "08",
     title: "Cybersecurity & Digital Security",
     tags: ["Security Audits", "Penetration Testing", "Compliance", "Monitoring"],
-    desc: "Protect your product and business with security assessments, vulnerability testing and ongoing threat monitoring.",
-  },
+    desc: "Protect your product and business with security assessments, vulnerability testing and ongoing threat monitoring." },
   {
     num: "09",
     title: "Maintenance & Support",
     tags: ["Bug Fixes", "Updates", "Performance", "Uptime Monitoring"],
-    desc: "We don't disappear after launch. Ongoing maintenance, security patches, performance tuning and priority support for your live product.",
-  },
+    desc: "We don't disappear after launch. Ongoing maintenance, security patches, performance tuning and priority support for your live product." },
 ];
 
 // ── Accordion row ──────────────────────────────────────────────
@@ -85,8 +76,7 @@ const Row = ({ service, isOpen, onToggle }: {
           color: "#111",
           flex: 1,
           letterSpacing: "-0.03em",
-          lineHeight: 1,
-        }}>
+          lineHeight: 1 }}>
           {service.title}
         </span>
 
@@ -97,8 +87,7 @@ const Row = ({ service, isOpen, onToggle }: {
           display: "flex", alignItems: "center", justifyContent: "center",
           flexShrink: 0,
           background: isOpen ? "#f5f5f5" : "transparent",
-          transition: "background 0.2s",
-        }}>
+          transition: "background 0.2s" }}>
           {isOpen
             ? <Minus size={16} color="#111" />
             : <Plus size={16} color="#666" />
@@ -122,8 +111,7 @@ const Row = ({ service, isOpen, onToggle }: {
                     fontSize: "16.5px", fontWeight: 500,
                     padding: "5px 14px", borderRadius: "999px",
                     border: "1.5px solid #e0e0e0",
-                    color: "#444",
-                  }}>
+                    color: "#444" }}>
                     {tag}
                   </span>
                 ))}

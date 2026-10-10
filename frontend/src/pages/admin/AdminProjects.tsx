@@ -9,8 +9,7 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+  DialogTitle } from "@/components/ui/dialog";
 import { Pencil, Trash2, Plus, Star } from "lucide-react";
 
 interface Project {
@@ -30,8 +29,7 @@ const emptyForm = (): Omit<Project, "_id"> => ({
   description: "",
   image_url: "",
   github_url: "",
-  live_url: "",
-});
+  live_url: "" });
 
 const AdminProjects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -75,8 +73,7 @@ const AdminProjects = () => {
       description: project.description,
       image_url: project.image_url ?? "",
       github_url: project.github_url ?? "",
-      live_url: project.live_url ?? "",
-    });
+      live_url: project.live_url ?? "" });
     setError(null);
     setDialogOpen(true);
   };
@@ -112,8 +109,7 @@ const AdminProjects = () => {
         : "/api/admin/projects";
       const res = await adminFetch(url, {
         method,
-        body: JSON.stringify(form),
-      });
+        body: JSON.stringify(form) });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Save failed");

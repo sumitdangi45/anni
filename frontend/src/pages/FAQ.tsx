@@ -1,7 +1,7 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { Plus, Minus, ArrowRight, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
@@ -15,178 +15,137 @@ const FAQ_CATEGORIES = [
     items: [
       {
         q: "What is Anni Web Solutions?",
-        a: "Anni Web Solutions is a full-service digital agency based in India. We help startups, SMEs, and founders build web apps, mobile apps, SaaS products, AI solutions, and run digital marketing — all under one roof. Think of us as your on-demand tech team.",
-      },
+        a: "Anni Web Solutions is a full-service digital agency based in India. We help startups, SMEs, and founders build web apps, mobile apps, SaaS products, AI solutions, and run digital marketing — all under one roof. Think of us as your on-demand tech team." },
       {
         q: "Who do you typically work with?",
-        a: "We work with early-stage startups moving from idea to MVP, growing businesses that need to scale their digital infrastructure, founders who need a reliable tech partner, and agencies that want white-label development support.",
-      },
+        a: "We work with early-stage startups moving from idea to MVP, growing businesses that need to scale their digital infrastructure, founders who need a reliable tech partner, and agencies that want white-label development support." },
       {
         q: "Do you work with clients worldwide?",
-        a: "Yes. Our clients are based across India, the Middle East, Southeast Asia, and beyond. We work fully remotely and are comfortable with async collaboration across time zones.",
-      },
+        a: "Yes. Our clients are based across India, the Middle East, Southeast Asia, and beyond. We work fully remotely and are comfortable with async collaboration across time zones." },
       {
         q: "Who will I actually work with?",
-        a: "You'll work directly with Sumit Dangi (Founder) and a dedicated project lead. We keep communication direct — no account managers passing messages around. You get the actual people building your product.",
-      },
+        a: "You'll work directly with Sumit Dangi (Founder) and a dedicated project lead. We keep communication direct — no account managers passing messages around. You get the actual people building your product." },
       {
         q: "How do we communicate during a project?",
-        a: "We use WhatsApp, email, or any tool your team prefers (Slack, Notion, Linear, etc.). You'll get regular updates, milestone reviews, and direct access to the team throughout the project.",
-      },
+        a: "We use WhatsApp, email, or any tool your team prefers (Slack, Notion, Linear, etc.). You'll get regular updates, milestone reviews, and direct access to the team throughout the project." },
       {
         q: "Can you work with our existing in-house team?",
-        a: "Absolutely. We often plug into existing teams as an extension — handling overflow work, specific features, or specialized skills like AI integration or mobile development that your team doesn't have in-house.",
-      },
-    ],
-  },
+        a: "Absolutely. We often plug into existing teams as an extension — handling overflow work, specific features, or specialized skills like AI integration or mobile development that your team doesn't have in-house." },
+    ] },
   {
     id: "services",
     label: "Services",
     items: [
       {
         q: "What services do you offer?",
-        a: "We offer end-to-end digital services: custom web development, mobile app development (Android, iOS, cross-platform), SaaS product development, AI/ML solutions, automation & integrations, e-commerce development, UI/UX design, digital marketing & SEO, and ongoing maintenance & support.",
-      },
+        a: "We offer end-to-end digital services: custom web development, mobile app development (Android, iOS, cross-platform), SaaS product development, AI/ML solutions, automation & integrations, e-commerce development, UI/UX design, digital marketing & SEO, and ongoing maintenance & support." },
       {
         q: "Can multiple services be combined in one project?",
-        a: "Yes — and that's actually how most of our best projects work. For example, a SaaS product might include web development, a mobile app, AI features, and ongoing SEO. We scope everything together and give you a unified price.",
-      },
+        a: "Yes — and that's actually how most of our best projects work. For example, a SaaS product might include web development, a mobile app, AI features, and ongoing SEO. We scope everything together and give you a unified price." },
       {
         q: "Do you build AI-powered products?",
-        a: "Yes. AI is a core part of what we do. We build LLM-powered features, custom chatbots, AI automation workflows, RAG systems, computer vision solutions, and integrate APIs like OpenAI, Gemini, and Anthropic into your products.",
-      },
+        a: "Yes. AI is a core part of what we do. We build LLM-powered features, custom chatbots, AI automation workflows, RAG systems, computer vision solutions, and integrate APIs like OpenAI, Gemini, and Anthropic into your products." },
       {
         q: "Do you offer UI/UX design or just development?",
-        a: "Both. We handle everything from wireframes and design systems to final development. You can come to us with just an idea — we'll design and build it end to end.",
-      },
+        a: "Both. We handle everything from wireframes and design systems to final development. You can come to us with just an idea — we'll design and build it end to end." },
       {
         q: "Do you do digital marketing as well?",
-        a: "Yes. We offer SEO, Google Ads, Meta Ads, social media management, email marketing, and content strategy. Our goal is to help you not just build a product but grow it.",
-      },
-    ],
-  },
+        a: "Yes. We offer SEO, Google Ads, Meta Ads, social media management, email marketing, and content strategy. Our goal is to help you not just build a product but grow it." },
+    ] },
   {
     id: "projects-pricing",
     label: "Projects & Pricing",
     items: [
       {
         q: "How are projects priced?",
-        a: "Every project is scoped and priced individually based on complexity, timeline, and deliverables. We provide a detailed proposal after a discovery call. We also offer monthly retainer plans for ongoing work.",
-      },
+        a: "Every project is scoped and priced individually based on complexity, timeline, and deliverables. We provide a detailed proposal after a discovery call. We also offer monthly retainer plans for ongoing work." },
       {
         q: "Do you have a minimum project budget?",
-        a: "We don't have a hard minimum, but most custom projects start from ₹50,000 (or ~$600 USD). Small tasks and hourly consulting are available for existing clients or clearly scoped work.",
-      },
+        a: "We don't have a hard minimum, but most custom projects start from ₹50,000 (or ~$600 USD). Small tasks and hourly consulting are available for existing clients or clearly scoped work." },
       {
         q: "How long does a typical project take?",
-        a: "It depends on scope. A landing page or simple website: 1–2 weeks. A full web application or MVP: 4–8 weeks. A complex SaaS product or mobile app: 8–16 weeks. We always give you a realistic timeline upfront.",
-      },
+        a: "It depends on scope. A landing page or simple website: 1–2 weeks. A full web application or MVP: 4–8 weeks. A complex SaaS product or mobile app: 8–16 weeks. We always give you a realistic timeline upfront." },
       {
         q: "What's your payment structure?",
-        a: "Typically 50% upfront to start the project, and 50% on delivery. For larger projects, we break it into milestone-based payments. Monthly retainers are billed at the start of each month.",
-      },
+        a: "Typically 50% upfront to start the project, and 50% on delivery. For larger projects, we break it into milestone-based payments. Monthly retainers are billed at the start of each month." },
       {
         q: "Can you work on an existing product or website?",
-        a: "Yes. We regularly take over existing codebases to add features, fix bugs, refactor, or scale. We'll start with a technical audit to understand what we're working with before committing to a scope.",
-      },
-    ],
-  },
+        a: "Yes. We regularly take over existing codebases to add features, fix bugs, refactor, or scale. We'll start with a technical audit to understand what we're working with before committing to a scope." },
+    ] },
   {
     id: "process",
     label: "Our Process",
     items: [
       {
         q: "What does the project process look like?",
-        a: "It goes: Discovery call → Proposal & scope → Design (if needed) → Development sprints → QA & testing → Launch → Ongoing support. We keep you in the loop at every stage with regular updates and demos.",
-      },
+        a: "It goes: Discovery call → Proposal & scope → Design (if needed) → Development sprints → QA & testing → Launch → Ongoing support. We keep you in the loop at every stage with regular updates and demos." },
       {
         q: "Do you provide a project proposal before starting?",
-        a: "Always. After our discovery call we send a written proposal with scope of work, deliverables, timeline, and pricing. Nothing starts without your sign-off.",
-      },
+        a: "Always. After our discovery call we send a written proposal with scope of work, deliverables, timeline, and pricing. Nothing starts without your sign-off." },
       {
         q: "How do revisions work?",
-        a: "Each project includes a defined number of revision rounds. We work iteratively — you give feedback at each milestone, so there are no big surprises at the end. Additional revisions beyond scope are billed at our hourly rate.",
-      },
+        a: "Each project includes a defined number of revision rounds. We work iteratively — you give feedback at each milestone, so there are no big surprises at the end. Additional revisions beyond scope are billed at our hourly rate." },
       {
         q: "Will I get the source code?",
-        a: "Yes. On project completion and final payment, you receive full ownership of the source code, assets, and all project files. We typically hand off via a private GitHub repository.",
-      },
+        a: "Yes. On project completion and final payment, you receive full ownership of the source code, assets, and all project files. We typically hand off via a private GitHub repository." },
       {
         q: "Do you handle deployment and hosting?",
-        a: "Yes. We can handle full deployment to AWS, GCP, Azure, Vercel, or any platform you prefer. We also offer managed hosting and DevOps support as an add-on service.",
-      },
-    ],
-  },
+        a: "Yes. We can handle full deployment to AWS, GCP, Azure, Vercel, or any platform you prefer. We also offer managed hosting and DevOps support as an add-on service." },
+    ] },
   {
     id: "ai-saas",
     label: "AI & SaaS",
     items: [
       {
         q: "Can you build a SaaS product from scratch?",
-        a: "Yes — this is one of our specialities. We handle the full stack: architecture, backend APIs, frontend dashboard, database, auth, billing integration, and deployment. We can take you from zero to a live, paying-customer-ready product.",
-      },
+        a: "Yes — this is one of our specialities. We handle the full stack: architecture, backend APIs, frontend dashboard, database, auth, billing integration, and deployment. We can take you from zero to a live, paying-customer-ready product." },
       {
         q: "What AI technologies do you work with?",
-        a: "We work with OpenAI (GPT-4, Whisper, DALL-E), Google Gemini, Anthropic Claude, LangChain, LlamaIndex, Hugging Face, custom ML models (Scikit-learn, TensorFlow, PyTorch), and vector databases like Pinecone and Weaviate.",
-      },
+        a: "We work with OpenAI (GPT-4, Whisper, DALL-E), Google Gemini, Anthropic Claude, LangChain, LlamaIndex, Hugging Face, custom ML models (Scikit-learn, TensorFlow, PyTorch), and vector databases like Pinecone and Weaviate." },
       {
         q: "Can you build a custom chatbot for my business?",
-        a: "Yes. We build chatbots trained on your own data — for customer support, lead generation, internal knowledge bases, or product assistants. They can be embedded in your website, app, or messaging platforms like WhatsApp.",
-      },
+        a: "Yes. We build chatbots trained on your own data — for customer support, lead generation, internal knowledge bases, or product assistants. They can be embedded in your website, app, or messaging platforms like WhatsApp." },
       {
         q: "Do you build automation workflows?",
-        a: "Yes. We automate repetitive business processes using custom code, n8n, Make (Integromat), Zapier, and AI agents. Common use cases: lead routing, invoice processing, CRM sync, social media automation, and data pipelines.",
-      },
+        a: "Yes. We automate repetitive business processes using custom code, n8n, Make (Integromat), Zapier, and AI agents. Common use cases: lead routing, invoice processing, CRM sync, social media automation, and data pipelines." },
       {
         q: "Can you integrate AI into our existing product?",
-        a: "Absolutely. We can add AI features to any existing product — whether it's a recommendation engine, smart search, document processing, or a natural language interface layered on top of your existing system.",
-      },
-    ],
-  },
+        a: "Absolutely. We can add AI features to any existing product — whether it's a recommendation engine, smart search, document processing, or a natural language interface layered on top of your existing system." },
+    ] },
   {
     id: "support",
     label: "Support & Maintenance",
     items: [
       {
         q: "Do you offer post-launch support?",
-        a: "Yes. Every project includes a handover period with bug fixes at no extra cost. After that, we offer monthly maintenance retainers covering updates, security patches, performance monitoring, and small enhancements.",
-      },
+        a: "Yes. Every project includes a handover period with bug fixes at no extra cost. After that, we offer monthly maintenance retainers covering updates, security patches, performance monitoring, and small enhancements." },
       {
         q: "What's included in a maintenance retainer?",
-        a: "Depending on the plan: regular updates, uptime monitoring, security patches, database backups, small feature additions, and priority support. We'll scope the right retainer based on your product's needs.",
-      },
+        a: "Depending on the plan: regular updates, uptime monitoring, security patches, database backups, small feature additions, and priority support. We'll scope the right retainer based on your product's needs." },
       {
         q: "What if something breaks after launch?",
-        a: "If it's a bug from our code, we fix it free of charge within the warranty period (30 days post-launch). After that, fixes are covered under a maintenance retainer or billed as ad-hoc work.",
-      },
+        a: "If it's a bug from our code, we fix it free of charge within the warranty period (30 days post-launch). After that, fixes are covered under a maintenance retainer or billed as ad-hoc work." },
       {
         q: "Can you maintain a product built by another team?",
-        a: "Yes. We take over maintenance for existing products regularly. We'll start with a code review and technical audit, then set up monitoring and a maintenance plan from there.",
-      },
-    ],
-  },
+        a: "Yes. We take over maintenance for existing products regularly. We'll start with a code review and technical audit, then set up monitoring and a maintenance plan from there." },
+    ] },
   {
     id: "confidentiality",
     label: "Confidentiality & IP",
     items: [
       {
         q: "Will you sign an NDA?",
-        a: "Yes, absolutely. We're happy to sign a mutual NDA before any project discussions. Your idea, data, and business details are kept strictly confidential.",
-      },
+        a: "Yes, absolutely. We're happy to sign a mutual NDA before any project discussions. Your idea, data, and business details are kept strictly confidential." },
       {
         q: "Who owns the final product and code?",
-        a: "You do — 100%. Upon final payment, all intellectual property, source code, designs, and assets are transferred to you. We retain no rights to your product.",
-      },
+        a: "You do — 100%. Upon final payment, all intellectual property, source code, designs, and assets are transferred to you. We retain no rights to your product." },
       {
         q: "Will you work with our competitors?",
-        a: "We take confidentiality seriously. If you have concerns about conflicts of interest, raise it upfront and we'll discuss it honestly. We won't share anything you've told us with anyone else.",
-      },
+        a: "We take confidentiality seriously. If you have concerns about conflicts of interest, raise it upfront and we'll discuss it honestly. We won't share anything you've told us with anyone else." },
       {
         q: "Is our data safe with you?",
-        a: "We follow industry-standard security practices — encrypted communications, limited access, no third-party sharing. For sensitive projects we can work under specific data handling agreements.",
-      },
-    ],
-  },
+        a: "We follow industry-standard security practices — encrypted communications, limited access, no third-party sharing. For sensitive projects we can work under specific data handling agreements." },
+    ] },
 ];
 
 // ── Accordion Item ────────────────────────────────────────────
@@ -198,16 +157,14 @@ const AccordionItem = ({ q, a, isOpen, onToggle }: { q: string; a: string; isOpe
       style={{
         width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "22px 0", background: "none", border: "none", cursor: "pointer",
-        textAlign: "left", gap: "24px",
-      }}
+        textAlign: "left", gap: "24px" }}
     >
       <span style={{ fontSize: "16px", fontWeight: 500, lineHeight: 1.4, color: "var(--foreground)" }}>{q}</span>
       <span style={{
         width: "28px", height: "28px", borderRadius: "50%", flexShrink: 0,
         border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center",
         color: "var(--muted-foreground)", transition: "all 0.2s",
-        background: isOpen ? "var(--foreground)" : "transparent",
-      }}>
+        background: isOpen ? "var(--foreground)" : "transparent" }}>
         {isOpen
           ? <Minus size={13} color="var(--background)" />
           : <Plus size={13} />}
@@ -292,8 +249,7 @@ const Sidebar = ({ activeId }: { activeId: string }) => (
             padding: "6px 0",
             transition: "color 0.2s",
             borderLeft: activeId === cat.id ? "2px solid var(--foreground)" : "2px solid transparent",
-            paddingLeft: "10px",
-          }}
+            paddingLeft: "10px" }}
         >
           {cat.label}
         </a>
@@ -315,16 +271,14 @@ const HeroBanner = () => (
     flexDirection: "column" as const,
     gap: "32px",
     position: "relative" as const,
-    overflow: "hidden" as const,
-  }}>
+    overflow: "hidden" as const }}>
     {/* subtle gradient blob */}
     <div style={{
       position: "absolute", top: "-60px", right: "-60px",
       width: "300px", height: "300px",
       borderRadius: "50%",
       background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)",
-      pointerEvents: "none",
-    }} />
+      pointerEvents: "none" }} />
 
     <div>
       <p style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "20px" }}>
@@ -346,8 +300,7 @@ const HeroBanner = () => (
           display: "inline-flex", alignItems: "center", gap: "8px",
           background: "var(--foreground)", color: "var(--background)",
           borderRadius: "999px", padding: "12px 22px",
-          fontSize: "16px", fontWeight: 700, textDecoration: "none",
-        }}
+          fontSize: "16px", fontWeight: 700, textDecoration: "none" }}
       >
         <span style={{ width: "26px", height: "26px", borderRadius: "8px", background: "var(--background)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
           <ArrowRight size={13} color="var(--foreground)" />
@@ -363,8 +316,7 @@ const HeroBanner = () => (
           background: "transparent", color: "var(--foreground)",
           border: "1px solid var(--border)",
           borderRadius: "999px", padding: "12px 22px",
-          fontSize: "16px", fontWeight: 600, textDecoration: "none",
-        }}
+          fontSize: "16px", fontWeight: 600, textDecoration: "none" }}
       >
         <WhatsAppIcon size={14} />
         Chat on WhatsApp
@@ -378,8 +330,7 @@ const HeroBanner = () => (
 const FAQ = () => {
   useSEO({
     title: "FAQ — Anni Web Solutions",
-    description: "Frequently asked questions about working with Anni Web Solutions — services, pricing, process, AI, SaaS, support and more.",
-  });
+    description: "Frequently asked questions about working with Anni Web Solutions — services, pricing, process, AI, SaaS, support and more." });
 
   const [activeId, setActiveId] = useState(FAQ_CATEGORIES[0].id);
 
@@ -433,8 +384,7 @@ const FAQ = () => {
               display: "inline-flex", alignItems: "center", gap: "8px",
               background: "var(--background)", color: "var(--foreground)",
               borderRadius: "999px", padding: "13px 26px",
-              fontSize: "16.5px", fontWeight: 700, textDecoration: "none",
-            }}
+              fontSize: "16.5px", fontWeight: 700, textDecoration: "none" }}
           >
             <ArrowRight size={14} />
             Email Us
@@ -448,8 +398,7 @@ const FAQ = () => {
               background: "rgba(255,255,255,0.1)", color: "var(--background)",
               border: "1px solid rgba(255,255,255,0.18)",
               borderRadius: "999px", padding: "13px 26px",
-              fontSize: "16.5px", fontWeight: 600, textDecoration: "none",
-            }}
+              fontSize: "16.5px", fontWeight: 600, textDecoration: "none" }}
           >
             <WhatsAppIcon size={14} />
             WhatsApp
@@ -461,8 +410,7 @@ const FAQ = () => {
               background: "rgba(255,255,255,0.1)", color: "var(--background)",
               border: "1px solid rgba(255,255,255,0.18)",
               borderRadius: "999px", padding: "13px 26px",
-              fontSize: "16.5px", fontWeight: 600, textDecoration: "none",
-            }}
+              fontSize: "16.5px", fontWeight: 600, textDecoration: "none" }}
           >
             <Phone size={14} />
             +91 79741 35629

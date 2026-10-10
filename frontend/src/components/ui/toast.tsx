@@ -28,13 +28,9 @@ const toastVariants = cva(
     variants: {
       variant: {
         default: "border bg-background text-foreground",
-        destructive: "destructive group border-destructive bg-destructive text-destructive-foreground",
-      },
-    },
+        destructive: "destructive group border-destructive bg-destructive text-destructive-foreground" } },
     defaultVariants: {
-      variant: "default",
-    },
-  },
+      variant: "default" } },
 );
 
 const Toast = React.forwardRef<
@@ -107,5 +103,4 @@ export {
   ToastTitle,
   ToastDescription,
   ToastClose,
-  ToastAction,
-};
+  ToastAction };

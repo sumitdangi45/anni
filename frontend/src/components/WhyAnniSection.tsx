@@ -9,8 +9,7 @@ const WhyAnniSection = () => {
   const f = (delay = 0) => ({
     initial: { opacity: 0, y: 20 },
     animate: inView ? { opacity: 1, y: 0 } : {},
-    transition: { duration: 0.55, delay, ease: [0.4, 0, 0.2, 1] as const },
-  });
+    transition: { duration: 0.55, delay, ease: [0.4, 0, 0.2, 1] as const } });
 
   return (
     <section style={{ background: "#fff", padding: "100px 20px" }}>
@@ -41,16 +40,14 @@ const WhyAnniSection = () => {
           display: "grid",
           gridTemplateColumns: "1fr 1.15fr 1.4fr",
           gridTemplateRows: "240px 300px",
-          gap: "12px",
-        }}>
+          gap: "12px" }}>
 
           {/* ── Col 1: tall dark photo card — spans both rows ── */}
           <motion.div {...f(0.1)} style={{
             gridColumn: "1", gridRow: "1 / 3",
             borderRadius: "20px", overflow: "hidden",
             background: "#111", position: "relative",
-            display: "flex", flexDirection: "column",
-          }}>
+            display: "flex", flexDirection: "column" }}>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg,#2a2a2a 0%,#0a0a0a 100%)" }} />
             <div style={{ position: "absolute", inset: 0, opacity: 0.05, backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.6) 1px,transparent 1px)", backgroundSize: "24px 24px" }} />
             {/* silhouette */}
@@ -73,8 +70,7 @@ const WhyAnniSection = () => {
           {/* ── Col 2 Row 1: 2 stat cards side by side ── */}
           <motion.div {...f(0.14)} style={{
             gridColumn: "2", gridRow: "1",
-            display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px",
-          }}>
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
             {/* Stat 1 */}
             <div style={{ borderRadius: "20px", background: "#f7f7f7", padding: "24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <Globe size={20} color="#bbb" />
@@ -98,8 +94,7 @@ const WhyAnniSection = () => {
             gridColumn: "2", gridRow: "2",
             borderRadius: "20px", overflow: "hidden",
             position: "relative",
-            background: "#0a0a1a",
-          }}>
+            background: "#0a0a1a" }}>
             <video src={blueVideo} autoPlay loop muted playsInline
               style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", opacity:0.75 }} />
             <div style={{ position:"absolute", inset:0, background:"linear-gradient(to bottom,transparent 20%,rgba(0,0,0,0.8) 100%)" }} />
@@ -115,8 +110,7 @@ const WhyAnniSection = () => {
           <motion.div {...f(0.2)} style={{
             gridColumn: "3", gridRow: "1",
             borderRadius: "20px", overflow: "hidden",
-            background: "#f0f0f0", position: "relative",
-          }}>
+            background: "#f0f0f0", position: "relative" }}>
             <div style={{ padding: "14px", height: "100%", display: "flex", flexDirection: "column", gap: "8px" }}>
               {/* top mock UI bar */}
               <div style={{ flex: 1, borderRadius: "12px", background: "linear-gradient(135deg,#e8e8ff,#d0d0ff)", padding: "14px", display: "flex", flexDirection: "column", gap: "6px" }}>
@@ -144,8 +138,7 @@ const WhyAnniSection = () => {
             gridColumn: "3", gridRow: "2",
             borderRadius: "20px", background: "#0d0d0d",
             padding: "24px",
-            display: "flex", flexDirection: "column", justifyContent: "space-between",
-          }}>
+            display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div style={{ display: "flex", flexWrap: "wrap" as const, gap: "6px" }}>
               {["Web Development","AI & ML","Mobile Apps","SaaS","UI/UX","Automation","Cloud","Digital Growth"].map(tag => (
                 <span key={tag} style={{ fontSize: "11.5px", fontWeight: 600, padding: "4px 11px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.75)" }}>{tag}</span>

@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Package, CreditCard, Lock, Users, BarChart2, Plug, Cpu, Bell, MessageCircle, Layers, ShieldCheck, TrendingUp, Sparkles } from "lucide-react";
+import { ArrowRight, Package, CreditCard, Lock, Users, BarChart2, Plug, Cpu, Bell, Layers, ShieldCheck, TrendingUp, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -46,8 +46,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Subscription & Billing Systems",
     subtitle: "Turn your product into a sustainable recurring-revenue business.",
@@ -62,8 +61,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Multi-Tenant Architecture",
     subtitle: "One platform. Multiple customers. Securely separated.",
@@ -78,8 +76,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "SaaS Onboarding & Product Experience",
     subtitle: "Help users reach value faster.",
@@ -94,8 +91,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "SaaS Integrations & Automation",
     subtitle: "Connect your product to the tools your customers already use.",
@@ -110,8 +106,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "SaaS Analytics, AI & Scale",
     subtitle: "Build a product that gets smarter as it grows.",
@@ -126,8 +121,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 const WHAT_WE_BUILD = [
@@ -225,8 +219,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const SaaSDevelopment = () => {
   useSEO({
     title: "SaaS Development — Anni Web Solutions",
-    description: "Build, launch and scale SaaS products — multi-tenant architecture, subscription billing, onboarding, integrations and AI-ready SaaS platforms.",
-  });
+    description: "Build, launch and scale SaaS products — multi-tenant architecture, subscription billing, onboarding, integrations and AI-ready SaaS platforms." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

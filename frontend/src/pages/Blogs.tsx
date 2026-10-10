@@ -31,8 +31,7 @@ const CATS = ["All", "Case Study", "AI & Tech", "Web Dev", "Mobile", "Backend", 
 
 const S = {
   label: { fontSize: "16px", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "var(--muted-foreground)" },
-  card: { borderRadius: "16px", overflow: "hidden", border: "1px solid var(--border)", background: "var(--card)", cursor: "pointer", display: "flex", flexDirection: "column" as const },
-};
+  card: { borderRadius: "16px", overflow: "hidden", border: "1px solid var(--border)", background: "var(--card)", cursor: "pointer", display: "flex", flexDirection: "column" as const } };
 
 const StatRow = ({ blog }: { blog: Blog }) => {
   const { liked, likeCount, toggleLike } = useLike(blog._id, blog.likes ?? 0);
@@ -195,8 +194,7 @@ const Blogs = () => {
                 borderColor: cat === c ? "var(--foreground)" : "var(--border)",
                 background: cat === c ? "var(--foreground)" : "transparent",
                 color: cat === c ? "var(--background)" : "var(--muted-foreground)",
-                transition: "all 0.15s",
-              }}>
+                transition: "all 0.15s" }}>
                 {c}
               </button>
             ))}

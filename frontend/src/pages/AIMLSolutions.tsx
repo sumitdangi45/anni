@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Brain, BarChart2, Eye, FileText, Sparkles, Cpu, MessageCircle } from "lucide-react";
+import { ArrowRight, Brain, BarChart2, Sparkles, Cpu } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -48,8 +48,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0dfff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Predictive Analytics & Machine Learning",
     desc: "Turn your business data into actionable predictions using custom machine learning models designed to identify patterns, forecast outcomes, and support smarter decisions.",
@@ -62,8 +61,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Computer Vision Solutions",
     desc: "Build intelligent vision systems that understand images and videos to automate inspection, detection, recognition, monitoring, and other visual business processes.",
@@ -76,8 +74,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "NLP & Document AI",
     desc: "Automate text-heavy and document-based workflows with AI that can understand, extract, classify, summarize, and retrieve information from large volumes of content.",
@@ -90,8 +87,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Recommendation & Personalization Systems",
     desc: "Deliver more relevant experiences with AI-powered recommendation engines that understand user behavior, preferences, and interactions to personalize products and content.",
@@ -104,8 +100,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI Integration & Intelligent Automation",
     desc: "Bring AI into your existing business systems and automate repetitive workflows by connecting intelligent models with your applications, APIs, databases, and internal tools.",
@@ -118,8 +113,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 // ── Mock image ────────────────────────────────────────────────
@@ -150,8 +144,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
         display: "flex", gap: "60px", alignItems: "center",
         flexDirection: imgLeft ? "row" : "row-reverse",
         padding: "60px 0",
-        borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none",
-      }}
+        borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
       <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
         <MockImg gradient={s.gradient} dark={s.dark} />
@@ -184,8 +177,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const AIMLSolutions = () => {
   useSEO({
     title: "AI / ML Solutions — Anni Web Solutions",
-    description: "Custom AI chatbots, predictive analytics, computer vision, NLP and intelligent automation solutions for businesses.",
-  });
+    description: "Custom AI chatbots, predictive analytics, computer vision, NLP and intelligent automation solutions for businesses." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -207,8 +199,7 @@ const AIMLSolutions = () => {
           transition={{ duration: 0.6 }}
           style={{
             background: "transparent",
-            minHeight: "420px", position: "relative", overflow: "hidden", borderRadius: "20px",
-          }}
+            minHeight: "420px", position: "relative", overflow: "hidden", borderRadius: "20px" }}
         >
           <video src={whiteVideo} autoPlay loop muted playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, opacity: 0.5, pointerEvents: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E\")", backgroundSize: "300px 300px" }} />

@@ -4,8 +4,7 @@ import { motion, useInView } from "framer-motion";
 import {
   ArrowRight, Shield, Lock, Search, Cloud, Eye, Cpu,
   Globe, Server, Smartphone, Database, AlertTriangle,
-  MessageCircle, CheckCircle, Key, Activity,
-} from "lucide-react";
+  MessageCircle, CheckCircle, Key, Activity } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -48,8 +47,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "API Security",
     subtitle: "Secure the APIs connecting your digital products.",
@@ -64,8 +62,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "VAPT & Security Assessment",
     subtitle: "Know exactly where your security weaknesses are.",
@@ -80,8 +77,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Cloud & Infrastructure Security",
     subtitle: "Protect the infrastructure behind your applications.",
@@ -96,8 +92,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Identity, Access & Data Security",
     subtitle: "Make sure the right people access the right data.",
@@ -112,8 +107,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Security Monitoring & Incident Readiness",
     subtitle: "Detect suspicious activity and respond before damage spreads.",
@@ -128,8 +122,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Security for AI & SaaS",
     subtitle: "Secure the AI and SaaS systems powering your business.",
@@ -144,8 +137,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1a2e 0%,#1a2a44 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 const WHAT_WE_SECURE = [
@@ -223,8 +215,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const Cybersecurity = () => {
   useSEO({
     title: "Cybersecurity & Digital Security — Anni Web Solutions",
-    description: "Website security, API security, VAPT, cloud security, MFA/RBAC implementation, security monitoring and AI application security for startups and growing businesses.",
-  });
+    description: "Website security, API security, VAPT, cloud security, MFA/RBAC implementation, security monitoring and AI application security for startups and growing businesses." });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

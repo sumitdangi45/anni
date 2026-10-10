@@ -3,8 +3,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   ArrowRight, Cloud, GitBranch, Box, BarChart2, Shield, DollarSign,
-  Cpu, Server, Zap, Lock, RefreshCw, MessageCircle, Activity, Database,
-} from "lucide-react";
+  Cpu, Server, Zap, Lock, RefreshCw, MessageCircle, Activity, Database } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -48,8 +47,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "CI/CD & DevOps Automation",
     subtitle: "Ship new features without turning every release into manual work.",
@@ -64,8 +62,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Docker & Kubernetes",
     subtitle: "Package, deploy and scale applications consistently.",
@@ -80,8 +77,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Monitoring, Observability & Reliability",
     subtitle: "Know what's happening in production before your users tell you.",
@@ -96,8 +92,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Cloud Security, Backup & Disaster Recovery",
     subtitle: "Build infrastructure that can handle failures, not just normal days.",
@@ -112,8 +107,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Cloud Cost Optimization & FinOps",
     subtitle: "Control infrastructure costs as your product grows.",
@@ -128,8 +122,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "AI Cloud Infrastructure",
     subtitle: "Build infrastructure ready for modern AI workloads.",
@@ -144,8 +137,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 const WHAT_WE_MANAGE = [
@@ -225,8 +217,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const CloudDevOps = () => {
   useSEO({
     title: "Cloud & DevOps — Anni Web Solutions",
-    description: "Cloud deployment, CI/CD automation, Docker, Kubernetes, monitoring, cloud security, FinOps and AI cloud infrastructure for startups and growing businesses.",
-  });
+    description: "Cloud deployment, CI/CD automation, Docker, Kubernetes, monitoring, cloud security, FinOps and AI cloud infrastructure for startups and growing businesses." });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

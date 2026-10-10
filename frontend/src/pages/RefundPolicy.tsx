@@ -45,8 +45,7 @@ const InfoBox = ({ children }: { children: React.ReactNode }) => (
   <div style={{
     background: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px",
     padding: "20px 24px", marginBottom: "20px", fontSize: "16.5px", lineHeight: 1.7,
-    color: "var(--muted-foreground)",
-  }}>
+    color: "var(--muted-foreground)" }}>
     {children}
   </div>
 );
@@ -67,8 +66,7 @@ const TOC_ITEMS = [
 const RefundPolicy = () => {
   useSEO({
     title: "Refund Policy — Anni Web Solutions",
-    description: "Understand Anni Web Solutions' refund and cancellation policy for custom development, retainers, and digital products.",
-  });
+    description: "Understand Anni Web Solutions' refund and cancellation policy for custom development, retainers, and digital products." });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

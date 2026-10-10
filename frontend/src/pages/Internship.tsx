@@ -1,7 +1,7 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Code2, Sparkles, Users, Rocket, BookOpen, Briefcase, Globe, Cpu, Layers, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Rocket, BookOpen, Briefcase, Globe, Cpu, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -46,8 +46,7 @@ const TRACKS = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Frontend Development",
     subtitle: "Create fast, beautiful and responsive web interfaces.",
@@ -62,8 +61,7 @@ const TRACKS = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Mobile App Development",
     subtitle: "Build cross-platform mobile apps that work on iOS and Android.",
@@ -78,8 +76,7 @@ const TRACKS = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI / ML Engineering",
     subtitle: "Build intelligent features and automation using AI.",
@@ -94,8 +91,7 @@ const TRACKS = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "UI / UX Design",
     subtitle: "Design real interfaces for real products and clients.",
@@ -110,8 +106,7 @@ const TRACKS = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f0f0ff 0%,#dde0ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Digital Marketing & SEO",
     subtitle: "Run real campaigns and grow real businesses.",
@@ -126,8 +121,7 @@ const TRACKS = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 // ── What you get ───────────────────────────────────────────────
@@ -201,8 +195,7 @@ const TrackRow = ({ s, i }: { s: typeof TRACKS[0]; i: number }) => {
 const Internship = () => {
   useSEO({
     title: "Internship Catalyst — Anni Web Solutions",
-    description: "Join the Anni Web Solutions Internship Catalyst — work on real client projects, get mentored by senior builders and grow your career in tech.",
-  });
+    description: "Join the Anni Web Solutions Internship Catalyst — work on real client projects, get mentored by senior builders and grow your career in tech." });
 
   const heroRef   = useRef(null);
   const heroInView = useInView(heroRef, { once: true, margin: "-60px" });

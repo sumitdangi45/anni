@@ -3,8 +3,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   ArrowRight, Bot, MessageCircle, Phone, Zap, Users,
-  BookOpen, FileText, Cpu, Shield, CheckCircle,
-} from "lucide-react";
+  BookOpen, FileText, Cpu, Shield, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -51,8 +50,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0dfff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "WhatsApp Business Automation",
     subtitle: "Turn WhatsApp into an automated sales and support channel.",
@@ -67,8 +65,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0a1a0a 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI Voice Agents",
     subtitle: "Let AI handle calls, conversations and routine phone workflows.",
@@ -83,8 +80,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI Workflow & Business Automation",
     subtitle: "Connect your tools and automate the work between them.",
@@ -99,8 +95,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "AI Lead Generation & Sales Automation",
     subtitle: "Find, qualify and follow up with leads automatically.",
@@ -115,8 +110,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "RAG & Business Knowledge AI",
     subtitle: "Give your AI access to the information your business actually uses.",
@@ -131,8 +125,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "AI Document & Data Automation",
     subtitle: "Turn repetitive document work into an automated workflow.",
@@ -147,8 +140,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI Agents & Multi-Agent Systems",
     subtitle: "Build AI agents that plan, use tools and complete multi-step tasks.",
@@ -163,8 +155,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 // ── What we automate ──────────────────────────────────────────
@@ -217,8 +208,7 @@ const PRICING = [
     desc: "For simple business automation.",
     features: ["1 automated workflow", "Basic AI integration", "WhatsApp / Email / Forms", "CRM or Sheets integration", "Basic testing", "Deployment support"],
     highlight: false,
-    cta: "Get Started",
-  },
+    cta: "Get Started" },
   {
     name: "Business Automation",
     price: "₹24,999+",
@@ -226,8 +216,7 @@ const PRICING = [
     features: ["2–4 automated workflows", "AI agent or chatbot", "CRM integration", "WhatsApp automation", "API integrations", "Analytics & logging", "Human handoff", "Deployment & support"],
     highlight: true,
     badge: "MOST POPULAR",
-    cta: "Get Started",
-  },
+    cta: "Get Started" },
   {
     name: "Custom AI System",
     price: "Custom Quote",
@@ -235,8 +224,7 @@ const PRICING = [
     features: ["Custom AI agents", "RAG / Knowledge Base", "Multi-step workflows", "Multi-agent architecture", "CRM / ERP / DB integrations", "Voice AI", "Advanced monitoring", "Custom security & deployment"],
     highlight: false,
     dark: true,
-    cta: "Talk to Our Team",
-  },
+    cta: "Talk to Our Team" },
 ];
 
 // ── Mock image ────────────────────────────────────────────────
@@ -289,8 +277,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const AIAutomation = () => {
   useSEO({
     title: "AI Agents & Automation — Anni Web Solutions",
-    description: "We build AI agents and automation workflows that handle repetitive tasks, communicate with customers and execute business processes — WhatsApp, voice, CRM, RAG and more.",
-  });
+    description: "We build AI agents and automation workflows that handle repetitive tasks, communicate with customers and execute business processes — WhatsApp, voice, CRM, RAG and more." });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });
@@ -496,8 +483,7 @@ const AIAutomation = () => {
               <div key={i} style={{
                 borderRadius: "20px", padding: "32px", position: "relative", overflow: "hidden",
                 background: plan.dark ? "#0d0d0d" : "#fff",
-                border: plan.highlight ? "2px solid #4ade80" : plan.dark ? "1px solid hsl(0,0%,16%)" : "1.5px solid #ebebeb",
-              }}>
+                border: plan.highlight ? "2px solid #4ade80" : plan.dark ? "1px solid hsl(0,0%,16%)" : "1.5px solid #ebebeb" }}>
                 {plan.badge && (
                   <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", background: "#4ade80", color: "#111", fontSize: "16px", fontWeight: 700, padding: "5px 16px", borderRadius: "0 0 10px 10px", letterSpacing: "0.08em" }}>
                     {plan.badge}

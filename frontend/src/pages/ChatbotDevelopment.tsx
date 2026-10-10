@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, MessageCircle, Bot, Users, ShoppingBag, Globe, Wrench, TrendingUp } from "lucide-react";
+import { ArrowRight, Bot, Globe, Wrench, TrendingUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -45,8 +45,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0dfff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "WhatsApp Chatbots",
     desc: "Meet customers where they already communicate. Build automated WhatsApp experiences for enquiries, sales, support, notifications and customer follow-ups.",
@@ -59,8 +58,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0a1a0a 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Sales & Lead Generation Chatbots",
     desc: "Convert website visitors into qualified prospects by letting the chatbot understand their requirements, collect details and route valuable leads to your sales team.",
@@ -73,8 +71,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Customer Support Chatbots",
     desc: "Reduce repetitive support workload with intelligent bots that can instantly answer common questions while escalating complicated issues to your support team.",
@@ -87,8 +84,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "E-commerce Chatbots",
     desc: "Help customers discover products, compare options, get answers and move toward purchase through conversational shopping experiences.",
@@ -101,8 +97,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Multilingual Chatbots",
     desc: "Serve a wider audience with conversational AI capable of communicating naturally across English, Hindi and other regional languages.",
@@ -115,8 +110,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e8e8e0 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Custom Business Chatbots",
     desc: "Go beyond basic customer support with chatbots connected to your actual business systems and capable of performing useful actions.",
@@ -129,8 +123,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 const MockImg = ({ gradient, dark }: { gradient: string; dark: boolean }) => (
@@ -180,8 +173,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const ChatbotDevelopment = () => {
   useSEO({
     title: "Chatbot Development — Anni Web Solutions",
-    description: "Custom AI chatbots for websites, WhatsApp, sales, support and e-commerce. Multilingual, CRM-integrated and always-on.",
-  });
+    description: "Custom AI chatbots for websites, WhatsApp, sales, support and e-commerce. Multilingual, CRM-integrated and always-on." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

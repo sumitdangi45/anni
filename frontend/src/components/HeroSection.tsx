@@ -12,9 +12,7 @@ const FADE_UP = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: i * 0.1, ease: [0.4, 0, 0.2, 1] as const },
-  }),
-};
+    transition: { duration: 0.55, delay: i * 0.1, ease: [0.4, 0, 0.2, 1] as const } }) };
 
 // doubled for seamless marquee
 const LOGOS_BASE = [
@@ -61,8 +59,7 @@ const HeroSection = () => {
           paddingBottom: "0px",
           paddingLeft: "20px",
           paddingRight: "20px",
-          background: "hsl(0,0%,8%)",
-        }}
+          background: "hsl(0,0%,8%)" }}
       >
         <div className="w-full flex flex-col lg:flex-row gap-3" style={{ maxWidth: "1320px" }}>
 
@@ -85,8 +82,7 @@ const HeroSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to top, rgba(247,247,245,0.98) 0%, rgba(247,247,245,0.82) 30%, rgba(247,247,245,0.3) 58%, transparent 100%)",
-              }}
+                  "linear-gradient(to top, rgba(247,247,245,0.98) 0%, rgba(247,247,245,0.82) 30%, rgba(247,247,245,0.3) 58%, transparent 100%)" }}
             />
 
             <div className="relative z-10 flex flex-col h-full hero-left-inner" style={{ padding: "40px 44px 32px" }}>
@@ -100,8 +96,7 @@ const HeroSection = () => {
                   fontWeight: 600,
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
-                  marginBottom: "26px",
-                }}
+                  marginBottom: "26px" }}
               >
                 FULL-SERVICE TECH PARTNER FOR AMBITIOUS STARTUPS
               </motion.p>
@@ -115,8 +110,7 @@ const HeroSection = () => {
                   lineHeight: 1.1,
                   letterSpacing: "-0.025em",
                   color: "#111",
-                  marginBottom: "32px",
-                }}
+                  marginBottom: "32px" }}
               >
                 <span style={{ fontWeight: 800, color: "#111" }}>Tech partner </span>
                 <span style={{ fontWeight: 400, color: "#111" }}>for early-stage</span>
@@ -138,14 +132,12 @@ const HeroSection = () => {
                     background: "#111", color: "#fff",
                     borderRadius: "999px", padding: "10px 20px 10px 10px",
                     fontSize: "16px", fontWeight: 600, border: "none", cursor: "pointer",
-                    transition: "background 0.2s",
-                  }}
+                    transition: "background 0.2s" }}
                   
                 >
                   <span style={{
                     width: "28px", height: "28px", borderRadius: "50%",
-                    background: "#3a3a3a", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                  }}>
+                    background: "#3a3a3a", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <ArrowRight size={13} color="#fff" />
                   </span>
                   Contact now
@@ -158,8 +150,7 @@ const HeroSection = () => {
                     borderRadius: "999px", padding: "10px 20px",
                     fontSize: "16px", fontWeight: 600,
                     color: "#222", border: "1.5px solid #c8c8c8", background: "transparent",
-                    cursor: "pointer", transition: "background 0.2s", textDecoration: "none",
-                  }}
+                    cursor: "pointer", transition: "background 0.2s", textDecoration: "none" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "rgba(0,0,0,0.05)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
                 >
@@ -182,8 +173,7 @@ const HeroSection = () => {
                     fontWeight: 500,
                     lineHeight: 1.7,
                     maxWidth: "500px",
-                    marginBottom: "22px",
-                  }}
+                    marginBottom: "22px" }}
                 >
                   Anni Web Solutions is a founder-friendly tech agency providing custom web
                   development, mobile apps, AI/ML solutions, SaaS products and automation
@@ -207,16 +197,14 @@ const HeroSection = () => {
                             paddingLeft: "44px",
                             paddingRight: "44px",
                             flexShrink: 0,
-                            opacity: 0.75,
-                          }}
+                            opacity: 0.75 }}
                         >
                           <span style={{
                             color: "#111",
                             fontSize: "16px",
                             fontWeight: 700,
                             letterSpacing: "-0.02em",
-                            whiteSpace: "nowrap",
-                          }}>
+                            whiteSpace: "nowrap" }}>
                             {l.name}
                           </span>
                         </div>
@@ -235,8 +223,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               style={{
                 position: "absolute", bottom: "24px", right: "24px",
-                zIndex: 20,
-              }}
+                zIndex: 20 }}
             >
               <img
                 src={batchImg}

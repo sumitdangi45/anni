@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Shield, Smartphone, Globe, Server, Bell, RefreshCw, Clock, Zap, Lock, BarChart2, MessageCircle, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Smartphone, Globe, Server, Bell, RefreshCw, Clock, Zap, Lock, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -45,8 +45,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Web Application Maintenance",
     subtitle: "Keep your business application reliable as requirements grow.",
@@ -61,8 +60,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Mobile App Maintenance",
     subtitle: "Keep your Android and iOS apps working as platforms evolve.",
@@ -77,8 +75,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Security & Vulnerability Management",
     subtitle: "Protect your deployed product from newly discovered threats.",
@@ -93,8 +90,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Performance & Uptime Monitoring",
     subtitle: "Catch issues before your users do.",
@@ -109,8 +105,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Backup & Disaster Recovery",
     subtitle: "Protect your data and recover quickly when things go wrong.",
@@ -125,8 +120,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 const WHAT_WE_MAINTAIN = [
@@ -206,8 +200,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const MaintenanceSupport = () => {
   useSEO({
     title: "Website & App Maintenance — Anni Web Solutions",
-    description: "Ongoing website and app maintenance — security updates, bug fixes, performance monitoring, backups and technical support as a monthly subscription.",
-  });
+    description: "Ongoing website and app maintenance — security updates, bug fixes, performance monitoring, backups and technical support as a monthly subscription." });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

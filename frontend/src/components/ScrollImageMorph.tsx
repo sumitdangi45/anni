@@ -16,8 +16,7 @@ const getRect = (id: string): Rect | null => {
     left: r.left,
     width: r.width,
     height: r.height,
-    borderRadius: parseFloat(window.getComputedStyle(el).borderRadius) || 16,
-  };
+    borderRadius: parseFloat(window.getComputedStyle(el).borderRadius) || 16 };
 };
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
@@ -29,12 +28,10 @@ interface CardStyle {
 
 const ScrollImageMorph = () => {
   const [rects, setRects] = useState<{ hero: Rect | null; service: Rect | null; about: Rect | null }>({
-    hero: null, service: null, about: null,
-  });
+    hero: null, service: null, about: null });
   const [style, setStyle] = useState<CardStyle>({
     top: 0, left: 0, width: 0, height: 0,
-    borderRadius: 16, rotateY: 0, opacity: 0, zIndex: 50,
-  });
+    borderRadius: 16, rotateY: 0, opacity: 0, zIndex: 50 });
   const [phase, setPhase] = useState<"hero" | "service" | "about">("hero");
   const [morphImgs, setMorphImgs] = useState({ portrait: "", back: "" });
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
@@ -44,8 +41,7 @@ const ScrollImageMorph = () => {
       .then(r => r.json())
       .then(data => setMorphImgs({
         portrait: data.morph_portrait || "",
-        back:     data.morph_back     || "",
-      }))
+        back:     data.morph_back     || "" }))
       .catch(() => {});
   }, []);
 
@@ -60,8 +56,7 @@ const ScrollImageMorph = () => {
       setRects({
         hero:    getRect(HERO_IMG_ID),
         service: getRect(SERVICE_IMG_ID),
-        about:   getRect(ABOUT_IMG_ID),
-      });
+        about:   getRect(ABOUT_IMG_ID) });
     };
     // wait for layout
     const t = setTimeout(measure, 300);
@@ -79,8 +74,7 @@ const ScrollImageMorph = () => {
       top: hero.top, left: hero.left,
       width: hero.width, height: hero.height,
       borderRadius: hero.borderRadius,
-      rotateY: 0, opacity: 1, zIndex: 50,
-    });
+      rotateY: 0, opacity: 1, zIndex: 50 });
 
     const onScroll = () => {
       const scrollY = window.scrollY;
@@ -97,8 +91,7 @@ const ScrollImageMorph = () => {
           top: hero.top, left: hero.left,
           width: hero.width, height: hero.height,
           borderRadius: hero.borderRadius,
-          rotateY: 0, opacity: 1, zIndex: 50,
-        });
+          rotateY: 0, opacity: 1, zIndex: 50 });
       } else if (scrollY <= p1End) {
         const t = (scrollY - p1Start) / (p1End - p1Start);
         setPhase(t > 0.5 ? "service" : "hero");
@@ -109,16 +102,14 @@ const ScrollImageMorph = () => {
           height:       lerp(hero.height, service.height, t),
           borderRadius: lerp(hero.borderRadius, service.borderRadius, t),
           rotateY:      t * 180,
-          opacity: 1, zIndex: 50,
-        });
+          opacity: 1, zIndex: 50 });
       } else if (scrollY <= p2Start) {
         setPhase("service");
         setStyle({
           top: service.top, left: service.left,
           width: service.width, height: service.height,
           borderRadius: service.borderRadius,
-          rotateY: 180, opacity: 1, zIndex: 50,
-        });
+          rotateY: 180, opacity: 1, zIndex: 50 });
       } else if (scrollY <= p2End) {
         const t = (scrollY - p2Start) / (p2End - p2Start);
         setPhase(t > 0.5 ? "about" : "service");
@@ -129,8 +120,7 @@ const ScrollImageMorph = () => {
           height:       lerp(service.height, about.height, t),
           borderRadius: lerp(service.borderRadius, about.borderRadius, t),
           rotateY:      180 + t * 180,
-          opacity: 1, zIndex: 50,
-        });
+          opacity: 1, zIndex: 50 });
       } else {
         // arrived at about — stay here, never disappear
         setPhase("about");
@@ -138,8 +128,7 @@ const ScrollImageMorph = () => {
           top: about.top, left: about.left,
           width: about.width, height: about.height,
           borderRadius: about.borderRadius,
-          rotateY: 360, opacity: 1, zIndex: 50,
-        });
+          rotateY: 360, opacity: 1, zIndex: 50 });
       }
     };
 
@@ -165,8 +154,7 @@ const ScrollImageMorph = () => {
         zIndex: style.zIndex,
         overflow: "hidden",
         pointerEvents: "none",
-        transform: `perspective(1200px) rotateY(${style.rotateY % 360}deg)`,
-      }}
+        transform: `perspective(1200px) rotateY(${style.rotateY % 360}deg)` }}
     >
       <img
         src={imgSrc}

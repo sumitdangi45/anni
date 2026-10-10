@@ -44,8 +44,7 @@ const AdminContacts = () => {
   const markAsRead = async (id: string) => {
     try {
       const res = await adminFetch(`/api/admin/contacts/${id}/read`, {
-        method: "PATCH",
-      });
+        method: "PATCH" });
       if (!res.ok) return;
       setContacts((prev) =>
         prev.map((c) => (c._id === id ? { ...c, read: true } : c))

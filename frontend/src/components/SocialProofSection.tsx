@@ -7,22 +7,19 @@ const CARDS = [
     label: "WEB DEVELOPMENT",
     title: "Build Your\nDigital\nPresence",
     sub: "Custom websites & web apps",
-    accent: "#6b7eff",
-  },
+    accent: "#6b7eff" },
   {
     bg: "linear-gradient(160deg,#0d0d0d 0%,#1a0533 100%)",
     label: "AI SOLUTIONS",
     title: "Automate\nYour\nBusiness",
     sub: "AI agents & smart automation",
-    accent: "#4ade80",
-  },
+    accent: "#4ade80" },
   {
     bg: "linear-gradient(160deg,#0a1628 0%,#0f2a44 100%)",
     label: "MOBILE APPS",
     title: "Launch\nYour\nApp Fast",
     sub: "iOS & Android development",
-    accent: "#f59e0b",
-  },
+    accent: "#f59e0b" },
 ];
 
 const PhoneCard = ({ card }: { card: typeof CARDS[0] }) => (
@@ -109,8 +106,7 @@ const SocialProofSection = () => {
                   variants={{
                     enter:  (d: number) => ({ x: d > 0 ? 80 : -80, opacity: 0 }),
                     center: { x: 0, opacity: 1 },
-                    exit:   (d: number) => ({ x: d > 0 ? -80 : 80, opacity: 0 }),
-                  }}
+                    exit:   (d: number) => ({ x: d > 0 ? -80 : 80, opacity: 0 }) }}
                   initial="enter" animate="center" exit="exit"
                   transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
                   style={{ width: "100%", height: "100%" }}
@@ -139,8 +135,7 @@ const SocialProofSection = () => {
                   height: "7px",
                   width: active === i ? "28px" : "7px",
                   background: active === i ? "#111" : "#d0d0d0",
-                  transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
-                }}
+                  transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)" }}
               />
             ))}
           </div>

@@ -6,8 +6,7 @@ import { useSiteImages } from "@/hooks/useSiteImages";
 const useAboutImage = () => {
   const siteImages = useSiteImages();
   return {
-    morphSrc: siteImages.morph_portrait || siteImages.about || "",
-  };
+    morphSrc: siteImages.morph_portrait || siteImages.about || "" };
 };
 
 const AnimatedNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {

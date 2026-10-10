@@ -216,8 +216,7 @@ const ValuesSection = () => (
               padding: "36px 32px",
               borderRight: (i + 1) % 3 !== 0 ? "1px solid var(--border)" : "none",
               borderBottom: i < 3 ? "1px solid var(--border)" : "none",
-              height: "100%",
-            }}>
+              height: "100%" }}>
               <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "var(--foreground)", color: "var(--background)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
                 {v.icon}
               </div>
@@ -297,8 +296,7 @@ const FounderSection = () => (
 const About = () => {
   useSEO({
     title: "About — Anni Web Solutions",
-    description: "Learn about Anni Web Solutions — our story, mission, values, and the team behind the products. Founded by Sumit Dangi.",
-  });
+    description: "Learn about Anni Web Solutions — our story, mission, values, and the team behind the products. Founded by Sumit Dangi." });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

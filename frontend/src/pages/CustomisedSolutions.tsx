@@ -1,7 +1,7 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ArrowRight, MessageCircle, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -40,8 +40,7 @@ const EDUCATION = [
       "Direct WhatsApp support and enquiry CTAs for prospective students.",
     ],
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#c8d8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "e2",
     num: "02",
@@ -59,8 +58,7 @@ const EDUCATION = [
       "Scalable foundation for future tests, analytics and student dashboards.",
     ],
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "e3",
     num: "03",
@@ -78,8 +76,7 @@ const EDUCATION = [
       "Scalable platform structure for future courses and member experiences.",
     ],
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "e4",
     num: "04",
@@ -96,8 +93,7 @@ const EDUCATION = [
       "Reports and centralized institutional data.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "e5",
     num: "05",
@@ -114,8 +110,7 @@ const EDUCATION = [
       "Data-driven intervention insights.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "e6",
     num: "06",
@@ -132,8 +127,7 @@ const EDUCATION = [
       "Integration-ready data architecture.",
     ],
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "e7",
     num: "07",
@@ -150,8 +144,7 @@ const EDUCATION = [
       "Instructor and admin dashboards.",
     ],
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#bbf7d0 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "e8",
     num: "08",
@@ -168,8 +161,7 @@ const EDUCATION = [
       "Student performance dashboards.",
     ],
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 // ── BUSINESS ──────────────────────────────────────────────────
@@ -191,8 +183,7 @@ const BUSINESS = [
       "Dark editorial interface designed around the brand identity.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "b2",
     num: "02",
@@ -209,8 +200,7 @@ const BUSINESS = [
       "SEO-ready, responsive and performance-focused architecture.",
     ],
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "b3",
     num: "03",
@@ -227,8 +217,7 @@ const BUSINESS = [
       "WhatsApp, email and API integrations.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "b4",
     num: "04",
@@ -245,8 +234,7 @@ const BUSINESS = [
       "Reports, analytics and operational insights.",
     ],
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "b5",
     num: "05",
@@ -263,8 +251,7 @@ const BUSINESS = [
       "Business dashboards and reporting.",
     ],
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "b6",
     num: "06",
@@ -281,8 +268,7 @@ const BUSINESS = [
       "Approval systems and human-in-the-loop automation.",
     ],
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 // ── E-COMMERCE ────────────────────────────────────────────────
@@ -304,8 +290,7 @@ const ECOMMERCE = [
       "Premium, responsive brand experience.",
     ],
     gradient: "linear-gradient(135deg,#1a1a0a 0%,#2a2a10 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "ec2",
     num: "02",
@@ -323,8 +308,7 @@ const ECOMMERCE = [
       "Ordering and delivery workflows.",
     ],
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "ec3",
     num: "03",
@@ -342,8 +326,7 @@ const ECOMMERCE = [
       "Returns and order-related workflows.",
     ],
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "ec4",
     num: "04",
@@ -361,8 +344,7 @@ const ECOMMERCE = [
       "Parcel and delivery tracking.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "ec5",
     num: "05",
@@ -380,8 +362,7 @@ const ECOMMERCE = [
       "WhatsApp-based order confirmation.",
     ],
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "ec6",
     num: "06",
@@ -399,8 +380,7 @@ const ECOMMERCE = [
       "Delivery and route-related workflows.",
     ],
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "ec7",
     num: "07",
@@ -417,8 +397,7 @@ const ECOMMERCE = [
       "Customer analytics and marketing integrations.",
     ],
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "ec8",
     num: "08",
@@ -435,8 +414,7 @@ const ECOMMERCE = [
       "Central admin panel and reporting.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 // ── TECHNOLOGY ────────────────────────────────────────────────
@@ -458,8 +436,7 @@ const TECHNOLOGY = [
       "Scalable architecture for expanding analytical capabilities.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "t2",
     num: "02",
@@ -476,8 +453,7 @@ const TECHNOLOGY = [
       "User-facing interface for generating price predictions.",
     ],
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "t3",
     num: "03",
@@ -494,8 +470,7 @@ const TECHNOLOGY = [
       "Foundation for scalable crypto intelligence tools.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "t4",
     num: "04",
@@ -512,8 +487,7 @@ const TECHNOLOGY = [
       "Analytics and scalable cloud infrastructure.",
     ],
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "t5",
     num: "05",
@@ -530,8 +504,7 @@ const TECHNOLOGY = [
       "AI APIs integrated into existing products.",
     ],
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "t6",
     num: "06",
@@ -548,8 +521,7 @@ const TECHNOLOGY = [
       "API and database-based data pipelines.",
     ],
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 // ── LIFESTYLE & SERVICES ──────────────────────────────────────
@@ -571,8 +543,7 @@ const LIFESTYLE = [
       "Mobile-friendly wellness journey.",
     ],
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "l2",
     num: "02",
@@ -589,8 +560,7 @@ const LIFESTYLE = [
       "SEO-friendly pages around patient search queries.",
     ],
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "l3",
     num: "03",
@@ -607,8 +577,7 @@ const LIFESTYLE = [
       "Mobile-first experience for restaurant discovery.",
     ],
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "l4",
     num: "04",
@@ -625,8 +594,7 @@ const LIFESTYLE = [
       "Fast, responsive experience for mobile travellers.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "l5",
     num: "05",
@@ -643,8 +611,7 @@ const LIFESTYLE = [
       "Notifications and service status tracking.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "l6",
     num: "06",
@@ -661,8 +628,7 @@ const LIFESTYLE = [
       "Trainer and member dashboards.",
     ],
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 // ── Status badge ──────────────────────────────────────────────
@@ -670,8 +636,7 @@ const StatusBadge = ({ status }: { status: "live" | "project" | "concept" }) => 
   const config = {
     live: { label: "Live Project", bg: "#f0fdf4", color: "#16a34a", dot: "#22c55e" },
     project: { label: "Existing Project", bg: "#f0f0ff", color: "#4f46e5", dot: "#6b7eff" },
-    concept: { label: "Build This Solution", bg: "#f8f8f8", color: "#888", dot: "#ccc" },
-  }[status];
+    concept: { label: "Build This Solution", bg: "#f8f8f8", color: "#888", dot: "#ccc" } }[status];
 
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: "5px", padding: "4px 10px", borderRadius: "999px", background: config.bg, fontSize: "16px", fontWeight: 700, color: config.color }}>
@@ -789,8 +754,7 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
 const CustomisedSolutions = () => {
   useSEO({
     title: "Customised Solutions — Anni Web Solutions",
-    description: "Custom websites, applications and AI products built for education, business, e-commerce, technology and lifestyle — designed around your specific requirements.",
-  });
+    description: "Custom websites, applications and AI products built for education, business, e-commerce, technology and lifestyle — designed around your specific requirements." });
 
   const [tab, setTab] = useState<Tab>("education");
   const ref = useRef(null);
@@ -801,8 +765,7 @@ const CustomisedSolutions = () => {
     business: { label: "Business", items: BUSINESS as Product[], heading: "Digital products built around the way businesses work.", sub: "Corporate websites, CRM platforms, management systems and automation." },
     ecommerce: { label: "E-Commerce", items: ECOMMERCE as Product[], heading: "Commerce experiences built to turn browsing into buying.", sub: "Custom stores, mobile shopping apps, marketplaces and AI-powered commerce." },
     technology: { label: "Technology", items: TECHNOLOGY as Product[], heading: "Technology products built for what comes next.", sub: "AI/ML platforms, SaaS products, analytics systems and developer tools." },
-    lifestyle: { label: "Lifestyle & Services", items: LIFESTYLE as Product[], heading: "Digital experiences for lifestyle and service businesses.", sub: "Wellness, hospitality, healthcare, food and service platforms." },
-  };
+    lifestyle: { label: "Lifestyle & Services", items: LIFESTYLE as Product[], heading: "Digital experiences for lifestyle and service businesses.", sub: "Wellness, hospitality, healthcare, food and service platforms." } };
 
   const current = TAB_CONFIG[tab];
 
@@ -834,8 +797,7 @@ const CustomisedSolutions = () => {
                 fontSize: "16px", fontWeight: 600, transition: "all 0.2s",
                 background: tab === t ? "#111" : "transparent",
                 color: tab === t ? "#fff" : "#777",
-                boxShadow: tab === t ? "0 2px 8px rgba(0,0,0,0.15)" : "none",
-              }}
+                boxShadow: tab === t ? "0 2px 8px rgba(0,0,0,0.15)" : "none" }}
             >
               {TAB_CONFIG[t].label}
             </button>

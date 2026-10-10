@@ -13,8 +13,7 @@ import {
   Menu,
   X,
   Image,
-  FileUp,
-} from "lucide-react";
+  FileUp } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard",   to: "/admin",              icon: LayoutDashboard, end: true },

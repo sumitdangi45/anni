@@ -5,8 +5,7 @@ import { motion, useInView } from "framer-motion";
 import {
   ArrowRight, ShoppingCart, CreditCard, Settings, Plug, TrendingUp,
   Cpu, Globe, Package, Users, RefreshCw, BarChart2, Shield, Search,
-  Smartphone, Zap, MessageCircle, CheckCircle,
-} from "lucide-react";
+  Smartphone, Zap, MessageCircle, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -53,8 +52,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Shopping Cart & Checkout Optimization",
     subtitle: "Remove friction between Add to Cart and Order Placed.",
@@ -69,8 +67,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Payments & Order Management",
     subtitle: "Make transactions and order operations simple.",
@@ -85,8 +82,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Store Management & Operations",
     subtitle: "Give your team complete control over the store.",
@@ -101,8 +97,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "E-commerce Integrations",
     subtitle: "Connect your store to the systems your business already uses.",
@@ -117,8 +112,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Conversion & Personalization",
     subtitle: "Turn more visitors into customers.",
@@ -133,8 +127,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "AI-Powered Commerce",
     subtitle: "Make your store smarter with AI.",
@@ -149,8 +142,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "ONDC & Multi-Channel Commerce",
     subtitle: "Expand beyond your own storefront.",
@@ -165,8 +157,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0a1a0a 0%,#152015 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 // ── What we build ─────────────────────────────────────────────
@@ -262,8 +253,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const EcommerceDevelopment = () => {
   useSEO({
     title: "E-commerce Development — Anni Web Solutions",
-    description: "Custom e-commerce development — storefront, checkout optimization, UPI payments, inventory, AI recommendations, ONDC integration and conversion-focused commerce systems.",
-  });
+    description: "Custom e-commerce development — storefront, checkout optimization, UPI payments, inventory, AI recommendations, ONDC integration and conversion-focused commerce systems." });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

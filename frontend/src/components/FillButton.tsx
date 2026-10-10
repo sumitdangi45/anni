@@ -92,8 +92,7 @@ let styleInjected = false;
 const FillButton = ({
   children, href, to, onClick,
   variant = "dark", size = "md", icon = true,
-  className = "", style, target, rel,
-}: FillButtonProps) => {
+  className = "", style, target, rel }: FillButtonProps) => {
   // inject styles once
   if (typeof document !== "undefined" && !styleInjected) {
     const el = document.createElement("style");

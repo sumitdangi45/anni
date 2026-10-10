@@ -16,8 +16,7 @@ beforeEach(() => {
   vi.clearAllMocks();
   (global.fetch as any).mockResolvedValue({
     ok: true,
-    json: () => Promise.resolve({}),
-  });
+    json: () => Promise.resolve({}) });
 });
 
 // ── HeroSection ───────────────────────────────────────────
@@ -199,8 +198,7 @@ describe("useSiteImages hook", () => {
     const { renderHook, act } = await import("@testing-library/react");
     (global.fetch as any).mockResolvedValueOnce({
       ok: true,
-      json: () => Promise.resolve({ hero: "/uploads/test.jpg", navbar_avatar: "/uploads/avatar.jpg" }),
-    });
+      json: () => Promise.resolve({ hero: "/uploads/test.jpg", navbar_avatar: "/uploads/avatar.jpg" }) });
     const { useSiteImages } = await import("@/hooks/useSiteImages");
     const { result } = renderHook(() => useSiteImages());
     await act(async () => { await new Promise(r => setTimeout(r, 100)); });

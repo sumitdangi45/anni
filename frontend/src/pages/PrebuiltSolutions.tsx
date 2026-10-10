@@ -1,7 +1,7 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -39,8 +39,7 @@ const WEBSITES = [
     ],
     best: "Colleges · Universities · Educational Institutions · Degree Institutes",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0d8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "w2",
     title: "School Website",
@@ -55,8 +54,7 @@ const WEBSITES = [
     ],
     best: "Schools · CBSE Schools · ICSE Schools · Private Schools · School Groups",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "w3",
     title: "Corporate & Business Website",
@@ -71,8 +69,7 @@ const WEBSITES = [
     ],
     best: "MSMEs · Startups · Agencies · IT Companies · Professional Services · Local Businesses",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "w4",
     title: "Real Estate Website",
@@ -87,8 +84,7 @@ const WEBSITES = [
     ],
     best: "Builders · Developers · Property Dealers · Real Estate Agencies · Property Consultants",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "w5",
     title: "E-commerce Store",
@@ -103,8 +99,7 @@ const WEBSITES = [
     ],
     best: "D2C Brands · Retailers · Manufacturers · Local Businesses · Product Startups",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "w6",
     title: "Restaurant & Café Website",
@@ -119,8 +114,7 @@ const WEBSITES = [
     ],
     best: "Restaurants · Cafés · QSRs · Cloud Kitchens · Bakeries · Food Businesses",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "w7",
     title: "Hotel & Hospitality Website",
@@ -135,8 +129,7 @@ const WEBSITES = [
     ],
     best: "Hotels · Resorts · Homestays · Boutique Hotels · Guest Houses · Hospitality Groups",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "w8",
     title: "Healthcare & Clinic Website",
@@ -151,8 +144,7 @@ const WEBSITES = [
     ],
     best: "Clinics · Hospitals · Doctors · Diagnostic Centres · Dental Clinics · Healthcare Groups",
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 // ── APPS ─────────────────────────────────────────────────────
@@ -171,8 +163,7 @@ const APPS = [
     ],
     best: "Schools · Private Institutions · School Groups · Educational Organizations",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0d8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "a2",
     title: "AI Student Performance Intelligence",
@@ -187,8 +178,7 @@ const APPS = [
     ],
     best: "Colleges · Universities · HODs · Academic Departments",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "a3",
     title: "AI Attendance Management",
@@ -203,8 +193,7 @@ const APPS = [
     ],
     best: "Schools · Colleges · Coaching Institutes · Training Centers · Organizations",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "a4",
     title: "KisanSathi — Agriculture Platform",
@@ -219,8 +208,7 @@ const APPS = [
     ],
     best: "AgriTech Startups · FPOs · Agriculture Businesses · Rural Platforms",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "a5",
     title: "Grocery Delivery Platform",
@@ -235,8 +223,7 @@ const APPS = [
     ],
     best: "Grocery Stores · Supermarkets · Hyperlocal Businesses · Quick-Commerce Startups",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "a6",
     title: "Food Delivery Platform",
@@ -251,8 +238,7 @@ const APPS = [
     ],
     best: "Food Delivery Startups · Restaurant Networks · Cloud Kitchens · QSR Businesses",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "a7",
     title: "Multi-Vendor E-commerce Platform",
@@ -267,8 +253,7 @@ const APPS = [
     ],
     best: "Marketplace Startups · D2C Aggregators · Multi-Seller Businesses · Niche Marketplaces",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "a8",
     title: "On-Demand Services Platform",
@@ -283,8 +268,7 @@ const APPS = [
     ],
     best: "Home Services · Repair · Cleaning · Beauty · Wellness · Local Service Businesses",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "a9",
     title: "Healthcare & Clinic Management",
@@ -299,8 +283,7 @@ const APPS = [
     ],
     best: "Clinics · Doctors · Dental Clinics · Diagnostic Centers · Healthcare Groups",
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "a10",
     title: "Restaurant Ordering & Operations",
@@ -315,8 +298,7 @@ const APPS = [
     ],
     best: "Restaurants · Cafés · QSR Chains · Cloud Kitchens · Restaurant Groups",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 // ── AI PRODUCTS ───────────────────────────────────────────────
@@ -335,8 +317,7 @@ const AI_PRODUCTS = [
     ],
     best: "AgriTech Startups · FPOs · Agriculture Businesses · Rural Platforms",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "ai2",
     title: "AI Snapshot Attendance",
@@ -351,8 +332,7 @@ const AI_PRODUCTS = [
     ],
     best: "Schools · Colleges · Coaching Institutes · Training Centers · Organizations",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0d8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "ai3",
     title: "AI Student Performance Intelligence",
@@ -367,8 +347,7 @@ const AI_PRODUCTS = [
     ],
     best: "Colleges · Universities · HODs · Academic Departments",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "ai4",
     title: "AI Business Assistant",
@@ -383,8 +362,7 @@ const AI_PRODUCTS = [
     ],
     best: "SMEs · Service Businesses · SaaS Companies · Support Teams",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "ai5",
     title: "AI Document Intelligence",
@@ -399,8 +377,7 @@ const AI_PRODUCTS = [
     ],
     best: "Finance Teams · SMEs · Healthcare · Logistics · Operations · Back Offices",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "ai6",
     title: "AI Knowledge & RAG Platform",
@@ -415,8 +392,7 @@ const AI_PRODUCTS = [
     ],
     best: "Companies · SaaS Businesses · Educational Institutions · Professional Services",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     id: "ai7",
     title: "AI Sales & Lead Intelligence",
@@ -431,8 +407,7 @@ const AI_PRODUCTS = [
     ],
     best: "Agencies · Real Estate · SaaS · Education · Service Businesses · B2B Companies",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     id: "ai8",
     title: "AI Workflow & Agent Platform",
@@ -447,8 +422,7 @@ const AI_PRODUCTS = [
     ],
     best: "SMEs · SaaS Businesses · Operations Teams · Customer Support · Sales Teams",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 // ── Mock image placeholder ────────────────────────────────────
@@ -470,8 +444,7 @@ const MockImg = ({ gradient, dark }: { gradient: string; dark: boolean }) => (
 
 // ── Product card (alternating) ────────────────────────────────
 const ProductCard = ({
-  product, index,
-}: {
+  product, index }: {
   product: typeof WEBSITES[0];
   index: number;
 }) => {
@@ -544,8 +517,7 @@ const ProductCard = ({
 const PrebuiltSolutions = () => {
   useSEO({
     title: "Pre-Built Solutions — Anni Web Solutions",
-    description: "Ready-made websites, business applications and AI products customized for your industry — launch faster without starting from scratch.",
-  });
+    description: "Ready-made websites, business applications and AI products customized for your industry — launch faster without starting from scratch." });
 
   const [tab, setTab] = useState<Tab>("websites");
   const ref = useRef(null);
@@ -554,8 +526,7 @@ const PrebuiltSolutions = () => {
   const TAB_DATA = {
     websites: { label: "Pre-Built Websites", items: WEBSITES, tagline: "Professionally designed websites for your industry.", sublabel: "Ready-made websites. Customized for your business." },
     apps: { label: "Pre-Built Business Applications", items: APPS, tagline: "Ready-to-launch software for real business operations.", sublabel: "Start with a working business platform. Customize for your needs." },
-    ai: { label: "Pre-Built AI Products", items: AI_PRODUCTS, tagline: "AI products built around real-world problems.", sublabel: "Ready-to-customize AI foundations for businesses and institutions." },
-  };
+    ai: { label: "Pre-Built AI Products", items: AI_PRODUCTS, tagline: "AI products built around real-world problems.", sublabel: "Ready-to-customize AI foundations for businesses and institutions." } };
 
   const current = TAB_DATA[tab];
 
@@ -588,8 +559,7 @@ const PrebuiltSolutions = () => {
                 fontSize: "16px", fontWeight: 600, transition: "all 0.2s",
                 background: tab === t ? "#111" : "transparent",
                 color: tab === t ? "#fff" : "#777",
-                boxShadow: tab === t ? "0 2px 8px rgba(0,0,0,0.15)" : "none",
-              }}
+                boxShadow: tab === t ? "0 2px 8px rgba(0,0,0,0.15)" : "none" }}
             >
               {t === "websites" ? "Pre-Built Websites" : t === "apps" ? "Business Applications" : "AI Products"}
             </button>

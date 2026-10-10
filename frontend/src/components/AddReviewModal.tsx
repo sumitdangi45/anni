@@ -72,9 +72,7 @@ const AddReviewModal = ({ open, onClose, onSubmitted }: Props) => {
           role: form.role || "User",
           text: form.text,
           rating: form.rating,
-          avatar_url: form.photo || null,
-        }),
-      });
+          avatar_url: form.photo || null }) });
       if (!res.ok) {
         const data = await res.json();
         setError(data.error || "Something went wrong");

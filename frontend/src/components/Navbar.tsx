@@ -84,32 +84,28 @@ const SERVICES_COLS = [
       { label: "Mobile App Development", to: "/services/mobile", desc: "Android, iOS & cross-platform apps" },
       { label: "SaaS Development", to: "/services/saas", desc: "Build, launch & scale software products" },
       { label: "E-commerce Development", to: "/services/ecommerce", desc: "Stores, marketplaces & commerce platforms" },
-    ],
-  },
+    ] },
   {
     heading: "AI & AUTOMATION",
     items: [
       { label: "AI / ML Solutions", to: "/services/ai-ml", desc: "Machine learning & AI models" },
       { label: "AI Agents & Automation", to: "/services/ai-agents", desc: "Intelligent workflow automation" },
       { label: "ChatBot Development", to: "/services/chatbot", desc: "Custom AI chatbots" },
-    ],
-  },
+    ] },
   {
     heading: "DESIGN & GROWTH",
     items: [
       { label: "UI / UX Design", to: "/services/design", desc: "Beautiful user experiences" },
       { label: "Digital Growth & SEO", to: "/services/seo", desc: "SEO, analytics & growth" },
       { label: "Branding & Identity", to: "/services/branding", desc: "Strategy, identity & brand systems" },
-    ],
-  },
+    ] },
   {
     heading: "INFRASTRUCTURE & SUPPORT",
     items: [
       { label: "Cybersecurity & Digital Security", to: "/services/cybersecurity", desc: "Security assessment, protection & monitoring" },
       { label: "Cloud & DevOps", to: "/services/cloud-devops", desc: "Deployment, automation & scalable infrastructure" },
       { label: "Maintenance & Support", to: "/services/maintenance", desc: "Website & app ongoing support" },
-    ],
-  },
+    ] },
 ];
 
 // ── Simple dropdown items ──────────────────────────────────────
@@ -140,8 +136,7 @@ const SimpleDropdown = ({ items, onClose }: {
       position: "absolute", top: "calc(100% + 8px)", left: 0,
       minWidth: "220px", background: "hsl(0,0%,10%)",
       border: "1px solid hsl(0,0%,16%)", borderRadius: "16px",
-      boxShadow: "0 20px 60px rgba(0,0,0,0.5)", overflow: "hidden", zIndex: 50,
-    }}
+      boxShadow: "0 20px 60px rgba(0,0,0,0.5)", overflow: "hidden", zIndex: 50 }}
   >
     {items.map((item) => (
       <Link key={item.to} to={item.to} onClick={onClose}
@@ -173,8 +168,6 @@ const MegaDropdown = ({ onClose }: { onClose: () => void }) => {
   const descClr  = isHome ? "rgba(255,255,255,0.72)"  : "#666";
   const hoverBg  = isHome ? "hsl(0,0%,13%)"           : "#f5f5f5";
   const divider  = isHome ? "hsl(0,0%,14%)"           : "#e8e8e8";
-  const botLinkC = isHome ? "rgba(255,255,255,0.5)"   : "#888";
-  const botLinkH = isHome ? "#fff"                    : "#111";
   const notSureC = isHome ? "rgba(255,255,255,0.3)"   : "#aaa";
   const notSureL = isHome ? "#6b7eff"                 : "#6b7eff";
   const subBotBg = isHome ? "hsl(0,0%,12%)"           : "#f5f5f5";
@@ -196,8 +189,7 @@ const MegaDropdown = ({ onClose }: { onClose: () => void }) => {
       position: "fixed", top: "68px", left: "20px", right: "20px",
       maxWidth: "1080px", margin: "0 auto",
       background: bg, border: bdr, borderRadius: "20px",
-      boxShadow: shadow, overflow: "hidden", zIndex: 50, display: "flex",
-    }}
+      boxShadow: shadow, overflow: "hidden", zIndex: 50, display: "flex" }}
   >
     {/* Left — 4 service columns + bottom row */}
     <div style={{ flex: 1, display: "flex", flexDirection: "column", padding: "28px 28px 0" }}>
@@ -337,8 +329,7 @@ const Navbar = () => {
           fontSize: "13.5px", fontWeight: 500,
           background: activeDropdown === label ? linkActBg(true) : "transparent",
           color: linkClr(activeDropdown === label),
-          transition: "all 0.15s",
-        }}
+          transition: "all 0.15s" }}
         onMouseEnter={e => { if (activeDropdown !== label) (e.currentTarget as HTMLElement).style.color = isHome ? "#fff" : "#111"; }}
         onMouseLeave={e => { if (activeDropdown !== label) (e.currentTarget as HTMLElement).style.color = isHome ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.5)"; }}
       >
@@ -355,8 +346,7 @@ const Navbar = () => {
         padding: "8px 12px", borderRadius: "8px", fontSize: "13.5px", fontWeight: 500,
         color: linkClr(pathname === to),
         textDecoration: "none", transition: "color 0.15s",
-        background: linkActBg(pathname === to),
-      }}
+        background: linkActBg(pathname === to) }}
       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = isHome ? "#fff" : "#111"; }}
       onMouseLeave={e => { if (pathname !== to) (e.currentTarget as HTMLElement).style.color = isHome ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.5)"; }}
     >
@@ -375,8 +365,7 @@ const Navbar = () => {
           position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
           display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: "0 28px", height: "68px",
-          background: navBg, borderBottom: navBdr,
-        }}
+          background: navBg, borderBottom: navBdr }}
       >
         {/* inject CTA styles */}
         <style>{CTA_STYLE}</style>

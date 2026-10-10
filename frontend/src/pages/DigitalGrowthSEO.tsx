@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Search, TrendingUp, BarChart2, Sparkles, MessageCircle, MapPin, FileText, Target } from "lucide-react";
+import { ArrowRight, Search, TrendingUp, BarChart2, Sparkles, MapPin, FileText, Target } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -46,8 +46,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "On-Page SEO",
     subtitle: "Make every important page easier to discover.",
@@ -62,8 +61,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e8e8e0 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Content & SEO Strategy",
     subtitle: "Create content that attracts the right audience.",
@@ -78,8 +76,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Local SEO",
     subtitle: "Get discovered by customers searching in your area.",
@@ -94,8 +91,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "AI Search & GEO",
     subtitle: "Prepare your brand for the next generation of search.",
@@ -110,8 +106,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "SEO Analytics & Growth",
     subtitle: "Turn search data into measurable business growth.",
@@ -126,8 +121,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 const GROWTH_OUTCOMES = [
@@ -196,8 +190,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const DigitalGrowthSEO = () => {
   useSEO({
     title: "Digital Growth & SEO — Anni Web Solutions",
-    description: "Technical SEO, content strategy, local SEO, AI search optimization and growth analytics to improve search visibility and drive real business results.",
-  });
+    description: "Technical SEO, content strategy, local SEO, AI search optimization and growth analytics to improve search visibility and drive real business results." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

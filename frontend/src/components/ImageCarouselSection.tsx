@@ -75,8 +75,7 @@ const ImageCarouselSection = () => {
               variants={{
                 enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0.8 }),
                 center: { x: 0, opacity: 1 },
-                exit: (d: number) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0.8 }),
-              }}
+                exit: (d: number) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0.8 }) }}
               initial="enter"
               animate="center"
               exit="exit"

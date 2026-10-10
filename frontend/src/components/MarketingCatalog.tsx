@@ -1,7 +1,6 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 
 const SERVICES = [
   {
@@ -14,8 +13,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Social Media Management & Account Handling",
     desc: "Complete end-to-end management of your social media profiles. We handle monthly content planning, graphic post creation, scheduling, caption writing, and active audience engagement.",
@@ -26,8 +24,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Video Shooting & Professional Editing",
     desc: "High-quality brand video shoots, cinematic product shoots, trending reel editing, color grading, sound design, and viral short-form content production.",
@@ -38,8 +35,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Brand Creation & Visual Identity",
     desc: "Build a premium, memorable brand identity. We craft custom logos, brand guidelines, visual templates, and storytelling that make your business stand out.",
@@ -50,8 +46,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Paid Ads Setup & Performance Marketing",
     desc: "Launch high-converting advertising campaigns. We build, write, and manage ad funnels on Meta (Facebook & Instagram), Google Ads, YouTube, and LinkedIn.",
@@ -62,8 +57,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "WhatsApp Marketing & Automation",
     desc: "Reach your customers directly on WhatsApp with automated messages, broadcast campaigns, and intelligent chatbot flows that drive sales 24/7.",
@@ -74,8 +68,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e8e8e0 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 // Mock image placeholder
@@ -84,8 +77,7 @@ const MockImg = ({ gradient, dark }: { gradient: string; dark: boolean }) => (
     width: "100%", height: "100%", borderRadius: "16px",
     background: gradient, padding: "24px",
     display: "flex", flexDirection: "column", gap: "10px",
-    justifyContent: "center", minHeight: "260px",
-  }}>
+    justifyContent: "center", minHeight: "260px" }}>
     <div style={{ width: "55%", height: "10px", borderRadius: "4px", background: dark ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.12)" }} />
     <div style={{ width: "75%", height: "10px", borderRadius: "4px", background: dark ? "rgba(255,255,255,0.14)" : "rgba(0,0,0,0.08)" }} />
     <div style={{ flex: 1, borderRadius: "12px", background: dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.05)", marginTop: "8px" }} />
@@ -112,8 +104,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
         display: "flex", gap: "60px", alignItems: "center",
         flexDirection: imgLeft ? "row" : "row-reverse",
         padding: "60px 0",
-        borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none",
-      }}
+        borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
       {/* Image side */}
       <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
@@ -135,8 +126,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
             <div key={pi} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
               <span style={{
                 fontSize: "16px", fontWeight: 800, color: "#6b7eff",
-                minWidth: "22px", paddingTop: "1px",
-              }}>
+                minWidth: "22px", paddingTop: "1px" }}>
                 0{pi + 1}
               </span>
               <p style={{ fontSize: "16px", color: "#555", lineHeight: 1.65 }}>{pt}</p>
@@ -154,8 +144,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
             background: "#111", color: "#fff",
             borderRadius: "999px", padding: "11px 22px",
             fontSize: "16px", fontWeight: 700, textDecoration: "none",
-            transition: "background 0.2s",
-          }}
+            transition: "background 0.2s" }}
           
         >
           <WhatsAppIcon size={15} />
@@ -185,8 +174,7 @@ const MarketingCatalog = () => {
             <span style={{
               display: "inline-block", padding: "5px 14px", borderRadius: "999px",
               background: "#fff0f5", border: "1px solid #fecdd3",
-              fontSize: "16px", fontWeight: 700, color: "#e11d48",
-            }}>
+              fontSize: "16px", fontWeight: 700, color: "#e11d48" }}>
               Our Marketing Catalog
             </span>
           </motion.div>
@@ -214,8 +202,7 @@ const MarketingCatalog = () => {
             marginTop: "60px",
             background: "linear-gradient(135deg,#0d0d1a 0%,#1a1a2e 100%)",
             borderRadius: "20px", padding: "40px 48px",
-            display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", flexWrap: "wrap",
-          }}
+            display: "flex", alignItems: "center", justifyContent: "space-between", gap: "32px", flexWrap: "wrap" }}
         >
           <div>
             <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "16px", fontWeight: 700, padding: "4px 12px", borderRadius: "999px", background: "rgba(107,114,255,0.2)", color: "#6b7eff", marginBottom: "14px" }}>

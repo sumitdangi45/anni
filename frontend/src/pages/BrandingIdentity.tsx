@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Palette, MessageSquare, BookOpen, Package, RefreshCw, Target, MessageCircle } from "lucide-react";
+import { ArrowRight, Palette, MessageSquare, BookOpen, Package, RefreshCw, Target } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -45,8 +45,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Logo & Visual Identity",
     subtitle: "Create a visual identity people can recognize.",
@@ -60,8 +59,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Brand Voice & Messaging",
     subtitle: "Give your brand a voice people can recognize.",
@@ -75,8 +73,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Brand Guidelines",
     subtitle: "Turn your identity into a system your whole team can follow.",
@@ -90,8 +87,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Brand Collateral & Marketing Assets",
     subtitle: "Take your brand from the style guide into the real world.",
@@ -105,8 +101,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Rebranding & Brand Refresh",
     subtitle: "Evolve your brand without losing what makes it yours.",
@@ -120,8 +115,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 const WHAT_WE_BUILD = [
@@ -190,8 +184,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const BrandingIdentity = () => {
   useSEO({
     title: "Branding & Identity — Anni Web Solutions",
-    description: "Complete brand systems — strategy, visual identity, messaging, brand guidelines and marketing assets for startups and growing businesses.",
-  });
+    description: "Complete brand systems — strategy, visual identity, messaging, brand guidelines and marketing assets for startups and growing businesses." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

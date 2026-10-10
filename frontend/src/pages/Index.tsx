@@ -19,8 +19,7 @@ import { useSEO } from "@/hooks/useSEO";
 const Index = () => {
   useSEO({
     title: "Anni Web Solutions — Web, Mobile & AI Agency",
-    description: "Anni Web Solutions is a full-service tech agency. We design, develop and scale web, mobile and AI solutions for startups and growing businesses.",
-  });
+    description: "Anni Web Solutions is a full-service tech agency. We design, develop and scale web, mobile and AI solutions for startups and growing businesses." });
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">

@@ -58,8 +58,7 @@ const TOC_ITEMS = [
 const PrivacyPolicy = () => {
   useSEO({
     title: "Privacy Policy — Anni Web Solutions",
-    description: "Learn how Anni Web Solutions collects, uses, and protects your personal data.",
-  });
+    description: "Learn how Anni Web Solutions collects, uses, and protects your personal data." });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

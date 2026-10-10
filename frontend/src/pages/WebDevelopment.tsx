@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Code2, Layers, ShoppingCart, Plug, Sparkles, RefreshCw, MessageCircle, Globe, FileCode, Database, Cpu } from "lucide-react";
+import { ArrowRight, Code2, Layers, ShoppingCart, Sparkles, Globe, FileCode, Database, Cpu } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -46,8 +46,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Custom Web Applications",
     subtitle: "Turn complex business processes into powerful web applications.",
@@ -62,8 +61,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "E-commerce Development",
     subtitle: "Build an online store designed to sell.",
@@ -78,8 +76,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "API & Third-Party Integrations",
     subtitle: "Connect your website with the tools your business already uses.",
@@ -94,8 +91,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "AI-Powered Web Solutions",
     subtitle: "Add intelligence to your website and web application.",
@@ -110,8 +106,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Website Modernization & Redesign",
     subtitle: "Transform an outdated website into a modern digital experience.",
@@ -126,8 +121,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
 ];
 
 const WHAT_WE_BUILD = [
@@ -205,8 +199,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const WebDevelopment = () => {
   useSEO({
     title: "Custom Web Development — Anni Web Solutions",
-    description: "Custom websites, web applications, e-commerce and AI-powered web solutions built around your business goals.",
-  });
+    description: "Custom websites, web applications, e-commerce and AI-powered web solutions built around your business goals." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

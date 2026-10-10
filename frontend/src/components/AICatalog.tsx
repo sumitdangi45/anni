@@ -1,7 +1,6 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 
 const SERVICES = [
   {
@@ -14,8 +13,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0dfff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "WhatsApp Business Automation",
     desc: "Optimize customer communication with automated WhatsApp flows. Set up smart auto-replies, bulk notifications, and interactive chat menus.",
@@ -26,8 +24,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0a1a0a 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI Voice Calling Agents",
     desc: "Deploy intelligent AI voice agents that handle inbound & outbound calls, qualify leads, book appointments, and respond to customer queries — without human intervention.",
@@ -38,8 +35,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI Workflow & Business Automation",
     desc: "Eliminate repetitive tasks by automating your entire business operations — from lead management and invoicing to employee onboarding and reporting.",
@@ -50,8 +46,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e8e8e0 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "RAG Systems & Knowledge Base AI",
     desc: "Build AI systems that answer questions from your own documents, PDFs, SOPs, and databases — giving your team and customers instant intelligent answers.",
@@ -62,8 +57,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI Lead Generation & Outreach",
     desc: "Automate your entire lead generation pipeline — from scraping and enrichment to personalized AI-written outreach via email, LinkedIn, and WhatsApp.",
@@ -74,8 +68,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a0a 0%,#2a2a10 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 const MockImg = ({ gradient, dark }: { gradient: string; dark: boolean }) => (
@@ -106,8 +99,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
         display: "flex", gap: "60px", alignItems: "center",
         flexDirection: imgLeft ? "row" : "row-reverse",
         padding: "60px 0",
-        borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none",
-      }}
+        borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
       <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
         <MockImg gradient={s.gradient} dark={s.dark} />

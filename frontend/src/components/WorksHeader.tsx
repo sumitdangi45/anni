@@ -12,8 +12,7 @@ const WorksHeader = () => {
       style={{
         background: "#fff",
         padding: "100px 24px 80px",
-        textAlign: "center",
-      }}
+        textAlign: "center" }}
     >
       {/* label */}
       <motion.p
@@ -26,8 +25,7 @@ const WorksHeader = () => {
           letterSpacing: "0.18em",
           textTransform: "uppercase",
           color: "#6b7eff",
-          marginBottom: "20px",
-        }}
+          marginBottom: "20px" }}
       >
         WORKS
       </motion.p>
@@ -43,8 +41,7 @@ const WorksHeader = () => {
           color: "#111",
           lineHeight: 1.15,
           letterSpacing: "-0.03em",
-          marginBottom: "20px",
-        }}
+          marginBottom: "20px" }}
       >
         Highlighted Projects
         <br />
@@ -61,8 +58,7 @@ const WorksHeader = () => {
           color: "#666",
           lineHeight: 1.75,
           maxWidth: "480px",
-          margin: "0 auto 36px",
-        }}
+          margin: "0 auto 36px" }}
       >
         From web apps to AI solutions and mobile development,{" "}
         <span style={{ color: "#6b7eff" }}>we help ambitious teams</span>{" "}

@@ -9,8 +9,7 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+  DialogTitle } from "@/components/ui/dialog";
 import { Pencil, Trash2, Plus, Star } from "lucide-react";
 
 interface Testimonial {
@@ -28,8 +27,7 @@ const emptyForm = (): Omit<Testimonial, "_id"> => ({
   role: "",
   text: "",
   rating: 5,
-  avatar_url: "",
-});
+  avatar_url: "" });
 
 const AdminTestimonials = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
@@ -72,8 +70,7 @@ const AdminTestimonials = () => {
       role: t.role,
       text: t.text,
       rating: t.rating ?? 5,
-      avatar_url: t.avatar_url ?? "",
-    });
+      avatar_url: t.avatar_url ?? "" });
     setError(null);
     setDialogOpen(true);
   };
@@ -83,8 +80,7 @@ const AdminTestimonials = () => {
     setDeleteError(null);
     try {
       const res = await adminFetch(`/api/admin/testimonials/${id}`, {
-        method: "DELETE",
-      });
+        method: "DELETE" });
       if (!res.ok) throw new Error("Delete failed");
       setTestimonials((prev) => prev.filter((t) => t._id !== id));
     } catch {
@@ -111,8 +107,7 @@ const AdminTestimonials = () => {
         : "/api/admin/testimonials";
       const res = await adminFetch(url, {
         method,
-        body: JSON.stringify(form),
-      });
+        body: JSON.stringify(form) });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Save failed");

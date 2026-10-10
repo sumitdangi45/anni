@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Layers, Monitor, Smartphone, Search, Component, RefreshCw, Globe, ShoppingCart, Database, Cpu, BarChart2 } from "lucide-react";
+import { ArrowRight, Monitor, Smartphone, Search, Component, Globe, ShoppingCart, Database, Cpu, BarChart2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -46,8 +46,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "SaaS & Dashboard Design",
     subtitle: "Make complex products simple to understand and use.",
@@ -62,8 +61,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Mobile App UI/UX",
     subtitle: "Create mobile experiences people can use naturally.",
@@ -78,8 +76,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "UX Research & Usability Testing",
     subtitle: "Understand your users before you build.",
@@ -94,8 +91,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Design Systems & UI Libraries",
     subtitle: "Build a design foundation that scales with your product.",
@@ -110,8 +106,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "UX Audit & Product Redesign",
     subtitle: "Find what's not working and redesign what matters.",
@@ -126,8 +121,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 const WHAT_WE_DESIGN = [
@@ -203,8 +197,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const UIUXDesign = () => {
   useSEO({
     title: "UI/UX Design — Anni Web Solutions",
-    description: "Intuitive, modern and conversion-focused digital experiences for websites, SaaS products, mobile apps and business platforms.",
-  });
+    description: "Intuitive, modern and conversion-focused digital experiences for websites, SaaS products, mobile apps and business platforms." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

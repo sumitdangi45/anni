@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import whiteVideo from "@/assets/white animated.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Smartphone, ShoppingCart, MapPin, Users, Radio, Cpu, MessageCircle, Lock, Bell, Map, Sparkles, Layers, Shield, Zap } from "lucide-react";
+import { ArrowRight, Smartphone, ShoppingCart, MapPin, Users, Radio, Cpu, Lock, Bell, Map, Sparkles, Layers, Shield, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -46,8 +46,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "E-commerce & Shopping Apps",
     subtitle: "Give your customers a faster way to discover and buy.",
@@ -62,8 +61,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "On-Demand & Service Apps",
     subtitle: "Connect customers with the services they need.",
@@ -78,8 +76,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Business & Employee Apps",
     subtitle: "Put your business workflows in your team's pocket.",
@@ -94,8 +91,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Real-Time & Social Applications",
     subtitle: "Build mobile experiences where people connect instantly.",
@@ -110,8 +106,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "AI-Powered Mobile Apps",
     subtitle: "Bring intelligent experiences directly to your users.",
@@ -126,8 +121,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 const WHAT_WE_BUILD = [
@@ -223,8 +217,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const MobileAppDevelopment = () => {
   useSEO({
     title: "Mobile App Development — Anni Web Solutions",
-    description: "Custom Android and iOS mobile app development for startups and businesses — cross-platform apps, e-commerce, on-demand, real-time and AI-powered mobile experiences.",
-  });
+    description: "Custom Android and iOS mobile app development for startups and businesses — cross-platform apps, e-commerce, on-demand, real-time and AI-powered mobile experiences." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

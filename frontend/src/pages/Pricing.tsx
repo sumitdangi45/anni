@@ -1,7 +1,7 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { Check, ArrowRight, MessageCircle } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -41,8 +41,7 @@ const PLANS = {
           { text: "Ongoing Maintenance, Backups & Security" },
         ],
         cta: "Start Basic at ₹999/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
+        ctaHref: "https://wa.me/917974135629" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -68,8 +67,7 @@ const PLANS = {
           { text: "Priority Technical Support" },
         ],
         cta: "Get Standard at ₹2,499/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
+        ctaHref: "https://wa.me/917974135629" },
     ],
     usd: [
       {
@@ -91,8 +89,7 @@ const PLANS = {
           { text: "Ongoing Maintenance, Backups & Security" },
         ],
         cta: "Start Basic at $15/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
+        ctaHref: "https://wa.me/917974135629" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -114,10 +111,8 @@ const PLANS = {
           { text: "Priority Technical Support" },
         ],
         cta: "Get Standard at $30/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
-    ],
-  },
+        ctaHref: "https://wa.me/917974135629" },
+    ] },
   yearly: {
     inr: [
       {
@@ -139,8 +134,7 @@ const PLANS = {
           { text: "Ongoing Maintenance, Backups & Security" },
         ],
         cta: "Start Basic at ₹799/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
+        ctaHref: "https://wa.me/917974135629" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -162,8 +156,7 @@ const PLANS = {
           { text: "Priority Technical Support" },
         ],
         cta: "Get Standard at ₹1,999/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
+        ctaHref: "https://wa.me/917974135629" },
     ],
     usd: [
       {
@@ -184,8 +177,7 @@ const PLANS = {
           { text: "Maintenance & Security" },
         ],
         cta: "Start Basic at $12/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
+        ctaHref: "https://wa.me/917974135629" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -206,16 +198,9 @@ const PLANS = {
           { text: "SEO Setup" },
         ],
         cta: "Get Standard at $24/mo",
-        ctaHref: "https://wa.me/917974135629",
-      },
-    ],
-  },
-};
+        ctaHref: "https://wa.me/917974135629" },
+    ] } };
 
-const CUSTOM_SERVICES_INR = [
-  "Custom Web App", "Mobile App", "AI / ML Solutions", "SaaS Development",
-  "AI Automation", "UI/UX Design", "Branding", "Digital Growth",
-];
 
 const PREMIUM_FEATURES_INR = [
   { text: "Everything in Standard Plan, plus:" },
@@ -242,8 +227,7 @@ const Feat = ({ text, note, highlight }: { text: string; note?: string; highligh
 const Pricing = () => {
   useSEO({
     title: "Pricing — Anni Web Solutions",
-    description: "Simple, transparent pricing for web development, AI solutions and digital growth. Monthly and yearly plans available.",
-  });
+    description: "Simple, transparent pricing for web development, AI solutions and digital growth. Monthly and yearly plans available." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -310,8 +294,7 @@ const Pricing = () => {
                   background: billing === key ? "#fff" : "transparent",
                   color: billing === key ? "#111" : "#888",
                   boxShadow: billing === key ? "0 1px 6px rgba(0,0,0,0.1)" : "none",
-                  transition: "all 0.2s",
-                }}
+                  transition: "all 0.2s" }}
               >
                 {label}
                 {badge && <span style={{ fontSize: "9.5px", fontWeight: 700, padding: "2px 7px", borderRadius: "999px", background: billing === key ? "#111" : "#ddd", color: billing === key ? "#fff" : "#666" }}>{badge}</span>}
@@ -331,8 +314,7 @@ const Pricing = () => {
                   fontSize: "16.5px", fontWeight: 700,
                   background: currency === key ? "#111" : "transparent",
                   color: currency === key ? "#fff" : "#888",
-                  transition: "all 0.2s",
-                }}
+                  transition: "all 0.2s" }}
               >
                 {label}
               </button>
@@ -357,8 +339,7 @@ const Pricing = () => {
                   borderRadius: "20px",
                   border: plan.highlight ? "2px solid #ef4444" : "1.5px solid #ebebeb",
                   background: "#fff", padding: "32px",
-                  position: "relative", overflow: "hidden",
-                }}
+                  position: "relative", overflow: "hidden" }}
               >
                 {plan.highlight && "badge" in plan && (
                   <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", background: "linear-gradient(90deg,#f97316,#ef4444)", color: "#fff", fontSize: "16px", fontWeight: 700, padding: "5px 16px", borderRadius: "0 0 10px 10px", letterSpacing: "0.08em" }}>
@@ -387,8 +368,7 @@ const Pricing = () => {
                     color: plan.highlight ? "#fff" : "#111",
                     borderRadius: "12px", padding: "13px 16px",
                     fontSize: "16px", fontWeight: 700, textDecoration: "none",
-                    marginBottom: "28px", transition: "background 0.2s",
-                  }}
+                    marginBottom: "28px", transition: "background 0.2s" }}
                   onMouseEnter={e => (e.currentTarget.style.background = plan.highlight ? "#333" : "#e8e8e8")}
                   onMouseLeave={e => (e.currentTarget.style.background = plan.highlight ? "#111" : "#f5f5f5")}
                 >
@@ -432,8 +412,7 @@ const Pricing = () => {
                   background: "rgba(255,255,255,0.1)", color: "#fff",
                   borderRadius: "12px", padding: "13px 16px",
                   fontSize: "16px", fontWeight: 700, textDecoration: "none",
-                  marginBottom: "24px", transition: "background 0.2s",
-                }}
+                  marginBottom: "24px", transition: "background 0.2s" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
               >
@@ -654,8 +633,7 @@ const Pricing = () => {
           <div style={{
             background: "linear-gradient(135deg, #1a0a0a 0%, #2a0a0a 50%, #0a0a0a 100%)",
             borderRadius: "20px", padding: "36px 40px",
-            display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap",
-          }}>
+            display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap" }}>
             <div>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "16px", fontWeight: 700, padding: "4px 12px", borderRadius: "999px", background: "rgba(239,68,68,0.2)", color: "#ef4444", marginBottom: "14px" }}>
                 🏗️ 100% Custom Business Architecture

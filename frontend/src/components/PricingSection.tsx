@@ -22,8 +22,7 @@ const PLANS = {
         "Owner Admin Dashboard (Phone & Laptop)",
         "Ongoing Maintenance, Backups & Security",
       ],
-      cta: "Get Started",
-    },
+      cta: "Get Started" },
     {
       name: "Standard",
       label: "DIGITAL + AUTOMATION",
@@ -42,8 +41,7 @@ const PLANS = {
         "Google Business Profile (GMB) & Local SEO",
         "Priority Technical Support",
       ],
-      cta: "Join Today",
-    },
+      cta: "Join Today" },
   ],
   quarterly: [
     {
@@ -62,8 +60,7 @@ const PLANS = {
         "Owner Admin Dashboard (Phone & Laptop)",
         "Ongoing Maintenance, Backups & Security",
       ],
-      cta: "Get Started",
-    },
+      cta: "Get Started" },
     {
       name: "Standard",
       label: "DIGITAL + AUTOMATION",
@@ -82,8 +79,7 @@ const PLANS = {
         "Google Business Profile (GMB) & Local SEO",
         "Priority Technical Support",
       ],
-      cta: "Join Today",
-    },
+      cta: "Join Today" },
   ],
   yearly: [
     {
@@ -102,8 +98,7 @@ const PLANS = {
         "Owner Admin Dashboard (Phone & Laptop)",
         "Ongoing Maintenance, Backups & Security",
       ],
-      cta: "Get Started",
-    },
+      cta: "Get Started" },
     {
       name: "Standard",
       label: "DIGITAL + AUTOMATION",
@@ -122,18 +117,15 @@ const PLANS = {
         "Google Business Profile (GMB) & Local SEO",
         "Priority Technical Support",
       ],
-      cta: "Join Today",
-    },
-  ],
-};
+      cta: "Join Today" },
+  ] };
 
 const CUSTOM = {
   name: "Custom Project",
   price: "₹8,499",
   per: "starting from",
   desc: "Complete enterprise-grade solution with 24/7 AI Chatbot, review automations, and multi-location management.",
-  services: ["Product Design", "Web Development", "Mobile App", "AI & ML", "SaaS Build", "Automation", "Branding", "Digital Growth"],
-};
+  services: ["Product Design", "Web Development", "Mobile App", "AI & ML", "SaaS Build", "Automation", "Branding", "Digital Growth"] };
 
 const PricingSection = () => {
   const ref = useRef(null);
@@ -186,8 +178,7 @@ const PricingSection = () => {
           style={{
             display: "inline-flex", alignItems: "center",
             background: "#f5f5f5", borderRadius: "999px",
-            padding: "5px", gap: "2px", marginBottom: "40px",
-          }}
+            padding: "5px", gap: "2px", marginBottom: "40px" }}
         >
           {([
             { key: "monthly", label: "Monthly" },
@@ -204,16 +195,14 @@ const PricingSection = () => {
                 background: billing === key ? "#fff" : "transparent",
                 color: billing === key ? "#111" : "#888",
                 boxShadow: billing === key ? "0 1px 6px rgba(0,0,0,0.1)" : "none",
-                transition: "all 0.2s",
-              }}
+                transition: "all 0.2s" }}
             >
               {label}
               {badge && (
                 <span style={{
                   fontSize: "16px", fontWeight: 700, padding: "2px 7px", borderRadius: "999px",
                   background: billing === key ? "#111" : "#ddd",
-                  color: billing === key ? "#fff" : "#666",
-                }}>
+                  color: billing === key ? "#fff" : "#666" }}>
                   {badge}
                 </span>
               )}
@@ -241,8 +230,7 @@ const PricingSection = () => {
                   background: "#fff",
                   padding: "32px",
                   position: "relative",
-                  overflow: "hidden",
-                }}
+                  overflow: "hidden" }}
               >
                 {/* Most popular badge */}
                 {plan.highlight && "badge" in plan && (
@@ -251,8 +239,7 @@ const PricingSection = () => {
                     background: "linear-gradient(90deg,#f97316,#ef4444)",
                     color: "#fff", fontSize: "16px", fontWeight: 700,
                     padding: "5px 16px", borderRadius: "0 0 10px 10px",
-                    letterSpacing: "0.08em",
-                  }}>
+                    letterSpacing: "0.08em" }}>
                     ⚡ {(plan as typeof plan & { badge: string }).badge}
                   </div>
                 )}
@@ -283,16 +270,14 @@ const PricingSection = () => {
                     color: plan.highlight ? "#fff" : "#111",
                     borderRadius: "12px", padding: "13px 16px",
                     fontSize: "16px", fontWeight: 600, textDecoration: "none",
-                    marginBottom: "28px", transition: "background 0.2s",
-                  }}
+                    marginBottom: "28px", transition: "background 0.2s" }}
                   onMouseEnter={e => (e.currentTarget.style.background = plan.highlight ? "#333" : "#ebebeb")}
                   onMouseLeave={e => (e.currentTarget.style.background = plan.highlight ? "#111" : "#f5f5f5")}
                 >
                   <span style={{
                     width: "28px", height: "28px", borderRadius: "8px",
                     background: plan.highlight ? "#333" : "#e0e0e0",
-                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                  }}>
+                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <ArrowRight size={13} color={plan.highlight ? "#fff" : "#111"} />
                   </span>
                   {plan.cta}
@@ -319,8 +304,7 @@ const PricingSection = () => {
                 background: "#0d0d0d",
                 padding: "32px",
                 gridColumn: "3",
-                gridRow: "1",
-              }}
+                gridRow: "1" }}
             >
               {/* name + dot */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
@@ -346,8 +330,7 @@ const PricingSection = () => {
                   background: "rgba(255,255,255,0.1)", color: "#fff",
                   borderRadius: "12px", padding: "13px 16px",
                   fontSize: "16px", fontWeight: 600, textDecoration: "none",
-                  marginBottom: "28px", transition: "background 0.2s",
-                }}
+                  marginBottom: "28px", transition: "background 0.2s" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
               >
@@ -360,8 +343,7 @@ const PricingSection = () => {
                 {CUSTOM.services.map(s => (
                   <span key={s} style={{
                     fontSize: "16px", fontWeight: 600, padding: "4px 10px", borderRadius: "999px",
-                    border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.78)",
-                  }}>{s}</span>
+                    border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.78)" }}>{s}</span>
                 ))}
               </div>
             </div>

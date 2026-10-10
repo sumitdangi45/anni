@@ -24,8 +24,7 @@ const STICKY_TOP = 80;   // navbar offset
 const StackCard = ({
   project,
   index,
-  total,
-}: {
+  total }: {
   project: Project;
   index: number;
   total: number;
@@ -34,8 +33,7 @@ const StackCard = ({
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
-  });
+    offset: ["start start", "end start"] });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, index === total - 1 ? 1 : 0.88]);
   const y = useTransform(scrollYProgress, [0, 1], [0, index === total - 1 ? 0 : -40]);

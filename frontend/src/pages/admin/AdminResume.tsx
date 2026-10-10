@@ -30,8 +30,7 @@ const AdminResume = () => {
       formData.append("resume", file);
       const res = await adminFetch("/api/admin/upload/resume", {
         method: "POST",
-        body: formData,
-      });
+        body: formData });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Upload failed");
       setCurrentUrl(data.url);

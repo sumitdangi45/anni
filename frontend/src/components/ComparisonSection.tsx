@@ -79,8 +79,7 @@ const ComparisonSection = () => {
                 <span style={{
                   display: "inline-block", background: "#1c1c2e", border: "1px solid #2a2a5a",
                   borderRadius: "999px", padding: "7px 16px",
-                  fontSize: "13px", fontWeight: 700, color: "#6b7eff",
-                }}>
+                  fontSize: "13px", fontWeight: 700, color: "#6b7eff" }}>
                   Anni Web Solutions
                 </span>
               </div>

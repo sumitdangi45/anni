@@ -1,7 +1,7 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, LayoutDashboard, Users, BarChart2, Zap, Radio, Package, ShieldCheck, Cpu, MessageCircle, Layers, GitBranch } from "lucide-react";
+import { ArrowRight, LayoutDashboard, Users, BarChart2, Zap, Radio, Package, ShieldCheck, Cpu, Layers, GitBranch } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/CTABanner";
@@ -45,8 +45,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Business Management Applications",
     subtitle: "Bring your business operations into one powerful platform.",
@@ -61,8 +60,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Customer & Partner Portals",
     subtitle: "Give your customers and partners their own digital workspace.",
@@ -77,8 +75,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Dashboards & Data Platforms",
     subtitle: "Turn business data into something your team can actually use.",
@@ -93,8 +90,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
-    dark: false,
-  },
+    dark: false },
   {
     title: "Workflow & Automation Applications",
     subtitle: "Replace repetitive manual processes with intelligent digital workflows.",
@@ -109,8 +105,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true,
-  },
+    dark: true },
   {
     title: "Real-Time & Collaborative Applications",
     subtitle: "Build web applications where information moves instantly.",
@@ -125,8 +120,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true,
-  },
+    dark: true },
 ];
 
 const WHAT_WE_BUILD = [
@@ -204,8 +198,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const WebApplications = () => {
   useSEO({
     title: "Web Application Development — Anni Web Solutions",
-    description: "Custom web applications — SaaS platforms, business management systems, customer portals, dashboards and real-time applications built around your workflow.",
-  });
+    description: "Custom web applications — SaaS platforms, business management systems, customer portals, dashboards and real-time applications built around your workflow." });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

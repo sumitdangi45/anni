@@ -24,8 +24,7 @@ const Footer = () => {
                 background: "#fff", color: "#111",
                 borderRadius: "12px", padding: "11px 20px 11px 11px",
                 fontSize: "16px", fontWeight: 700, textDecoration: "none",
-                transition: "background 0.2s",
-              }}
+                transition: "background 0.2s" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#e8e8e8")}
               onMouseLeave={e => (e.currentTarget.style.background = "#fff")}
             >
@@ -136,8 +135,7 @@ const Footer = () => {
                 <span key={tag} style={{
                   fontSize: "16px", fontWeight: 600, padding: "5px 12px", borderRadius: "999px",
                   border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.75)",
-                  letterSpacing: "0.04em", textTransform: "uppercase",
-                }}>{tag}</span>
+                  letterSpacing: "0.04em", textTransform: "uppercase" }}>{tag}</span>
               ))}
             </div>
           </div>
@@ -209,8 +207,7 @@ const Footer = () => {
               style={{
                 fontSize: "16px", fontWeight: 700, padding: "6px 14px", borderRadius: "999px",
                 border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.75)",
-                textDecoration: "none", letterSpacing: "0.06em", transition: "all 0.2s",
-              }}
+                textDecoration: "none", letterSpacing: "0.06em", transition: "all 0.2s" }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.15)"; }}
             >
@@ -263,8 +260,7 @@ const Footer = () => {
           textAlign: "center",
           whiteSpace: "nowrap",
           margin: 0,
-          lineHeight: 0.85,
-        }}>
+          lineHeight: 0.85 }}>
           anni web solutions
         </p>
       </div>
