@@ -45,6 +45,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0dfff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808972/anni/chatbot/ANNI_AI_Assistant_Workspace.png",
     dark: false },
   {
     title: "WhatsApp Chatbots",
@@ -58,6 +59,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0a1a0a 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808975/anni/chatbot/WhatsApp_Assistant_Product_Showcase.png",
     dark: true },
   {
     title: "Sales & Lead Generation Chatbots",
@@ -71,6 +73,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808977/anni/chatbot/ANNI_Lead_Assistant_Chat_Interface.png",
     dark: true },
   {
     title: "Customer Support Chatbots",
@@ -84,6 +87,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808979/anni/chatbot/ANNI_Assistant_Support_Flow.png",
     dark: false },
   {
     title: "E-commerce Chatbots",
@@ -97,6 +101,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808981/anni/chatbot/ANNI_Shopping_Assistant_Mockup.png",
     dark: true },
   {
     title: "Multilingual Chatbots",
@@ -110,6 +115,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e8e8e0 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808984/anni/chatbot/Futuristic_Indian_AI_Robot_Assistant_Banner.png",
     dark: false },
   {
     title: "Custom Business Chatbots",
@@ -123,6 +129,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808986/anni/chatbot/ANNI_AI_Renewal_Assistant_Dashboard.png",
     dark: true },
 ];
 
@@ -143,10 +150,13 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
   const imgLeft = s.img === "left";
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
-        <MockImg gradient={s.gradient} dark={s.dark} />
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+        {(s as any).imageUrl
+          ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
+          : <MockImg gradient={s.gradient} dark={s.dark} />
+        }
       </div>
       <div style={{ flex: 1 }}>
         <h3 style={{ fontSize: "clamp(1.3rem, 2.5vw, 1.7rem)", fontWeight: 800, color: "#111", lineHeight: 1.2, letterSpacing: "-0.025em", marginBottom: "12px" }}>{s.title}</h3>
@@ -186,7 +196,7 @@ const ChatbotDevelopment = () => {
     <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
       <Navbar />
 
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref} className="hero-outer-wrap">
 
         {/* ── Hero card ── */}
         <motion.div
@@ -198,7 +208,7 @@ const ChatbotDevelopment = () => {
           <video src={whiteVideo} autoPlay loop muted playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, opacity: 0.5, pointerEvents: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E\")", backgroundSize: "300px 300px" }} />
 
-          <div style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
+          <div className="hero-inner-pad" style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
             <p style={{ fontSize: "16px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888", marginBottom: "20px" }}>
               CHATBOT DEVELOPMENT
             </p>
@@ -210,7 +220,7 @@ const ChatbotDevelopment = () => {
             <p style={{ fontSize: "16px", color: "#666", lineHeight: 1.75, marginBottom: "32px", maxWidth: "520px" }}>
               Build intelligent conversational experiences for your website, WhatsApp and business platforms. Our custom chatbots can answer questions, qualify leads, book appointments, connect with your systems and hand conversations to your team when human support is needed.
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
               <a href="/contact"
                 style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#111", color: "#fff", borderRadius: "999px", padding: "11px 22px 11px 11px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }} className="btn-fill btn-fill-dark"
                 
@@ -234,14 +244,14 @@ const ChatbotDevelopment = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }}
+            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }} className="hero-badge"
           >
             <img src={batchImg} alt="Top Chatbot Development" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
           </motion.div>
         </motion.div>
 
         {/* ── USP ── */}
-        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }}>
+        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }} className="usp-grid">
           {USP.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={uspInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
               <div style={{ color: "#6b7eff", marginBottom: "14px" }}>{item.icon}</div>

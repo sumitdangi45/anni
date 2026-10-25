@@ -2,10 +2,12 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Globe, CheckCircle } from "lucide-react";
 import blueVideo from "@/assets/dd/dariiakosova_ssspin.io_1791305497.mp4";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const WhyAnniSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const isMobile = useIsMobile();
   const f = (delay = 0) => ({
     initial: { opacity: 0, y: 20 },
     animate: inView ? { opacity: 1, y: 0 } : {},
@@ -38,13 +40,13 @@ const WhyAnniSection = () => {
         */}
         <div className="why-bento" style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1.15fr 1.4fr",
-          gridTemplateRows: "240px 300px",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr 1.15fr 1.4fr",
+          gridTemplateRows: isMobile ? "auto" : "240px 300px",
           gap: "12px" }}>
 
           {/* ── Col 1: tall dark photo card — spans both rows ── */}
           <motion.div {...f(0.1)} style={{
-            gridColumn: "1", gridRow: "1 / 3",
+            gridColumn: isMobile ? "auto" : "1", gridRow: isMobile ? "auto" : "1 / 3",
             borderRadius: "20px", overflow: "hidden",
             background: "#111", position: "relative",
             display: "flex", flexDirection: "column" }}>
@@ -69,7 +71,7 @@ const WhyAnniSection = () => {
 
           {/* ── Col 2 Row 1: 2 stat cards side by side ── */}
           <motion.div {...f(0.14)} style={{
-            gridColumn: "2", gridRow: "1",
+            gridColumn: isMobile ? "auto" : "2", gridRow: isMobile ? "auto" : "1",
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
             {/* Stat 1 */}
             <div style={{ borderRadius: "20px", background: "#f7f7f7", padding: "24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
@@ -91,7 +93,7 @@ const WhyAnniSection = () => {
 
           {/* ── Col 2 Row 2: video bg card ── */}
           <motion.div {...f(0.18)} style={{
-            gridColumn: "2", gridRow: "2",
+            gridColumn: isMobile ? "auto" : "2", gridRow: isMobile ? "auto" : "2",
             borderRadius: "20px", overflow: "hidden",
             position: "relative",
             background: "#0a0a1a" }}>
@@ -108,7 +110,7 @@ const WhyAnniSection = () => {
 
           {/* ── Col 3 Row 1: dashboard collage card ── */}
           <motion.div {...f(0.2)} style={{
-            gridColumn: "3", gridRow: "1",
+            gridColumn: isMobile ? "auto" : "3", gridRow: isMobile ? "auto" : "1",
             borderRadius: "20px", overflow: "hidden",
             background: "#f0f0f0", position: "relative" }}>
             <div style={{ padding: "14px", height: "100%", display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -135,7 +137,7 @@ const WhyAnniSection = () => {
 
           {/* ── Col 3 Row 2: dark tags card ── */}
           <motion.div {...f(0.24)} style={{
-            gridColumn: "3", gridRow: "2",
+            gridColumn: isMobile ? "auto" : "3", gridRow: isMobile ? "auto" : "2",
             borderRadius: "20px", background: "#0d0d0d",
             padding: "24px",
             display: "flex", flexDirection: "column", justifyContent: "space-between" }}>

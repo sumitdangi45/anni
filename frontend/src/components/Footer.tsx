@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import logoImg from "@/assets/logow.png";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const Footer = () => {
+  const isMobile = useIsMobile();
   return (
     <footer style={{ background: "#0a0a0a", color: "#fff" }}>
 
       {/* ── Top section — 4 columns ── */}
       <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "80px 20px 60px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1fr", gap: "60px" }}>
+        <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.4fr 1fr 1fr 1fr", gap: isMobile ? "36px" : "60px" }}>
 
           {/* Col 1 — Brand */}
           <div>
@@ -125,7 +127,7 @@ const Footer = () => {
 
       {/* ── Middle section — We Build For + Case Studies + Resources ── */}
       <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "48px 20px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr 1fr", gap: "60px" }}>
+        <div className="footer-grid-mid" style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1.4fr 1fr", gap: isMobile ? "32px" : "60px" }}>
 
           {/* We Build For */}
           <div>

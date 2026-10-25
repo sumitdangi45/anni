@@ -240,7 +240,7 @@ const Pricing = () => {
     <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
       <Navbar />
 
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "120px 20px 80px" }} ref={ref}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "120px 20px 80px" }} ref={ref} className="pricing-header-wrap">
 
         {/* ── Header ── */}
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "40px", marginBottom: "48px", flexWrap: "wrap" }}>
@@ -280,6 +280,7 @@ const Pricing = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "40px", flexWrap: "wrap" }}
+          className="pricing-toggle-row"
         >
           {/* Billing toggle */}
           <div style={{ display: "inline-flex", alignItems: "center", background: "#f5f5f5", borderRadius: "999px", padding: "5px", gap: "2px" }}>
@@ -331,6 +332,7 @@ const Pricing = () => {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px", alignItems: "start" }}
+            className="pricing-grid"
           >
             {/* Plan cards */}
             {plans.map((plan) => (
@@ -385,7 +387,7 @@ const Pricing = () => {
             ))}
 
             {/* Premium / Custom card — dark */}
-            <div style={{ borderRadius: "20px", background: "#0d0d0d", padding: "32px", gridColumn: "3", gridRow: "1" }}>
+            <div style={{ borderRadius: "20px", background: "#0d0d0d", padding: "32px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
                 <span style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.1em", color: "#f59e0b", textTransform: "uppercase" }}>PREMIUM PLAN</span>
                 <div style={{ width: "18px", height: "18px", borderRadius: "50%", background: "linear-gradient(135deg,#f59e0b,#d97706)" }} />
@@ -443,6 +445,7 @@ const Pricing = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ marginTop: "40px", padding: "24px 32px", borderRadius: "16px", background: "#f8f8f8", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "20px", flexWrap: "wrap" }}
+          className="pricing-custom-note"
         >
           <div>
             <p style={{ fontSize: "16px", fontWeight: 700, color: "#111", marginBottom: "4px" }}>Need a custom enterprise solution?</p>
@@ -477,7 +480,7 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px" }}>
+          <div className="quad-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px" }}>
             {[
               { step: "01", icon: "🌐", title: "Discovery", desc: "Customers find you on Google, Social Media, or Referral" },
               { step: "02", icon: "🖥️", title: "Modern Website", desc: "High-converting, fast & mobile-friendly branded website" },
@@ -512,7 +515,7 @@ const Pricing = () => {
             </div>
 
             {/* table */}
-            <div style={{ overflowX: "auto" }}>
+            <div className="pricing-table-wrap" style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
                   <tr style={{ background: "#fafafa" }}>

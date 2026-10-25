@@ -39,6 +39,7 @@ const WEBSITES = [
     ],
     best: "Colleges · Universities · Educational Institutions · Degree Institutes",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0d8ff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792828972/anni/prebuilt/College_Website_Promotional_Mockup.png",
     dark: false },
   {
     id: "w2",
@@ -54,6 +55,7 @@ const WEBSITES = [
     ],
     best: "Schools · CBSE Schools · ICSE Schools · Private Schools · School Groups",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792828995/anni/prebuilt/Sanskar_School_Hero__Education_Builds_Leaders.png",
     dark: false },
   {
     id: "w3",
@@ -69,6 +71,7 @@ const WEBSITES = [
     ],
     best: "MSMEs · Startups · Agencies · IT Companies · Professional Services · Local Businesses",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792829019/anni/prebuilt/Corporate_Website_Product_Showcase.png",
     dark: false },
   {
     id: "w4",
@@ -84,6 +87,7 @@ const WEBSITES = [
     ],
     best: "Builders · Developers · Property Dealers · Real Estate Agencies · Property Consultants",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792829041/anni/prebuilt/Luxury_Real_Estate_Website_Showcase.png",
     dark: true },
   {
     id: "w5",
@@ -99,6 +103,7 @@ const WEBSITES = [
     ],
     best: "D2C Brands · Retailers · Manufacturers · Local Businesses · Product Startups",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792829540/anni/prebuilt/Premium_E-Commerce_Hero_Banner.png",
     dark: true },
   {
     id: "w6",
@@ -114,6 +119,7 @@ const WEBSITES = [
     ],
     best: "Restaurants · Cafés · QSRs · Cloud Kitchens · Bakeries · Food Businesses",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792829550/anni/prebuilt/s7hc9znutvlnijidbzci.png",
     dark: false },
   {
     id: "w7",
@@ -129,6 +135,7 @@ const WEBSITES = [
     ],
     best: "Hotels · Resorts · Homestays · Boutique Hotels · Guest Houses · Hospitality Groups",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792829555/anni/prebuilt/Luxury_Resort_Booking_Hero.png",
     dark: true },
   {
     id: "w8",
@@ -144,6 +151,7 @@ const WEBSITES = [
     ],
     best: "Clinics · Hospitals · Doctors · Diagnostic Centres · Dental Clinics · Healthcare Groups",
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792829558/anni/prebuilt/Modern_Healthcare_Clinic_Hero_Banner.png",
     dark: false },
 ];
 
@@ -455,11 +463,14 @@ const ProductCard = ({
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: 0.08, ease: [0.4, 0, 0.2, 1] }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: "1px solid #f0f0f0" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: "1px solid #f0f0f0" }}
     >
       {/* Image */}
       <div style={{ flex: "0 0 45%", borderRadius: "18px", overflow: "hidden", border: "1px solid #e8e8e8", boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}>
-        <MockImg gradient={product.gradient} dark={product.dark} />
+        {(product as any).imageUrl
+          ? <img src={(product as any).imageUrl} alt={product.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "300px" }} />
+          : <MockImg gradient={product.gradient} dark={product.dark} />
+        }
       </div>
 
       {/* Content */}

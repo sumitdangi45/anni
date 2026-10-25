@@ -200,6 +200,7 @@ const CategoryBlock = ({ category }: { category: typeof FAQ_CATEGORIES[0] }) => 
     <div
       ref={ref}
       id={category.id}
+      className="faq-category-block"
       style={{ paddingTop: "80px", paddingBottom: "80px", borderBottom: "1px solid var(--border)" }}
     >
       <h2 style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: "32px" }}>
@@ -261,7 +262,7 @@ const Sidebar = ({ activeId }: { activeId: string }) => (
 // ── Hero Banner ───────────────────────────────────────────────
 
 const HeroBanner = () => (
-  <section style={{
+  <section className="faq-hero-banner" style={{
     margin: "100px 20px 0",
     borderRadius: "24px",
     background: "var(--card)",
@@ -356,8 +357,10 @@ const FAQ = () => {
       <HeroBanner />
 
       {/* Main content: sidebar + accordion */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px 120px", display: "grid", gridTemplateColumns: "260px 1fr", gap: "80px", alignItems: "start" }}>
-        <Sidebar activeId={activeId} />
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px 120px", display: "grid", gridTemplateColumns: "260px 1fr", gap: "80px", alignItems: "start" }} className="faq-page-grid">
+        <div className="faq-sidebar-panel">
+          <Sidebar activeId={activeId} />
+        </div>
 
         <main>
           {FAQ_CATEGORIES.map((cat) => (

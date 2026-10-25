@@ -109,9 +109,9 @@ const ProjectCard = ({ project, index, total }: { project: Project; index: numbe
   const opacity = useTransform(scrollYProgress, [0, 0.85, 1], [1, 1, index === total - 1 ? 1 : 0.6]);
 
   return (
-    <div ref={ref} style={{ position: "sticky", top: "86px", zIndex: index + 1, marginBottom: "16px" }}>
+    <div ref={ref} style={{ position: "sticky", top: "86px", zIndex: index + 1, marginBottom: "16px" }} className="project-card-sticky">
       <motion.div style={{ scale, opacity }}>
-        <div style={{
+        <div className="project-card-inner" style={{
           background: "#fff",
           borderRadius: "22px",
           overflow: "hidden",
@@ -122,7 +122,7 @@ const ProjectCard = ({ project, index, total }: { project: Project; index: numbe
           boxShadow: "0 2px 32px rgba(0,0,0,0.07)" }}>
 
           {/* ── LEFT: text ── */}
-          <div style={{ padding: "44px 40px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid #f0f0f0" }}>
+          <div className="project-card-text" style={{ padding: "44px 40px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid #f0f0f0" }}>
 
             {/* top */}
             <div>
@@ -165,7 +165,7 @@ const ProjectCard = ({ project, index, total }: { project: Project; index: numbe
           </div>
 
           {/* ── RIGHT: image/mock ── */}
-          <div style={{ overflow: "hidden", minHeight: "600px" }}>
+          <div className="project-card-mock" style={{ overflow: "hidden", minHeight: "600px" }}>
             <MockScreen bg={project.image} dark={isDark} />
           </div>
 

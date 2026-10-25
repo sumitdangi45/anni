@@ -47,6 +47,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792749606/anni/cloud-devops/Zero_Disruption__Legacy_to_Modern_Cloud.png",
     dark: true },
   {
     title: "CI/CD & DevOps Automation",
@@ -62,6 +63,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792749616/anni/cloud-devops/ANNI_CI_CD_Pipeline_Infographic.png",
     dark: false },
   {
     title: "Docker & Kubernetes",
@@ -77,6 +79,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792749630/anni/cloud-devops/ANNI_Neon_Blocks_in_Cyber_Data_Center.png",
     dark: true },
   {
     title: "Monitoring, Observability & Reliability",
@@ -92,6 +95,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792749644/anni/cloud-devops/ANNI_Infrastructure_Monitoring_Dashboard.png",
     dark: false },
   {
     title: "Cloud Security, Backup & Disaster Recovery",
@@ -107,6 +111,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792749659/anni/cloud-devops/ANNI_Cyber_Recovery_Network.png",
     dark: true },
   {
     title: "Cloud Cost Optimization & FinOps",
@@ -122,6 +127,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792749672/anni/cloud-devops/ANNI_FinOps_Dashboard_Interface.png",
     dark: false },
   {
     title: "AI Cloud Infrastructure",
@@ -137,6 +143,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792749968/anni/cloud-devops/ANNI_AI_Chip_in_a_Neon_Data_Center.png",
     dark: true },
 ];
 
@@ -186,10 +193,13 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
   const imgLeft = s.img === "left";
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
-        <MockImg gradient={s.gradient} dark={s.dark} />
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+        {(s as any).imageUrl
+          ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
+          : <MockImg gradient={s.gradient} dark={s.dark} />
+        }
       </div>
       <div style={{ flex: 1 }}>
         <p style={{ fontSize: "16px", fontWeight: 700, color: "#6b7eff", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>{s.subtitle}</p>
@@ -230,7 +240,7 @@ const CloudDevOps = () => {
     <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
       <Navbar />
 
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref} className="hero-outer-wrap">
 
         {/* Hero — dark blue */}
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
@@ -239,7 +249,7 @@ const CloudDevOps = () => {
           <div style={{ position: "absolute", inset: 0, opacity: 0.05, pointerEvents: "none", backgroundImage: "linear-gradient(rgba(107,114,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(107,114,255,0.5) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
           <div style={{ position: "absolute", top: "-40px", right: "15%", width: "300px", height: "300px", borderRadius: "50%", background: "radial-gradient(circle, rgba(107,114,255,0.12) 0%, transparent 70%)" }} />
 
-          <div style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
+          <div className="hero-inner-pad" style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
             <p style={{ fontSize: "16px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(107,114,255,0.8)", marginBottom: "20px" }}>CLOUD & DEVOPS</p>
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, letterSpacing: "-0.035em", marginBottom: "20px" }}>
               Deploy faster. Scale smarter.
@@ -248,7 +258,7 @@ const CloudDevOps = () => {
             <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.78)", lineHeight: 1.75, marginBottom: "32px", maxWidth: "540px" }}>
               We build reliable cloud infrastructure and automated DevOps workflows that help businesses launch faster, improve application reliability, control infrastructure costs and scale digital products with confidence.
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
               <a href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#6b7eff", color: "#fff", borderRadius: "999px", padding: "11px 22px 11px 11px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#5a63e0")} onMouseLeave={e => (e.currentTarget.style.background = "#6b7eff")}
               >
@@ -263,14 +273,14 @@ const CloudDevOps = () => {
             </div>
           </div>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }}
+            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }} className="hero-badge"
           >
             <img src={batchImg} alt="Top Cloud & DevOps Partner" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
           </motion.div>
         </motion.div>
 
         {/* USP */}
-        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }}>
+        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }} className="usp-grid">
           {USP.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={uspInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
               <div style={{ color: "#6b7eff", marginBottom: "14px" }}>{item.icon}</div>
@@ -285,7 +295,7 @@ const CloudDevOps = () => {
       <SelectedWorkSection label="SELECTED CLOUD WORK" heading="Infrastructure that ships products and scales businesses." />
 
       {/* What we manage */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={buildRef}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={buildInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -295,7 +305,7 @@ const CloudDevOps = () => {
               From application deployment to production operations.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {WHAT_WE_MANAGE.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={buildInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}
@@ -336,7 +346,7 @@ const CloudDevOps = () => {
               Build once. Automate the path to production.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
+          <div className="quad-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
             {DEVOPS_STACK.map((group, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={stackInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.06 }}
                 style={{ background: "hsl(0,0%,10%)", borderRadius: "16px", padding: "22px", border: "1px solid hsl(0,0%,15%)" }}
@@ -354,7 +364,7 @@ const CloudDevOps = () => {
       </section>
 
       {/* Process */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={processRef}>
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -364,7 +374,7 @@ const CloudDevOps = () => {
               From infrastructure planning to reliable production.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {PROCESS_STEPS.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.08 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}

@@ -35,7 +35,7 @@ const WHO_WE_WORK_WITH = [
 ];
 
 const TIMELINE = [
-  { year: "2019", title: "Where It Started", desc: "Sumit Dangi began freelancing — building websites and web apps for local businesses. The mission was simple: give small teams access to quality tech." },
+  { year: "2019", title: "Where It Started", desc: "Sumit Thakur began freelancing — building websites and web apps for local businesses. The mission was simple: give small teams access to quality tech." },
   { year: "2021", title: "Anni Web Solutions Founded", desc: "What started as solo work grew into a focused team. Anni Web Solutions was formally established to take on larger projects across web, mobile, and AI." },
   { year: "2022", title: "Scaling Up", desc: "Expanded to SaaS development, AI/ML, and digital marketing. Client base grew across India, the Middle East, and Southeast Asia." },
   { year: "2023", title: "AI-First Practice", desc: "Built a dedicated AI practice — LLM integrations, automation, chatbots, and intelligent product features for growing businesses." },
@@ -69,7 +69,7 @@ const FadeIn = ({ children, delay = 0, x = 0, y = 20 }: { children: React.ReactN
 
 // ── Hero ──────────────────────────────────────────────────────
 const Hero = () => (
-  <section style={{ padding: "160px 20px 100px", maxWidth: "1200px", margin: "0 auto" }}>
+  <section className="about-hero-pad" style={{ padding: "160px 20px 100px", maxWidth: "1200px", margin: "0 auto" }}>
     <FadeIn y={12} delay={0}>
       <p style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "24px" }}>
         About Anni Web Solutions
@@ -85,7 +85,7 @@ const Hero = () => (
     </FadeIn>
 
     <FadeIn y={16} delay={0.1}>
-      <div style={{ display: "flex", gap: "60px", flexWrap: "wrap", paddingTop: "40px", borderTop: "1px solid var(--border)" }}>
+      <div style={{ display: "flex", gap: "60px", flexWrap: "wrap", paddingTop: "40px", borderTop: "1px solid var(--border)" }} className="about-stats-row">
         {STATS.map((s) => (
           <div key={s.label}>
             <p style={{ fontSize: "clamp(2rem,4vw,2.8rem)", fontWeight: 800, letterSpacing: "-0.04em", lineHeight: 1 }}>{s.value}</p>
@@ -100,7 +100,7 @@ const Hero = () => (
 // ── Story ─────────────────────────────────────────────────────
 const Story = () => (
   <section style={{ background: "#f3f4f6", color: "#111", padding: "100px 20px" }}>
-    <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "80px", alignItems: "start" }}>
+    <div className="about-story-grid" style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "80px", alignItems: "start" }}>
       <FadeIn x={-30} delay={0}>
         <p style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.45, marginBottom: "20px", color: "#666" }}>Our Story</p>
         <h2 style={{ fontSize: "clamp(2rem,3.5vw,2.8rem)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.1, color: "#111" }}>
@@ -113,7 +113,7 @@ const Story = () => (
           Anni Web Solutions started with one frustrating observation: most businesses — especially small ones — couldn't access quality tech without burning through their budget or waiting months for delivery.
         </p>
         <p style={{ fontSize: "16px", lineHeight: 1.85, color: "#444", marginBottom: "24px" }}>
-          Sumit Dangi founded Anni to fix that. Starting as a solo freelancer, the vision was always the same — be the kind of tech partner that acts like a co-founder, not a contractor. Someone who cares about outcomes, not just deliverables.
+          Sumit Thakur founded Anni to fix that. Starting as a solo freelancer, the vision was always the same — be the kind of tech partner that acts like a co-founder, not a contractor. Someone who cares about outcomes, not just deliverables.
         </p>
         <p style={{ fontSize: "16px", lineHeight: 1.85, color: "#444" }}>
           Today, we're a lean, full-service agency with deep expertise across web, mobile, AI, and growth. We work with early-stage startups, growing SMEs, and founders who need a team that ships.
@@ -134,7 +134,7 @@ const MissionSection = () => (
         </p>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0" }} className="about-mission-grid">
         <div style={{ paddingRight: "60px", borderRight: "1px solid var(--border)" }}>
           <FadeIn delay={0.1}>
             <p style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "28px" }}>What We Do</p>
@@ -209,7 +209,7 @@ const ValuesSection = () => (
         </div>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", border: "1px solid var(--border)", borderRadius: "20px", overflow: "hidden" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", border: "1px solid var(--border)", borderRadius: "20px", overflow: "hidden" }} className="about-values-grid">
         {VALUES.map((v, i) => (
           <FadeIn key={v.title} delay={i * 0.08}>
             <div style={{
@@ -234,11 +234,11 @@ const ValuesSection = () => (
 const FounderSection = () => (
   <section style={{ padding: "100px 20px", background: "#f3f4f6", color: "#111" }}>
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }} className="about-founder-grid">
         <FadeIn x={-30} delay={0}>
           <p style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#888", marginBottom: "20px" }}>The Founder</p>
           <h2 style={{ fontSize: "clamp(2rem,3.5vw,2.8rem)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "28px", color: "#111" }}>
-            Sumit Dangi
+            Sumit Thakur
           </h2>
           <p style={{ fontSize: "16.5px", fontWeight: 600, color: "#888", marginBottom: "28px", textTransform: "uppercase", letterSpacing: "0.1em" }}>
             Founder & CEO — Full Stack &amp; AI Engineer
@@ -296,7 +296,7 @@ const FounderSection = () => (
 const About = () => {
   useSEO({
     title: "About — Anni Web Solutions",
-    description: "Learn about Anni Web Solutions — our story, mission, values, and the team behind the products. Founded by Sumit Dangi." });
+    description: "Learn about Anni Web Solutions — our story, mission, values, and the team behind the products. Founded by Sumit Thakur." });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

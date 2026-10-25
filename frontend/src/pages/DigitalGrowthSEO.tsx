@@ -46,6 +46,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807031/anni/seo/ANNI_SEO_Audit_Dashboard.png",
     dark: true },
   {
     title: "On-Page SEO",
@@ -61,6 +62,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e8e8e0 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807039/anni/seo/ANNI_SEO_Dashboard_Mockup.png",
     dark: false },
   {
     title: "Content & SEO Strategy",
@@ -76,6 +78,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807053/anni/seo/ANNI_SEO_Strategy_Workspace.png",
     dark: true },
   {
     title: "Local SEO",
@@ -91,6 +94,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807062/anni/seo/ANNI_Web_Solutions_Business_Profile_Mockup.png",
     dark: false },
   {
     title: "AI Search & GEO",
@@ -106,6 +110,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807070/anni/seo/AI_Answer_Engines_Cite_ANNI.png",
     dark: true },
   {
     title: "SEO Analytics & Growth",
@@ -121,6 +126,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807078/anni/seo/ANNI_SEO_Dashboard_on_Laptop.png",
     dark: false },
 ];
 
@@ -159,10 +165,13 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
   const imgLeft = s.img === "left";
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
-        <MockImg gradient={s.gradient} dark={s.dark} />
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+        {(s as any).imageUrl
+          ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
+          : <MockImg gradient={s.gradient} dark={s.dark} />
+        }
       </div>
       <div style={{ flex: 1 }}>
         <p style={{ fontSize: "16px", fontWeight: 700, color: "#6b7eff", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>{s.subtitle}</p>
@@ -207,7 +216,7 @@ const DigitalGrowthSEO = () => {
     <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
       <Navbar />
 
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref} className="hero-outer-wrap">
 
         {/* ── Hero card ── */}
         <motion.div
@@ -219,7 +228,7 @@ const DigitalGrowthSEO = () => {
           <video src={whiteVideo} autoPlay loop muted playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, opacity: 0.5, pointerEvents: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E\")", backgroundSize: "300px 300px" }} />
 
-          <div style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
+          <div className="hero-inner-pad" style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
             <p style={{ fontSize: "16px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#888", marginBottom: "20px" }}>DIGITAL GROWTH & SEO</p>
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#111", lineHeight: 1.1, letterSpacing: "-0.035em", marginBottom: "20px" }}>
               Get found. Get noticed.
@@ -229,7 +238,7 @@ const DigitalGrowthSEO = () => {
             <p style={{ fontSize: "16px", color: "#666", lineHeight: 1.75, marginBottom: "32px", maxWidth: "540px" }}>
               We build data-driven digital growth strategies that improve search visibility, attract the right audience and turn website traffic into measurable business results — from technical SEO and content to local search and AI-powered discovery.
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
               <a href="/contact"
                 style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#111", color: "#fff", borderRadius: "999px", padding: "11px 22px 11px 11px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }} className="btn-fill btn-fill-dark"
                 
@@ -250,14 +259,14 @@ const DigitalGrowthSEO = () => {
           </div>
 
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }}
+            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }} className="hero-badge"
           >
             <img src={batchImg} alt="Top SEO Partner" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
           </motion.div>
         </motion.div>
 
         {/* ── USP ── */}
-        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }}>
+        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }} className="usp-grid">
           {USP.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={uspInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
               <div style={{ color: "#6b7eff", marginBottom: "14px" }}>{item.icon}</div>
@@ -272,7 +281,7 @@ const DigitalGrowthSEO = () => {
       <SelectedWorkSection label="SELECTED SEO WORK" heading="Growth strategies built to drive real results." />
 
       {/* ── What we help you grow ── */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={outcomesRef}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={outcomesInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -284,7 +293,7 @@ const DigitalGrowthSEO = () => {
               More visibility. Better traffic. Stronger business outcomes.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {GROWTH_OUTCOMES.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={outcomesInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}
@@ -329,7 +338,7 @@ const DigitalGrowthSEO = () => {
               Strategy first. Optimization always.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {PROCESS_STEPS.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.08 }}
                 style={{ background: "hsl(0,0%,10%)", borderRadius: "16px", padding: "28px 24px", border: "1px solid hsl(0,0%,15%)" }}

@@ -300,27 +300,24 @@
 @media (max-width: 768px) {
 
   /* ── HeroSection ── */
-  .hero-left-card  { min-height: 520px !important; }
+  .hero-left-card  { min-height: 480px !important; }
   .hero-left-inner { padding: 24px 20px 24px !important; }
-  .hero-right-col  { width: 100% !important; flex-shrink: 1 !important; }
+  .hero-right-col  { display: none !important; }
 
   /* ── WorkSection — fade overlays shrink on mobile ── */
   .work-fade-left,
-  .work-fade-right { width: clamp(20px, 8vw, 80px) !important; }
+  .work-fade-right { width: clamp(20px, 8vw, 60px) !important; }
 
   /* ── ServicesSection — banner stacks ── */
-  .services-banner        { height: auto !important; min-height: 200px; }
+  .services-banner        { height: auto !important; min-height: 180px; }
   .services-banner-inner {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 12px !important;
+    gap: 10px !important;
     padding: 20px !important;
     height: auto !important;
   }
-  .services-banner-inner > div:last-child {
-    text-align: left !important;
-    max-width: 100% !important;
-  }
+  .services-banner-inner > div:last-child { display: none !important; }
 
   /* ── ProcessSection — 3 cards stack ── */
   .process-cards { flex-direction: column !important; }
@@ -356,26 +353,133 @@
   .faq-layout  { flex-direction: column !important; gap: 24px !important; }
   .faq-sidebar { width: 100% !important; position: static !important; }
 
-  /* ── TestimonialsSection — hide photo card, full width carousel ── */
-  .testimonials-photo-card  { display: none !important; }
+  /* ── TestimonialsSection — hide photo card ── */
+  .testimonials-photo-card { display: none !important; }
   .testimonials-layout { gap: 0 !important; }
 
   /* ── SocialProofSection — phone carousel ── */
   .social-carousel-wrap { height: 480px !important; overflow: hidden !important; }
-  .phone-side  { display: none !important; }
-  .phone-center {
-    width: min(320px, 85vw) !important;
-    height: 480px !important;
+  .phone-side   { display: none !important; }
+  .phone-center { width: min(300px, 85vw) !important; height: 480px !important; }
+
+  /* ── ProjectCardsSection — single column stacked ── */
+  .project-card-inner {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
   }
+  .project-card-text {
+    padding: 28px 20px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+  }
+  .project-card-mock { min-height: 200px !important; }
+  /* disable sticky scroll on mobile */
+  .project-card-sticky { position: static !important; }
+
+  /* ── WorksHeader — tighter padding ── */
+  .works-header-section { padding: 60px 20px 48px !important; }
+
+  /* ── ServiceRow (service pages) ── */
+  .service-row {
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 32px 0 !important;
+  }
+  .service-row-img {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+  .service-row-img img { min-height: 200px !important; }
+
+  /* ── Hero outer wrapper top padding ── */
+  .hero-outer-wrap { padding: 60px 16px 0 !important; }
+
+  /* ── Hero inner padding on service pages ── */
+  .hero-inner-pad { padding: 28px 20px !important; }
+
+  /* ── Hero CTA buttons wrap ── */
+  .hero-cta-row { flex-wrap: wrap !important; }
+
+  /* ── Hide batch badge on mobile ── */
+  .hero-badge { display: none !important; }
+
+  /* ── USP 4-col → 2-col ── */
+  .usp-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    padding: 40px 0 48px !important;
+  }
+
+  /* ── Triple 3-col grids → 1-col ── */
+  .triple-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+  /* ── Quad 4-col grids → 2-col ── */
+  .quad-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+
+  /* ── Section padding reduction ── */
+  .mobile-section-pad,
+  .service-section { padding-top: 48px !important; padding-bottom: 48px !important; }
+
+  /* ── Footer 4-col → 1-col ── */
+  .footer-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .footer-grid-mid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* ── About grids ── */
+  .about-story-grid  { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .about-2col-grid   { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .about-values-grid { grid-template-columns: 1fr !important; }
+  .about-values-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+  .about-hero-pad { padding: 100px 20px 40px !important; }
+  .about-mission-grid { grid-template-columns: 1fr !important; }
+  .about-mission-grid > div:first-child { padding-right: 0 !important; border-right: none !important; border-bottom: 1px solid var(--border); padding-bottom: 32px; }
+  .about-mission-grid > div:last-child  { padding-left: 0 !important; padding-top: 32px; }
+  .about-founder-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .about-stats-row    { gap: 24px !important; }
+
+  /* ── Blogs ── */
+  .blog-hero-section  { padding: 100px 20px 40px !important; }
+  .featured-blog-card { grid-template-columns: 1fr !important; }
+  .blog-skeleton-grid { grid-template-columns: 1fr !important; }
+
+  /* ── FAQ page ── */
+  .faq-page-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .faq-sidebar-panel { display: none !important; }
+  .faq-hero-banner { margin: 80px 16px 0 !important; padding: 32px 20px !important; }
+  .faq-category-block { padding-top: 48px !important; padding-bottom: 48px !important; }
+
+  /* ── Contact form field grids ── */
+  .contact-field-grid { grid-template-columns: 1fr !important; }
+
+  /* ── Legal pages (Terms, Privacy, Refund) ── */
+  .legal-body-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: 0 16px 60px !important;
+  }
+  .legal-sidebar { display: none !important; }
+  .pricing-grid { grid-template-columns: 1fr !important; }
+  .pricing-grid > div { grid-column: auto !important; grid-row: auto !important; }
+  .pricing-header-wrap { padding: 80px 16px 48px !important; }
+  .pricing-toggle-row { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+  .pricing-toggle-row > div { width: 100% !important; justify-content: center !important; }
+  .pricing-custom-note { flex-direction: column !important; }
+  .pricing-table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+
+  /* ── General section padding reduction ── */
+  .mobile-section-pad { padding-top: 60px !important; padding-bottom: 60px !important; }
 }
 
 /* ══════════════════════════════════════════════════════════════
    EXTRA SMALL — 480px
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .hero-left-inner { padding: 20px 16px 20px !important; }
-  .phone-center {
-    width: 90vw !important;
-    height: 440px !important;
-  }
+  .hero-left-inner         { padding: 20px 16px !important; }
+  .phone-center            { width: 90vw !important; height: 440px !important; }
+  .usp-grid                { grid-template-columns: 1fr !important; }
+  .pricing-workflow-grid   { grid-template-columns: 1fr !important; }
+  .project-card-text       { padding: 20px 16px !important; }
+  .quad-grid               { grid-template-columns: 1fr !important; }
 }

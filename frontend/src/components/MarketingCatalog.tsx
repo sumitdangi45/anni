@@ -107,7 +107,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
         borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
       {/* Image side */}
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
         <MockImg gradient={s.gradient} dark={s.dark} />
       </div>
 

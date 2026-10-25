@@ -61,7 +61,8 @@ const FeaturedCard = ({ blog }: { blog: Blog }) => {
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
       onClick={() => nav(`/blogs/${blog._id}`)}
-      style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid var(--border)", background: "var(--card)", cursor: "pointer", display: "grid", gridTemplateColumns: blog.images.length > 0 ? "1fr 1fr" : "1fr", minHeight: "320px" }}>
+      style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid var(--border)", background: "var(--card)", cursor: "pointer", display: "grid", gridTemplateColumns: blog.images.length > 0 ? "1fr 1fr" : "1fr", minHeight: "320px" }}
+      className="featured-blog-card">
       {blog.images.length > 0 && (
         <div style={{ overflow: "hidden", position: "relative", minHeight: "280px" }}>
           <img src={blog.images[0]} alt={blog.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -159,7 +160,7 @@ const Blogs = () => {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section ref={heroRef} style={{ maxWidth: 1200, margin: "0 auto", padding: "140px 20px 60px" }}>
+      <section ref={heroRef} style={{ maxWidth: 1200, margin: "0 auto", padding: "140px 20px 60px" }} className="blog-hero-section">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}>
           <p style={{ ...S.label, marginBottom: 20 }}>Insights & Ideas</p>
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 24, marginBottom: 48 }}>
@@ -207,7 +208,7 @@ const Blogs = () => {
         {loading && (
           <>
             <div style={{ marginBottom: 24 }}><SkeletonCard /></div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+            <div className="blog-skeleton-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
               {[0,1,2].map(i => <SkeletonCard key={i} />)}
             </div>
           </>

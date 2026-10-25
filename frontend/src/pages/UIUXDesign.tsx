@@ -46,6 +46,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807797/anni/uiux/ANNI_Web_Solutions_Tech_Showcase.png",
     dark: false },
   {
     title: "SaaS & Dashboard Design",
@@ -61,6 +62,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807801/anni/uiux/ANNI_Analytics_Dashboard_Laptop_Mockup.png",
     dark: true },
   {
     title: "Mobile App UI/UX",
@@ -76,6 +78,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792807983/anni/uiux/ANNI_Digital_Solutions_App_Showcase.png",
     dark: true },
   {
     title: "UX Research & Usability Testing",
@@ -91,6 +94,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808366/anni/uiux/UX_Research_Before_Building.png",
     dark: false },
   {
     title: "Design Systems & UI Libraries",
@@ -106,6 +110,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808368/anni/uiux/Design_Systems_That_Scale.png",
     dark: false },
   {
     title: "UX Audit & Product Redesign",
@@ -121,6 +126,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792808370/anni/uiux/Outdated_vs_Modern_Website_Design.png",
     dark: true },
 ];
 
@@ -166,10 +172,13 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
   const imgLeft = s.img === "left";
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
-        <MockImg gradient={s.gradient} dark={s.dark} />
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+        {(s as any).imageUrl
+          ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
+          : <MockImg gradient={s.gradient} dark={s.dark} />
+        }
       </div>
       <div style={{ flex: 1 }}>
         <p style={{ fontSize: "13px", fontWeight: 700, color: "#6b7eff", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: "8px" }}>{s.subtitle}</p>
@@ -216,14 +225,14 @@ const UIUXDesign = () => {
     <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
       <Navbar />
 
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref} className="hero-outer-wrap">
 
         {/* ── Hero ── */}
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
           style={{ background: "transparent", minHeight: "420px", position: "relative", overflow: "hidden", borderRadius: "20px" }}
         >
           <video src={whiteVideo} autoPlay loop muted playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-          <div style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
+          <div className="hero-inner-pad" style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
             <p style={{ fontSize: "12px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#888", marginBottom: "20px" }}>UI / UX DESIGN</p>
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#111", lineHeight: 1.1, letterSpacing: "-0.035em", marginBottom: "20px" }}>
               Digital experiences that look better
@@ -248,14 +257,14 @@ const UIUXDesign = () => {
             </div>
           </div>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }}
+            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }} className="hero-badge"
           >
             <img src={batchImg} alt="Top Design Partner" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
           </motion.div>
         </motion.div>
 
         {/* ── USP ── */}
-        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }}>
+        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }} className="usp-grid">
           {USP.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={uspInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
               <div style={{ color: "#6b7eff", marginBottom: "14px" }}>{item.icon}</div>
@@ -270,7 +279,7 @@ const UIUXDesign = () => {
       <SelectedWorkSection label="SELECTED UI/UX WORK" heading="Experiences designed to perform." />
 
       {/* ── What we design ── */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={buildRef}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={buildInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -280,7 +289,7 @@ const UIUXDesign = () => {
               More than screens. Complete digital experiences.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {WHAT_WE_DESIGN.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={buildInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}
@@ -311,7 +320,7 @@ const UIUXDesign = () => {
       </section>
 
       {/* ── Process ── */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={processRef}>
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -321,7 +330,7 @@ const UIUXDesign = () => {
               From research to a ready-to-build product.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {PROCESS_STEPS.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.08 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}

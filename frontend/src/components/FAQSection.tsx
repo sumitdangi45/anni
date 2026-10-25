@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Plus, Minus, ArrowRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const FAQS = [
   { q: "What services does Anni Web Solutions offer?",       a: "We offer end-to-end digital solutions including custom web development, mobile app development, AI/ML solutions, SaaS development, UI/UX design, AI automation, and digital growth & SEO." },
@@ -43,14 +44,15 @@ const FAQSection = ({ faqs, title, subtitle }: { faqs?: { q: string; a: string }
   const items = faqs ?? FAQS;
   const heading = title ?? "Frequently\nAsked\nQuestions";
   const desc = subtitle ?? "Everything you need to know about working with Anni, from project timelines and pricing to AI solutions and collaboration.";
+  const isMobile = useIsMobile();
 
   return (
     <section style={{ background: "#fff", padding: "100px 20px" }}>
       <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={ref}>
-        <div style={{ display: "flex", gap: "80px", alignItems: "flex-start" }} className="faq-layout">
+        <div style={{ display: "flex", gap: isMobile ? "0" : "80px", alignItems: "flex-start", flexDirection: isMobile ? "column" : "row" }} className="faq-layout">
 
           {/* Left sticky sidebar */}
-          <div style={{ width: "220px", flexShrink: 0, position: "sticky", top: "100px" }} className="faq-sidebar">
+          <div style={{ width: isMobile ? "100%" : "220px", flexShrink: 0, position: isMobile ? "static" : "sticky", top: "100px" }} className="faq-sidebar">
             <motion.p initial={{ opacity:0, y:10 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5 }}
               style={{ fontSize:"11px", fontWeight:700, letterSpacing:"0.22em", textTransform:"uppercase" as const, color:"#aaa", marginBottom:"16px" }}>
               FAQ

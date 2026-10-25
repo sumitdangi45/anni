@@ -9,6 +9,7 @@ const WorksHeader = () => {
   return (
     <section
       ref={ref}
+      className="works-header-section"
       style={{
         background: "#fff",
         padding: "100px 24px 80px",

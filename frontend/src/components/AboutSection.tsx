@@ -91,8 +91,8 @@ const AboutSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Email :</p>
-                <a href="mailto:sumitdangi8455@gmail.com" className="font-medium hover:text-primary transition-colors">
-                  sumitdangi8455@gmail.com
+                <a href="mailto:anniwebsolution@gmail.com" className="font-medium hover:text-primary transition-colors">
+                  anniwebsolution@gmail.com
                 </a>
               </div>
             </motion.div>

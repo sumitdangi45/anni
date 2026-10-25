@@ -47,6 +47,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792766192/anni/cybersecurity/ANNI_Vulnerability_Scan_Cyber_Matrix.png",
     dark: true },
   {
     title: "API Security",
@@ -62,6 +63,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792766197/anni/cybersecurity/ANNI_Neon_Cybersecurity_Shield_1.png",
     dark: false },
   {
     title: "VAPT & Security Assessment",
@@ -77,6 +79,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792766201/anni/cybersecurity/Midnight_Cybersecurity_Vulnerability_Analysis.png",
     dark: true },
   {
     title: "Cloud & Infrastructure Security",
@@ -92,6 +95,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792766206/anni/cybersecurity/ANNI_Cloud_Security_Infrastructure.png",
     dark: true },
   {
     title: "Identity, Access & Data Security",
@@ -107,6 +111,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792766211/anni/cybersecurity/ANNI_Holographic_Security_Dashboard.png",
     dark: true },
   {
     title: "Security Monitoring & Incident Readiness",
@@ -122,6 +127,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792766216/anni/cybersecurity/ANNI_Security_Operations_Centre.png",
     dark: false },
   {
     title: "Security for AI & SaaS",
@@ -137,6 +143,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1a2e 0%,#1a2a44 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792766222/anni/cybersecurity/ANNI_Cybersecurity_Shield.png",
     dark: true },
 ];
 
@@ -184,10 +191,13 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
   const imgLeft = s.img === "left";
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
-        <MockImg gradient={s.gradient} dark={s.dark} />
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+        {(s as any).imageUrl
+          ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
+          : <MockImg gradient={s.gradient} dark={s.dark} />
+        }
       </div>
       <div style={{ flex: 1 }}>
         <p style={{ fontSize: "16px", fontWeight: 700, color: "#ef4444", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>{s.subtitle}</p>
@@ -228,7 +238,7 @@ const Cybersecurity = () => {
     <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
       <Navbar />
 
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref} className="hero-outer-wrap">
 
         {/* Hero — dark red/security themed */}
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
@@ -237,7 +247,7 @@ const Cybersecurity = () => {
           <div style={{ position: "absolute", inset: 0, opacity: 0.04, pointerEvents: "none", backgroundImage: "linear-gradient(rgba(239,68,68,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,0.5) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
           <div style={{ position: "absolute", top: "-40px", right: "15%", width: "350px", height: "350px", borderRadius: "50%", background: "radial-gradient(circle, rgba(239,68,68,0.1) 0%, transparent 70%)" }} />
 
-          <div style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
+          <div className="hero-inner-pad" style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
             <p style={{ fontSize: "16px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(239,68,68,0.7)", marginBottom: "20px" }}>CYBERSECURITY & DIGITAL SECURITY</p>
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, letterSpacing: "-0.035em", marginBottom: "20px" }}>
               Secure your digital business
@@ -246,7 +256,7 @@ const Cybersecurity = () => {
             <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.78)", lineHeight: 1.75, marginBottom: "32px", maxWidth: "540px" }}>
               We help businesses protect websites, web applications, APIs, cloud systems and digital data through practical security assessments, vulnerability testing, access controls, monitoring and security improvements.
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
               <a href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#ef4444", color: "#fff", borderRadius: "999px", padding: "11px 22px 11px 11px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#dc2626")} onMouseLeave={e => (e.currentTarget.style.background = "#ef4444")}
               >
@@ -261,14 +271,14 @@ const Cybersecurity = () => {
             </div>
           </div>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }}
+            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }} className="hero-badge"
           >
             <img src={batchImg} alt="Top Cybersecurity Partner" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
           </motion.div>
         </motion.div>
 
         {/* USP */}
-        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }}>
+        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }} className="usp-grid">
           {USP.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={uspInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
               <div style={{ color: "#ef4444", marginBottom: "14px" }}>{item.icon}</div>
@@ -282,7 +292,7 @@ const Cybersecurity = () => {
       <LogoMarquee />
 
       {/* What we secure */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={buildRef}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={buildInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -292,7 +302,7 @@ const Cybersecurity = () => {
               Protect every layer of your digital product.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {WHAT_WE_SECURE.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={buildInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}
@@ -333,7 +343,7 @@ const Cybersecurity = () => {
               A practical security checklist.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {SECURITY_AREAS.map((area, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={areasInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "hsl(0,0%,10%)", borderRadius: "16px", padding: "24px", border: "1px solid hsl(0,0%,15%)" }}
@@ -351,7 +361,7 @@ const Cybersecurity = () => {
       </section>
 
       {/* Process */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={processRef}>
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -361,7 +371,7 @@ const Cybersecurity = () => {
               Assess. Fix. Protect. Monitor.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {PROCESS_STEPS.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.08 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}

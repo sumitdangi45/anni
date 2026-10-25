@@ -163,10 +163,13 @@ const TrackRow = ({ s, i }: { s: typeof TRACKS[0]; i: number }) => {
   const imgLeft = s.img === "left";
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < TRACKS.length - 1 ? "1px solid #f0f0f0" : "none" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < TRACKS.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
-        <MockImg gradient={s.gradient} dark={s.dark} />
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+        {(s as any).imageUrl
+          ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
+          : <MockImg gradient={s.gradient} dark={s.dark} />
+        }
       </div>
       <div style={{ flex: 1 }}>
         <p style={{ fontSize: "12px", fontWeight: 700, color: "#6b7eff", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: "8px" }}>{s.subtitle}</p>
@@ -256,13 +259,13 @@ const Internship = () => {
           </div>
 
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={heroInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }}>
+            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }} className="hero-badge">
             <img src={batchImg} alt="Anni Web Solutions" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
           </motion.div>
         </motion.div>
 
         {/* ── USP grid ── */}
-        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }}>
+        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }} className="usp-grid">
           {USP.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={uspInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
               <div style={{ color: "#6b7eff", marginBottom: "14px" }}>{item.icon}</div>
@@ -274,7 +277,7 @@ const Internship = () => {
       </div>
 
       {/* ── What you get ── */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={benRef}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={benInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -284,7 +287,7 @@ const Internship = () => {
               More than an internship. A career launchpad.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {BENEFITS.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={benInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}
@@ -315,7 +318,7 @@ const Internship = () => {
       </section>
 
       {/* ── Process ── */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={procRef}>
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={procInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -325,7 +328,7 @@ const Internship = () => {
               From application to graduation.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {PROCESS_STEPS.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={procInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.08 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}

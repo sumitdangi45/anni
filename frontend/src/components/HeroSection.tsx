@@ -6,6 +6,7 @@ import heroTeam from "@/assets/hero1.png";
 import aiVideo from "@/assets/makemoneyalways2_ssspin.io_1790702019.mp4";
 import heroVideo from "@/assets/TrimEdit_ssspin.io_1790702904.mp4";
 import batchImg from "@/assets/batch.png";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 20 },
@@ -27,6 +28,7 @@ const LOGOS = [...LOGOS_BASE, ...LOGOS_BASE];
 
 const HeroSection = () => {
   const [contactOpen, setContactOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <>
@@ -69,7 +71,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             className="relative flex flex-col overflow-hidden rounded-2xl hero-left-card"
-            style={{ flex: "1 1 0", minHeight: "640px" }}
+            style={{ flex: "1 1 0", minHeight: isMobile ? "480px" : "640px" }}
           >
             {/* background video */}
             <video
@@ -85,7 +87,7 @@ const HeroSection = () => {
                   "linear-gradient(to top, rgba(247,247,245,0.98) 0%, rgba(247,247,245,0.82) 30%, rgba(247,247,245,0.3) 58%, transparent 100%)" }}
             />
 
-            <div className="relative z-10 flex flex-col h-full hero-left-inner" style={{ padding: "40px 44px 32px" }}>
+            <div className="relative z-10 flex flex-col h-full hero-left-inner" style={{ padding: isMobile ? "24px 20px" : "40px 44px 32px" }}>
 
               {/* ── label ── */}
               <motion.p
@@ -235,6 +237,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* ══════════════ RIGHT CARDS ══════════════ */}
+          {!isMobile && (
           <div className="hero-right-col flex flex-col gap-3" style={{ width: "340px", flexShrink: 0 }}>
 
             {/* Card 1 — AI video */}
@@ -314,6 +317,7 @@ const HeroSection = () => {
             </motion.div>
 
           </div>
+          )}
         </div>
       </section>
 

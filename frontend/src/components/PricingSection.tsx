@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 type Billing = "monthly" | "quarterly" | "yearly";
 
@@ -131,6 +132,7 @@ const PricingSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [billing, setBilling] = useState<Billing>("monthly");
+  const isMobile = useIsMobile();
 
   const plans = PLANS[billing];
 
@@ -218,7 +220,7 @@ const PricingSection = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35 }}
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px", alignItems: "stretch" }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: "16px", alignItems: "stretch" }}
             className="pricing-grid"
           >
             {plans.map((plan) => (

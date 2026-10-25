@@ -50,6 +50,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0dfff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823241/anni/ai-automation/ANNI_Assistant_Chat_Widget.png",
     dark: false },
   {
     title: "WhatsApp Business Automation",
@@ -65,6 +66,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0a1a0a 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823245/anni/ai-automation/WhatsApp_Booking_Automation_Workflow.png",
     dark: true },
   {
     title: "AI Voice Agents",
@@ -80,6 +82,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823249/anni/ai-automation/ANNI_Voice_AI__Intelligent_Calls.png",
     dark: true },
   {
     title: "AI Workflow & Business Automation",
@@ -95,6 +98,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823253/anni/ai-automation/Neon_ANNI_Automation_Workflow_Dashboard.png",
     dark: false },
   {
     title: "AI Lead Generation & Sales Automation",
@@ -110,6 +114,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823256/anni/ai-automation/AI_Lead_Generation_Dashboard.png",
     dark: true },
   {
     title: "RAG & Business Knowledge AI",
@@ -125,6 +130,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823260/anni/ai-automation/Mint_Knowledge_AI_Dashboard.png",
     dark: false },
   {
     title: "AI Document & Data Automation",
@@ -140,6 +146,7 @@ const SERVICES = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823263/anni/ai-automation/Futuristic_Document_Intelligence_Dashboard.png",
     dark: true },
   {
     title: "AI Agents & Multi-Agent Systems",
@@ -155,6 +162,7 @@ const SERVICES = [
     ],
     img: "right",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792823266/anni/ai-automation/ANNI_AI_Multi-Agent_Network.png",
     dark: true },
 ];
 
@@ -245,10 +253,13 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
   const imgLeft = s.img === "left";
   return (
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
-      style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
+      className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
-        <MockImg gradient={s.gradient} dark={s.dark} />
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+        {(s as any).imageUrl
+          ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
+          : <MockImg gradient={s.gradient} dark={s.dark} />
+        }
       </div>
       <div style={{ flex: 1 }}>
         <p style={{ fontSize: "16px", fontWeight: 700, color: "#4ade80", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>{s.subtitle}</p>
@@ -292,7 +303,7 @@ const AIAgents = () => {
     <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
       <Navbar />
 
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "100px 20px 0" }} ref={ref} className="hero-outer-wrap">
 
         {/* Hero — dark green themed */}
         <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
@@ -301,7 +312,7 @@ const AIAgents = () => {
           <div style={{ position: "absolute", inset: 0, opacity: 0.05, pointerEvents: "none", backgroundImage: "linear-gradient(rgba(74,222,128,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(74,222,128,0.5) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
           <div style={{ position: "absolute", top: "-40px", right: "15%", width: "350px", height: "350px", borderRadius: "50%", background: "radial-gradient(circle, rgba(74,222,128,0.12) 0%, transparent 70%)" }} />
 
-          <div style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
+          <div className="hero-inner-pad" style={{ position: "relative", zIndex: 2, padding: "52px 56px", maxWidth: "700px" }}>
             <p style={{ fontSize: "16px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(74,222,128,0.7)", marginBottom: "20px" }}>AI AGENTS & AUTOMATION</p>
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, letterSpacing: "-0.035em", marginBottom: "20px" }}>
               Automate the work.
@@ -310,7 +321,7 @@ const AIAgents = () => {
             <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.78)", lineHeight: 1.75, marginBottom: "32px", maxWidth: "540px" }}>
               We build AI agents and intelligent automation systems that handle repetitive tasks, communicate with customers, connect your business tools and execute complete workflows — helping your team save time and focus on higher-value work.
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
               <a href="/contact"
                 style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#4ade80", color: "#111", borderRadius: "999px", padding: "11px 22px 11px 11px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#22c55e")} onMouseLeave={e => (e.currentTarget.style.background = "#4ade80")}
@@ -330,14 +341,14 @@ const AIAgents = () => {
           </div>
 
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
-            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }}
+            style={{ position: "absolute", bottom: "24px", right: "24px", zIndex: 10 }} className="hero-badge"
           >
             <img src={batchImg} alt="Top AI Automation Partner" style={{ width: "100px", height: "100px", objectFit: "contain" }} />
           </motion.div>
         </motion.div>
 
         {/* USP */}
-        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }}>
+        <div ref={uspRef} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", padding: "64px 0 80px" }} className="usp-grid">
           {USP.map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={uspInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.1 }}>
               <div style={{ color: "#4ade80", marginBottom: "14px" }}>{item.icon}</div>
@@ -352,7 +363,7 @@ const AIAgents = () => {
       <SelectedWorkSection label="SELECTED AI AUTOMATION WORK" heading="AI workflows built to save time and drive business outcomes." />
 
       {/* What we automate */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={automateRef}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={automateInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -362,7 +373,7 @@ const AIAgents = () => {
               From customer conversations to internal operations.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px" }}>
+          <div className="quad-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px" }}>
             {AUTOMATE.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={automateInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.06 }}
                 style={{ background: "#fff", borderRadius: "14px", padding: "22px", border: "1px solid #ebebeb" }}
@@ -392,7 +403,7 @@ const AIAgents = () => {
       </section>
 
       {/* Use cases */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={useCaseRef}>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={useCaseInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -402,7 +413,7 @@ const AIAgents = () => {
               Where automation creates real business value.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {USE_CASES.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={useCaseInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}
@@ -426,7 +437,7 @@ const AIAgents = () => {
               We automate the workflow, not just add an AI model.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {PROCESS.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={processInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.08 }}
                 style={{ background: "hsl(0,0%,10%)", borderRadius: "16px", padding: "28px 24px", border: "1px solid hsl(0,0%,15%)" }}
@@ -441,7 +452,7 @@ const AIAgents = () => {
       </section>
 
       {/* AI Safety */}
-      <section style={{ background: "#f8f8f8", padding: "80px 20px" }}>
+      <section className="service-section" style={{ background: "#f8f8f8", padding: "80px 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }} ref={safetyRef}>
           <div style={{ textAlign: "center", marginBottom: "52px" }}>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={safetyInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
@@ -451,7 +462,7 @@ const AIAgents = () => {
               Automation should be powerful — but controlled.
             </motion.h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+          <div className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
             {SAFETY.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={safetyInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.45, delay: i * 0.07 }}
                 style={{ background: "#fff", borderRadius: "16px", padding: "28px 24px", border: "1px solid #ebebeb" }}
@@ -477,7 +488,7 @@ const AIAgents = () => {
             </motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={pricingInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.2 }}
-            style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}
+            className="triple-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}
           >
             {PRICING.map((plan, i) => (
               <div key={i} style={{

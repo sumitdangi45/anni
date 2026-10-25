@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
       <Navbar />
 
       {/* Hero */}
-      <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "140px 20px 60px" }}>
+      <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "100px 20px 40px" }}>
         <p style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "20px" }}>
           Legal
         </p>
@@ -81,10 +81,10 @@ const PrivacyPolicy = () => {
       </section>
 
       {/* Body */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px 120px", display: "grid", gridTemplateColumns: "220px 1fr", gap: "80px", alignItems: "start" }}>
+      <div className="legal-body-grid" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px 120px", display: "grid", gridTemplateColumns: "220px 1fr", gap: "80px", alignItems: "start" }}>
 
         {/* TOC sidebar */}
-        <div style={{ position: "sticky", top: "120px" }}>
+        <div className="legal-sidebar" style={{ position: "sticky", top: "120px" }}>
           <p style={{ fontSize: "16px", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted-foreground)", marginBottom: "16px" }}>
             Contents
           </p>

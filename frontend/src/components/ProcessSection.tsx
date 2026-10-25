@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Clock, RotateCcw, CheckCircle2 } from "lucide-react";
 import heroVideo from "@/assets/dd/freakytank_ssspin.io_1790748931.mp4";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 // ── Card 1 — Start a Project ─────────────────────────────────
 const Card1 = () => (
@@ -117,6 +118,7 @@ const Card3 = () => (
 const ProcessSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const isMobile = useIsMobile();
 
   return (
     <section style={{ background: "hsl(0,0%,6%)", padding: "100px 20px" }}>
@@ -151,7 +153,7 @@ const ProcessSection = () => {
         {/* 3 Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.25 }}
-          style={{ display: "flex", gap: "16px", alignItems: "stretch" }}
+          style={{ display: "flex", gap: "16px", alignItems: "stretch", flexDirection: isMobile ? "column" : "row" }}
           className="process-cards"
         >
           <Card1 />
