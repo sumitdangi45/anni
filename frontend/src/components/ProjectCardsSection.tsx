@@ -3,12 +3,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import FillButton from "@/components/FillButton";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
-import pv1 from "@/assets/cards_img/linkedin-video (1).mp4";
-import pv2 from "@/assets/cards_img/Screen Recording 2026-10-26 113144.mp4";
-import pv3 from "@/assets/cards_img/Screen Recording 2026-10-26 113639.mp4";
-import pv4 from "@/assets/cards_img/Screen Recording 2026-10-26 113859.mp4";
-import pv5 from "@/assets/cards_img/Screen Recording 2026-10-26 114710.mp4";
-import pv6 from "@/assets/cards_img/Video Project.mp4";
+const pv1 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643202/anni/videos/projects/pv1.mp4";
+const pv2 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643268/anni/videos/projects/pv2.mp4";
+const pv3 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643327/anni/videos/projects/pv3.mp4";
+const pv4 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793644702/anni/videos/projects/pv4.mp4";
+const pv5 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643327/anni/videos/projects/pv3.mp4"; // pv5 reuses pv3 (too large for free plan)
+const pv6 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643513/anni/videos/projects/pv6.mp4";
 
 interface Project {
   id: string;

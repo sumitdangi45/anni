@@ -1,6 +1,6 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { ArrowRight, Phone } from "lucide-react";
-import ctaVideo from "@/assets/hyperpixels9434_ssspin.io_1791462468.mp4";
+const ctaVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643077/anni/videos/cta_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 

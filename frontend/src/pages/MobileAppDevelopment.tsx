@@ -1,5 +1,5 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import whiteVideo from "@/assets/white animated.mp4";
+const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Smartphone, ShoppingCart, MapPin, Users, Radio, Cpu, Lock, Bell, Map, Sparkles, Layers, Shield, Zap } from "lucide-react";

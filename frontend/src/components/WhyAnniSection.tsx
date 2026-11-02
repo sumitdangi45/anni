@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Globe, CheckCircle } from "lucide-react";
-import blueVideo from "@/assets/dd/dariiakosova_ssspin.io_1791305497.mp4";
+const blueVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643112/anni/videos/why_blue_video.mp4";
 import founderImg from "@/assets/cards_img/Contemplative Monochrome Portrait.png";
-import techVideo from "@/assets/cards_img/Animate_futuristic_technology_video_1080p_20261026120421.mp4";
+const techVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643117/anni/videos/tech_video.mp4";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const WhyAnniSection = () => {

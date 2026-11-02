@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
-import heroVideo from "@/assets/hero2.mp4";
+const heroVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643089/anni/videos/services_hero_video.mp4";
 
 const SERVICES = [
   {

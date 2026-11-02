@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
-import v1 from "@/assets/cards_img/Untitled_Scene_10-08_04_27_27_20261025193105.mp4";
-import v2 from "@/assets/cards_img/Untitled_Scene_10-25_14_06_59_20261025194136.mp4";
-import v3 from "@/assets/cards_img/Untitled_Scene_10-25_15_33_12_20261025211315.mp4";
-import v4 from "@/assets/cards_img/Untitled_Scene_10-26_03_00_14_20261026083439.mp4";
-import v5 from "@/assets/cards_img/Untitled_Scene_10-26_03_26_47_20261026090049.mp4";
+const v1 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793647421/anni/videos/social/sp_v1.mp4";
+const v2 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793647449/anni/videos/social/sp_v2.mp4";
+const v3 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793647478/anni/videos/social/sp_v3.mp4";
+const v4 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793647507/anni/videos/social/sp_v4.mp4";
+const v5 = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793647540/anni/videos/social/sp_v5.mp4";
 
 const CARDS = [
   { video: v1, label: "WEB DEVELOPMENT",  title: "Build Your\nDigital\nPresence",  sub: "Custom websites & web apps",   accent: "#6b7eff" },

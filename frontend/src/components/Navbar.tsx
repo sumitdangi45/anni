@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import ContactModal from "./ContactModal";
 import logoImg from "@/assets/logow.png";
 import logoBlack from "@/assets/Anni Web Solutions Logo.png";
-import faalVideo from "@/assets/faal_ssspin.io_1791295537.mp4";
+const faalVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643084/anni/videos/nav_faal_video.mp4";
 
 // ── CTA hover fill animation ───────────────────────────────────
 const CTA_STYLE = `

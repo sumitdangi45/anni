@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Clock, RotateCcw, CheckCircle2 } from "lucide-react";
-import heroVideo from "@/assets/dd/freakytank_ssspin.io_1790748931.mp4";
+const heroVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643107/anni/videos/process_video.mp4";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 // ── Card 1 — Start a Project ─────────────────────────────────

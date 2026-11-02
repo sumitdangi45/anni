@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroTeam from "@/assets/hero1.png";
-import aiVideo from "@/assets/makemoneyalways2_ssspin.io_1790702019.mp4";
-import heroVideo from "@/assets/TrimEdit_ssspin.io_1790702904.mp4";
 import batchImg from "@/assets/batch.png";
 import { useIsMobile } from "@/hooks/useIsMobile";
+
+const aiVideo   = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643075/anni/videos/ai_video.mp4";
+const heroVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643073/anni/videos/hero_video.mp4";
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 20 },
