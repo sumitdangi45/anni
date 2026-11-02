@@ -61,8 +61,8 @@ const Row = ({ service, isOpen, onToggle }: {
     <div style={{ borderBottom: "1px solid #e8e8e8" }}>
       <button
         onClick={onToggle}
-        className="w-full flex items-center text-left"
         style={{ padding: "44px 0", background: "transparent", border: "none", cursor: "pointer", gap: "48px" }}
+        className="w-full flex items-center text-left services-accordion-btn"
       >
         {/* number */}
         <span style={{ fontSize: "16px", fontWeight: 500, color: "#6b7eff", width: "36px", flexShrink: 0 }}>
@@ -104,7 +104,7 @@ const Row = ({ service, isOpen, onToggle }: {
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
             style={{ overflow: "hidden" }}
           >
-            <div style={{ paddingBottom: "32px", paddingLeft: "60px" }}>
+            <div className="services-accordion-content" style={{ paddingBottom: "32px", paddingLeft: "60px" }}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "16px" }}>
                 {service.tags.map(tag => (
                   <span key={tag} style={{
@@ -129,7 +129,7 @@ const Row = ({ service, isOpen, onToggle }: {
 
 // ── Main section ──────────────────────────────────────────────
 const ServicesSection = () => {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 

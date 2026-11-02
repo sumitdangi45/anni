@@ -181,6 +181,7 @@ const PricingSection = () => {
             display: "inline-flex", alignItems: "center",
             background: "#f5f5f5", borderRadius: "999px",
             padding: "5px", gap: "2px", marginBottom: "40px" }}
+          className="pricing-billing-toggle"
         >
           {([
             { key: "monthly", label: "Monthly" },

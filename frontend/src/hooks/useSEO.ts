@@ -4,36 +4,65 @@ interface SEOProps {
   title: string;
   description?: string;
   ogImage?: string;
+  canonical?: string;
 }
 
-const BASE = "Sumit Dangi";
+const SITE_NAME = "Anni Web Solutions Pvt. Ltd.";
+const BASE_URL  = "https://anniwebsolutions.com";
+const OG_IMAGE  = `${BASE_URL}/og-image.png`;
 
-export function useSEO({ title, description, ogImage }: SEOProps) {
+export function useSEO({ title, description, ogImage, canonical }: SEOProps) {
   useEffect(() => {
-    document.title = `${title} | ${BASE}`;
+    const fullTitle = `${title} | ${SITE_NAME}`;
+    document.title = fullTitle;
 
     const setMeta = (selector: string, content: string) => {
       let el = document.querySelector(selector) as HTMLMetaElement | null;
       if (!el) {
         el = document.createElement("meta");
-        const attr = selector.includes("[name") ? "name" : "property";
-        const val = selector.match(/["']([^"']+)["']/)?.[1] ?? "";
+        const isProperty = selector.includes("[property");
+        const attr = isProperty ? "property" : "name";
+        const val  = selector.match(/["']([^"']+)["']/)?.[1] ?? "";
         el.setAttribute(attr, val);
         document.head.appendChild(el);
       }
       el.setAttribute("content", content);
     };
 
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!el) {
+        el = document.createElement("link");
+        el.setAttribute("rel", rel);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("href", href);
+    };
+
+    // Title tags
+    setMeta('meta[property="og:title"]',    fullTitle);
+    setMeta('meta[name="twitter:title"]',   fullTitle);
+
+    // Description
     if (description) {
-      setMeta('meta[name="description"]', description);
-      setMeta('meta[property="og:description"]', description);
-      setMeta('meta[name="twitter:description"]', description);
+      setMeta('meta[name="description"]',          description);
+      setMeta('meta[property="og:description"]',   description);
+      setMeta('meta[name="twitter:description"]',  description);
     }
-    setMeta('meta[property="og:title"]', `${title} | ${BASE}`);
-    setMeta('meta[name="twitter:title"]', `${title} | ${BASE}`);
-    if (ogImage) {
-      setMeta('meta[property="og:image"]', ogImage);
-      setMeta('meta[name="twitter:image"]', ogImage);
+
+    // OG image
+    const img = ogImage || OG_IMAGE;
+    setMeta('meta[property="og:image"]',   img);
+    setMeta('meta[name="twitter:image"]',  img);
+
+    // Canonical
+    if (canonical) {
+      setLink("canonical", canonical);
     }
-  }, [title, description, ogImage]);
+
+    // OG URL
+    if (canonical) {
+      setMeta('meta[property="og:url"]', canonical);
+    }
+  }, [title, description, ogImage, canonical]);
 }

@@ -111,8 +111,7 @@ const SERVICES_COLS = [
 // ── Simple dropdown items ──────────────────────────────────────
 const WORK_ITEMS = [
   { label: "Prebuilt Solutions", to: "/work/prebuilt", desc: "Ready-to-launch products" },
-  { label: "Custom Projects", to: "/work/custom", desc: "Tailored from scratch" },
-  { label: "Case Studies", to: "/projects", desc: "Our highlighted work" },
+  { label: "Custom Projects",    to: "/work/custom",   desc: "Tailored from scratch" },
 ];
 
 const COMPANY_ITEMS = [

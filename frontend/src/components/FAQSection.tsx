@@ -13,7 +13,7 @@ const FAQS = [
   { q: "What technologies do you use?",                      a: "We work with React, Next.js, Node.js, Python, React Native, Flutter, MongoDB, PostgreSQL, AWS, and more. For AI, we use OpenAI, LangChain, TensorFlow, and other modern ML frameworks." },
   { q: "Do you offer post-launch support?",                  a: "Yes. All projects include 30 days of free post-launch support. We also offer ongoing maintenance and support packages if you need continued assistance after launch." },
   { q: "Can you sign an NDA?",                               a: "Yes. We are happy to sign a Non-Disclosure Agreement before any project discussions. Your ideas and business information are always kept confidential." },
-  { q: "How do we get started?",                             a: "Simply reach out via our Contact page or email us at contact@anniwebsolutions.com. We'll schedule a free discovery call to understand your needs and provide a project proposal." },
+  { q: "How do we get started?",                             a: "Simply reach out via our Contact page or email us at anniwebsolution@gmail.com. We'll schedule a free discovery call to understand your needs and provide a project proposal." },
 ];
 
 // ── Row ───────────────────────────────────────────────────────
@@ -89,11 +89,11 @@ const FAQSection = ({ faqs, title, subtitle }: { faqs?: { q: string; a: string }
                   </span>
                   <span style={{ fontSize:"13px", color:"#555" }}>@anniwebsolutions</span>
                 </a>
-                <a href="mailto:contact@anniwebsolutions.com" style={{ display:"flex", alignItems:"center", gap:"8px", textDecoration:"none" }}>
+                <a href="mailto:anniwebsolution@gmail.com" style={{ display:"flex", alignItems:"center", gap:"8px", textDecoration:"none" }}>
                   <span style={{ width:"26px", height:"26px", borderRadius:"6px", background:"#e8e8e8", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                   </span>
-                  <span style={{ fontSize:"13px", color:"#555" }}>contact@anniwebsolutions.com</span>
+                  <span style={{ fontSize:"13px", color:"#555" }}>anniwebsolution@gmail.com</span>
                 </a>
               </div>
             </motion.div>

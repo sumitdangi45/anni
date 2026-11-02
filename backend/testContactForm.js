@@ -17,7 +17,7 @@ console.log("Data:", contactData);
 resend.emails
   .send({
     from: "onboarding@resend.dev",
-    to: process.env.CONTACT_RECEIVER || "sumitdangi8455@gmail.com",
+    to: process.env.CONTACT_RECEIVER || "anniwebsolution@gmail.com",
     subject: `New Contact: ${contactData.name} — ${contactData.service || "General"}`,
     html: `<h2>New Contact</h2>
            <p><b>Name:</b> ${contactData.name}</p>

@@ -171,6 +171,7 @@ const APPS = [
     ],
     best: "Schools · Private Institutions · School Groups · Educational Organizations",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0d8ff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982110/anni/prebuilt-business/9451233a-623c-4292-a1ff-ce2f29f6cd0d.png",
     dark: false },
   {
     id: "a2",
@@ -186,6 +187,7 @@ const APPS = [
     ],
     best: "Colleges · Universities · HODs · Academic Departments",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982113/anni/prebuilt-business/AI-Powered_Student_Performance_Dashboard_1.png",
     dark: true },
   {
     id: "a3",
@@ -201,6 +203,7 @@ const APPS = [
     ],
     best: "Schools · Colleges · Coaching Institutes · Training Centers · Organizations",
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982116/anni/prebuilt-business/AI_Attendance_Dashboard_Interface.png",
     dark: false },
   {
     id: "a4",
@@ -216,6 +219,7 @@ const APPS = [
     ],
     best: "AgriTech Startups · FPOs · Agriculture Businesses · Rural Platforms",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982119/anni/prebuilt-business/KisanSathi_AI_Farming_Hero_Banner.png",
     dark: true },
   {
     id: "a5",
@@ -231,6 +235,7 @@ const APPS = [
     ],
     best: "Grocery Stores · Supermarkets · Hyperlocal Businesses · Quick-Commerce Startups",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982122/anni/prebuilt-business/FreshCart__Groceries_at_Your_Doorstep.png",
     dark: false },
   {
     id: "a6",
@@ -246,6 +251,7 @@ const APPS = [
     ],
     best: "Food Delivery Startups · Restaurant Networks · Cloud Kitchens · QSR Businesses",
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982124/anni/prebuilt-business/FoodHub_Restaurant_Ordering_App_Mockup.png",
     dark: true },
   {
     id: "a7",
@@ -261,6 +267,7 @@ const APPS = [
     ],
     best: "Marketplace Startups · D2C Aggregators · Multi-Seller Businesses · Niche Marketplaces",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982127/anni/prebuilt-business/ShopKart_Mega_Deals_App_Mockup.png",
     dark: true },
   {
     id: "a8",
@@ -276,6 +283,7 @@ const APPS = [
     ],
     best: "Home Services · Repair · Cleaning · Beauty · Wellness · Local Service Businesses",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982129/anni/prebuilt-business/On-Demand_Home_Services_App_UI.png",
     dark: false },
   {
     id: "a9",
@@ -291,6 +299,7 @@ const APPS = [
     ],
     best: "Clinics · Doctors · Dental Clinics · Diagnostic Centers · Healthcare Groups",
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792982131/anni/prebuilt-business/MediCare_Healthcare_App_Interface.png",
     dark: false },
   {
     id: "a10",
@@ -325,6 +334,7 @@ const AI_PRODUCTS = [
     ],
     best: "AgriTech Startups · FPOs · Agriculture Businesses · Rural Platforms",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984917/anni/prebuilt-ai/KisanSathi_Smart_Farming_Dashboard.png",
     dark: true },
   {
     id: "ai2",
@@ -340,6 +350,7 @@ const AI_PRODUCTS = [
     ],
     best: "Schools · Colleges · Coaching Institutes · Training Centers · Organizations",
     gradient: "linear-gradient(135deg,#e8f0ff 0%,#d0d8ff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984921/anni/prebuilt-ai/AI_Attendance_Dashboard_Interface.png",
     dark: false },
   {
     id: "ai3",
@@ -355,6 +366,7 @@ const AI_PRODUCTS = [
     ],
     best: "Colleges · Universities · HODs · Academic Departments",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984925/anni/prebuilt-ai/AI-Powered_Student_Performance_Dashboard_1.png",
     dark: true },
   {
     id: "ai4",
@@ -370,6 +382,7 @@ const AI_PRODUCTS = [
     ],
     best: "SMEs · Service Businesses · SaaS Companies · Support Teams",
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984930/anni/prebuilt-ai/Anni_AI_Knowledge_Base_Dashboard.png",
     dark: false },
   {
     id: "ai5",
@@ -385,6 +398,7 @@ const AI_PRODUCTS = [
     ],
     best: "Finance Teams · SMEs · Healthcare · Logistics · Operations · Back Offices",
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984935/anni/prebuilt-ai/Anni_AI_Invoice_Extraction_Dashboard.png",
     dark: false },
   {
     id: "ai6",
@@ -400,6 +414,7 @@ const AI_PRODUCTS = [
     ],
     best: "Companies · SaaS Businesses · Educational Institutions · Professional Services",
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984940/anni/prebuilt-ai/Anni_AI_Neon_Knowledge_Dashboard.png",
     dark: true },
   {
     id: "ai7",
@@ -415,6 +430,7 @@ const AI_PRODUCTS = [
     ],
     best: "Agencies · Real Estate · SaaS · Education · Service Businesses · B2B Companies",
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984944/anni/prebuilt-ai/Anni_AI_Lead_Intelligence_Dashboard.png",
     dark: false },
   {
     id: "ai8",
@@ -430,6 +446,7 @@ const AI_PRODUCTS = [
     ],
     best: "SMEs · SaaS Businesses · Operations Teams · Customer Support · Sales Teams",
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792984949/anni/prebuilt-ai/Anni_AI_Sales_Automation_Dashboard.png",
     dark: true },
 ];
 
@@ -466,15 +483,15 @@ const ProductCard = ({
       className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: "1px solid #f0f0f0" }}
     >
       {/* Image */}
-      <div style={{ flex: "0 0 45%", borderRadius: "18px", overflow: "hidden", border: "1px solid #e8e8e8", boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}>
+      <div className="prebuilt-img-card" style={{ flex: "0 0 45%", borderRadius: "18px", overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}>
         {(product as any).imageUrl
-          ? <img src={(product as any).imageUrl} alt={product.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "300px" }} />
+          ? <img src={(product as any).imageUrl} alt={product.title} style={{ width: "100%", display: "block", minHeight: "300px", maxHeight: "380px", objectFit: "scale-down", background: product.gradient }} />
           : <MockImg gradient={product.gradient} dark={product.dark} />
         }
       </div>
 
       {/* Content */}
-      <div style={{ flex: 1 }}>
+      <div className="service-row-text" style={{ flex: 1 }}>
         {/* number */}
         <p style={{ fontSize: "16px", fontWeight: 700, color: "#aaa", letterSpacing: "0.14em", marginBottom: "8px" }}>
           {String(index + 1).padStart(2, "0")}
@@ -512,7 +529,7 @@ const ProductCard = ({
             </span>
             Get This Product
           </a>
-          <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
             style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#f5f5f5", color: "#111", borderRadius: "999px", padding: "10px 18px", fontSize: "16px", fontWeight: 600, textDecoration: "none" }}
             onMouseEnter={e => (e.currentTarget.style.background = "#ebebeb")} onMouseLeave={e => (e.currentTarget.style.background = "#f5f5f5")}
           >
@@ -559,22 +576,25 @@ const PrebuiltSolutions = () => {
           </p>
         </motion.div>
 
-        {/* ── Tab filter — exact TexWeb style ── */}
+        {/* ── Tab filter ── */}
         <motion.div initial={{ opacity: 0, y: 14 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 }}
-          style={{ display: "inline-flex", alignItems: "center", background: "#f5f5f5", borderRadius: "999px", padding: "5px", gap: "4px", marginBottom: "64px" }}
+          style={{ marginBottom: "48px", overflowX: "auto", WebkitOverflowScrolling: "touch" as any }}
         >
+          <div style={{ display: "inline-flex", alignItems: "center", background: "#f5f5f5", borderRadius: "999px", padding: "5px", gap: "4px", whiteSpace: "nowrap" }}>
           {(["websites", "apps", "ai"] as Tab[]).map(t => (
             <button key={t} onClick={() => setTab(t)}
               style={{
-                padding: "10px 22px", borderRadius: "999px", border: "none", cursor: "pointer",
-                fontSize: "16px", fontWeight: 600, transition: "all 0.2s",
+                padding: "10px 18px", borderRadius: "999px", border: "none", cursor: "pointer",
+                fontSize: "14px", fontWeight: 600, transition: "all 0.2s",
                 background: tab === t ? "#111" : "transparent",
                 color: tab === t ? "#fff" : "#777",
-                boxShadow: tab === t ? "0 2px 8px rgba(0,0,0,0.15)" : "none" }}
+                boxShadow: tab === t ? "0 2px 8px rgba(0,0,0,0.15)" : "none",
+                whiteSpace: "nowrap" }}
             >
               {t === "websites" ? "Pre-Built Websites" : t === "apps" ? "Business Applications" : "AI Products"}
             </button>
           ))}
+          </div>
         </motion.div>
 
         {/* ── Section heading ── */}
@@ -624,7 +644,7 @@ const PrebuiltSolutions = () => {
               </span>
               Build Custom Solution
             </a>
-            <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "999px", padding: "12px 24px", fontSize: "16px", fontWeight: 700, textDecoration: "none", border: "1px solid rgba(255,255,255,0.2)" }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")} onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
             >

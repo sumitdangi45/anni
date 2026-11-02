@@ -123,7 +123,62 @@ const Story = () => (
   </section>
 );
 
-// ── Mission + What We Do ──────────────────────────────────────
+// ── Team Photos (beew.studio style) ─────────────────────────
+const TeamPhotos = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  return (
+    <section style={{ padding: "0 20px 80px", background: "#f3f4f6" }} ref={ref}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: "16px", alignItems: "stretch" }}
+          className="team-photos-grid"
+        >
+          {/* Large photo — left */}
+          <div style={{ borderRadius: "20px", overflow: "hidden", position: "relative", minHeight: "420px" }}>
+            <img
+              src="https://res.cloudinary.com/w3bsruq6/image/upload/v1793517012/anni/team/team_meetup_1.jpg"
+              alt="Anni Web Solutions team meetup"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
+            {/* subtle overlay */}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 50%)" }} />
+            <div style={{ position: "absolute", bottom: "20px", left: "20px" }}>
+              <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)", background: "rgba(0,0,0,0.35)", backdropFilter: "blur(8px)", padding: "5px 12px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.2)" }}>
+                Team Meetup
+              </span>
+            </div>
+          </div>
+
+          {/* Right column — photo + tagline */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            {/* Small photo */}
+            <div style={{ borderRadius: "20px", overflow: "hidden", flex: "1", minHeight: "260px" }}>
+              <img
+                src="https://res.cloudinary.com/w3bsruq6/image/upload/v1793517016/anni/team/team_meetup_2.jpg"
+                alt="Anni Web Solutions team"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </div>
+
+            {/* Tagline card */}
+            <div style={{ background: "#111", borderRadius: "20px", padding: "28px 24px", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "120px" }}>
+              <p style={{ fontSize: "clamp(1rem, 1.8vw, 1.2rem)", fontWeight: 700, color: "#fff", lineHeight: 1.45, letterSpacing: "-0.02em" }}>
+                Real people. Real projects.<br />Real results.
+              </p>
+              <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)", marginTop: "12px" }}>
+                Anni Web Solutions — Bhopal & Sehore, India
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 const MissionSection = () => (
   <section style={{ padding: "100px 20px" }}>
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -251,7 +306,7 @@ const FounderSection = () => (
           </p>
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/917974135629"
+              href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#f0f0f0", color: "#111", border: "1px solid #ddd", borderRadius: "999px", padding: "10px 20px", fontSize: "16px", fontWeight: 600, textDecoration: "none" }}
@@ -259,7 +314,7 @@ const FounderSection = () => (
               Chat on WhatsApp
             </a>
             <a
-              href="mailto:contact@anniwebsolutions.com"
+              href="mailto:anniwebsolution@gmail.com"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#111", color: "#fff", borderRadius: "999px", padding: "10px 20px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }} className="btn-fill btn-fill-dark"
             >
               <ArrowRight size={13} />
@@ -303,6 +358,7 @@ const About = () => {
       <Navbar />
       <Hero />
       <Story />
+      <TeamPhotos />
       <MissionSection />
       <TimelineSection />
       <ValuesSection />

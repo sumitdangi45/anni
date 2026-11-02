@@ -24,62 +24,8 @@ const CUSTOM_FAQ = [
 // ── EDUCATION ─────────────────────────────────────────────────
 const EDUCATION = [
   {
-    id: "e1",
-    num: "01",
-    title: "Sarvadnya Vidyapeeth",
-    subtitle: "College Admission & Education Portal",
-    tag: "EDUCATION · WEB DEVELOPMENT",
-    status: "live" as const,
-    liveUrl: "https://sarvadnyavidyapeeth.in",
-    points: [
-      "Structured BCA, BBA and skill-based program pages with clear course information.",
-      "Admission-focused experience with enquiry flows and student-facing information.",
-      "Department, faculty, campus and infrastructure sections for institutional discovery.",
-      "NIRF/NAAC and institutional highlights to communicate credibility.",
-      "Interactive campus galleries and responsive mobile-first experience.",
-      "Direct WhatsApp support and enquiry CTAs for prospective students.",
-    ],
-    gradient: "linear-gradient(135deg,#e8f0ff 0%,#c8d8ff 100%)",
-    dark: false },
-  {
-    id: "e2",
-    num: "02",
-    title: "Ruchi Upadhyay Classes",
-    subtitle: "EdTech & Competitive Learning Platform",
-    tag: "EDUCATION · EDTECH",
-    status: "live" as const,
-    liveUrl: "https://ruchiupadhyayclasses.in",
-    points: [
-      "Dedicated learning experience for Classes 9–12 and competitive exam preparation.",
-      "Course and subject-focused content organization.",
-      "Study resources, revision material and practice-oriented learning.",
-      "Student-focused course access and learning workflows.",
-      "Digital engagement designed for board and competitive examination students.",
-      "Scalable foundation for future tests, analytics and student dashboards.",
-    ],
-    gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
-    dark: false },
-  {
-    id: "e3",
-    num: "03",
-    title: "Team 360",
-    subtitle: "Spiritual Learning & Mentorship Platform",
-    tag: "EDUCATION · MENTORSHIP",
-    status: "live" as const,
-    liveUrl: "https://devendraduttsharma.com",
-    points: [
-      "Structured presentation of mentorship and spiritual development programs.",
-      "Live and recorded learning content.",
-      "Digital book and resource library.",
-      "Workshop and program registration workflows.",
-      "Online booking and enquiry experience.",
-      "Scalable platform structure for future courses and member experiences.",
-    ],
-    gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true },
-  {
     id: "e4",
-    num: "04",
+    num: "01",
     title: "School Management Platform",
     subtitle: "Connected School Operations",
     tag: "EDUCATION · APPLICATION",
@@ -93,10 +39,11 @@ const EDUCATION = [
       "Reports and centralized institutional data.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992111/anni/custom/education/9451233a-623c-4292-a1ff-ce2f29f6cd0d.png",
     dark: true },
   {
     id: "e5",
-    num: "05",
+    num: "02",
     title: "AI Student Performance Platform",
     subtitle: "Academic Intelligence & Performance Prediction",
     tag: "EDUCATION · AI / ML",
@@ -110,10 +57,11 @@ const EDUCATION = [
       "Data-driven intervention insights.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992114/anni/custom/education/AI-Powered_Student_Performance_Dashboard_1.png",
     dark: true },
   {
     id: "e6",
-    num: "06",
+    num: "03",
     title: "AI Attendance Platform",
     subtitle: "Computer Vision Attendance System",
     tag: "EDUCATION · AI / COMPUTER VISION",
@@ -127,10 +75,11 @@ const EDUCATION = [
       "Integration-ready data architecture.",
     ],
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992117/anni/custom/education/AI_Attendance_Dashboard_Interface.png",
     dark: false },
   {
     id: "e7",
-    num: "07",
+    num: "04",
     title: "Learning Management System",
     subtitle: "Your Own Digital Learning Platform",
     tag: "EDUCATION · LMS",
@@ -144,10 +93,11 @@ const EDUCATION = [
       "Instructor and admin dashboards.",
     ],
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#bbf7d0 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992121/anni/custom/education/Anni_LMS_Course_Dashboard.png",
     dark: false },
   {
     id: "e8",
-    num: "08",
+    num: "05",
     title: "Coaching Institute Management",
     subtitle: "Run Your Coaching Business Digitally",
     tag: "EDUCATION · APPLICATION",
@@ -161,32 +111,15 @@ const EDUCATION = [
       "Student performance dashboards.",
     ],
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992124/anni/custom/education/Anni_CoachSphere_Neon_Coaching_Dashboard.png",
     dark: false },
 ];
 
 // ── BUSINESS ──────────────────────────────────────────────────
 const BUSINESS = [
   {
-    id: "b1",
-    num: "01",
-    title: "Trend Kro Media",
-    subtitle: "Digital Growth & Branding Platform",
-    tag: "BUSINESS · BRANDING · WEB",
-    status: "live" as const,
-    liveUrl: "https://trendkromedia.com",
-    points: [
-      "Service-focused digital presence for multiple business offerings.",
-      "Personal branding and media positioning sections.",
-      "TEDx, podcast and media opportunity presentation.",
-      "Case-study and success-story sections.",
-      "Strategy-call and lead-generation journey.",
-      "Dark editorial interface designed around the brand identity.",
-    ],
-    gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
-    dark: true },
-  {
     id: "b2",
-    num: "02",
+    num: "01",
     title: "Corporate & Business Website",
     subtitle: "A Professional Digital Presence for Your Business",
     tag: "BUSINESS · WEB DEVELOPMENT",
@@ -200,10 +133,11 @@ const BUSINESS = [
       "SEO-ready, responsive and performance-focused architecture.",
     ],
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992127/anni/custom/business/Anni_Web_Solutions_Digital_Agency_UI.png",
     dark: false },
   {
     id: "b3",
-    num: "03",
+    num: "02",
     title: "CRM & Lead Management Platform",
     subtitle: "Turn Every Enquiry Into an Organized Sales Process",
     tag: "BUSINESS · APPLICATION",
@@ -217,10 +151,11 @@ const BUSINESS = [
       "WhatsApp, email and API integrations.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992129/anni/custom/business/Anni_CRM_Kanban_Pipeline_Dashboard.png",
     dark: true },
   {
     id: "b4",
-    num: "04",
+    num: "03",
     title: "Business Management Platform",
     subtitle: "One System to Run Your Business",
     tag: "BUSINESS · APPLICATION",
@@ -234,10 +169,11 @@ const BUSINESS = [
       "Reports, analytics and operational insights.",
     ],
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992132/anni/custom/business/Anni_One_Futuristic_SaaS_Dashboard.png",
     dark: false },
   {
     id: "b5",
-    num: "05",
+    num: "04",
     title: "Customer & Partner Portal",
     subtitle: "Give Customers and Partners Their Own Digital Workspace",
     tag: "BUSINESS · WEB APPLICATION",
@@ -251,10 +187,11 @@ const BUSINESS = [
       "Business dashboards and reporting.",
     ],
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992135/anni/custom/business/Anni_Portal_Office_Dashboard_Workspace.png",
     dark: true },
   {
     id: "b6",
-    num: "06",
+    num: "05",
     title: "Business Automation Platform",
     subtitle: "Replace Repetitive Work With Intelligent Workflows",
     tag: "BUSINESS · AI AUTOMATION",
@@ -268,122 +205,15 @@ const BUSINESS = [
       "Approval systems and human-in-the-loop automation.",
     ],
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992137/anni/custom/business/Anni_Flow_AI_Workflow_Dashboard.png",
     dark: true },
 ];
 
 // ── E-COMMERCE ────────────────────────────────────────────────
 const ECOMMERCE = [
   {
-    id: "ec1",
-    num: "01",
-    title: "Kirtilals",
-    subtitle: "Luxury Jewellery Website",
-    tag: "E-COMMERCE · LUXURY COMMERCE",
-    status: "live" as const,
-    liveUrl: "https://kirtilals.com",
-    points: [
-      "Curated jewellery and bridal collections.",
-      "Detailed product and design presentations.",
-      "High-resolution product imagery and zoom.",
-      "Custom jewellery enquiry journeys.",
-      "Virtual consultations and store appointments.",
-      "Premium, responsive brand experience.",
-    ],
-    gradient: "linear-gradient(135deg,#1a1a0a 0%,#2a2a10 100%)",
-    dark: true },
-  {
-    id: "ec2",
-    num: "02",
-    title: "Momentz",
-    subtitle: "Personalised Photo Printing Platform",
-    tag: "E-COMMERCE · PERSONALISED COMMERCE",
-    status: "live" as const,
-    liveUrl: "https://momentz.in",
-    points: [
-      "Personalised photo-printing products.",
-      "Photo uploads and customisation.",
-      "Frames and personalised gift options.",
-      "Drag-and-drop cropping tools.",
-      "Bulk uploads and photo filters.",
-      "Ordering and delivery workflows.",
-    ],
-    gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false },
-  {
-    id: "ec3",
-    num: "03",
-    title: "Threadclothes",
-    subtitle: "Women's Fashion Shopping App",
-    tag: "E-COMMERCE · FASHION · MOBILE APP",
-    status: "live" as const,
-    liveUrl: "https://play.google.com/store/apps/details?id=com.threadclothes.android",
-    points: [
-      "Fashion-focused product catalogue.",
-      "Categories for ethnic and contemporary wear.",
-      "Product details and shopping experience.",
-      "Cash-on-delivery support.",
-      "Wallet points and customer benefits.",
-      "Returns and order-related workflows.",
-    ],
-    gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
-    dark: false },
-  {
-    id: "ec4",
-    num: "04",
-    title: "Uoons",
-    subtitle: "Electronics Shopping App",
-    tag: "E-COMMERCE · ELECTRONICS · MOBILE APP",
-    status: "live" as const,
-    liveUrl: "https://play.google.com/store/apps/details?id=com.uoons.india",
-    points: [
-      "Electronics and accessories catalogue.",
-      "Product information and price comparisons.",
-      "Customer ratings and reviews.",
-      "Secure payment experience.",
-      "Coupons and seller communication.",
-      "Parcel and delivery tracking.",
-    ],
-    gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true },
-  {
-    id: "ec5",
-    num: "05",
-    title: "Women Plus by Monika",
-    subtitle: "Plus-Size Fashion App",
-    tag: "E-COMMERCE · FASHION · MOBILE APP",
-    status: "live" as const,
-    liveUrl: "https://play.google.com/store/apps/details?id=com.womenplusindia",
-    points: [
-      "Curated plus-size fashion catalogue.",
-      "Product variants and size information.",
-      "Helpful sizing guides.",
-      "Dynamic product pricing.",
-      "UPI payment options.",
-      "WhatsApp-based order confirmation.",
-    ],
-    gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false },
-  {
-    id: "ec6",
-    num: "06",
-    title: "MinitPe",
-    subtitle: "Food, Grocery & Local Services App",
-    tag: "E-COMMERCE · LOCAL COMMERCE · MOBILE APP",
-    status: "live" as const,
-    liveUrl: "https://play.google.com/store/apps/details?id=com.ghiniba.customer",
-    points: [
-      "Food and grocery ordering.",
-      "Local product and service discovery.",
-      "Cab and ride-booking functionality.",
-      "Multiple payment options and wallet.",
-      "Order and service management.",
-      "Delivery and route-related workflows.",
-    ],
-    gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
-    dark: true },
-  {
     id: "ec7",
-    num: "07",
+    num: "01",
     title: "D2C Brand & E-commerce Platform",
     subtitle: "A Branded Online Store Built Around Your Products",
     tag: "E-COMMERCE · CUSTOM SOLUTION",
@@ -397,10 +227,11 @@ const ECOMMERCE = [
       "Customer analytics and marketing integrations.",
     ],
     gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992140/anni/custom/ecommerce/Anni_Store_Skincare_Showcase.png",
     dark: true },
   {
     id: "ec8",
-    num: "08",
+    num: "02",
     title: "Multi-Vendor Marketplace",
     subtitle: "Build Your Own Digital Marketplace",
     tag: "E-COMMERCE · MARKETPLACE",
@@ -414,32 +245,15 @@ const ECOMMERCE = [
       "Central admin panel and reporting.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992143/anni/custom/ecommerce/Anni_Market_Neon_Analytics_Dashboard.png",
     dark: true },
 ];
 
 // ── TECHNOLOGY ────────────────────────────────────────────────
 const TECHNOLOGY = [
   {
-    id: "t1",
-    num: "01",
-    title: "Tradescribe",
-    subtitle: "Trading Analytics Platform",
-    tag: "TECHNOLOGY · WEB APPLICATION",
-    status: "live" as const,
-    liveUrl: "https://tradescribe.in",
-    points: [
-      "Stock and market analysis interfaces.",
-      "Crypto and futures market insights.",
-      "Interactive charts and market metrics.",
-      "Trading-focused analytics experience.",
-      "Fast, responsive data-driven interface.",
-      "Scalable architecture for expanding analytical capabilities.",
-    ],
-    gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true },
-  {
     id: "t2",
-    num: "02",
+    num: "01",
     title: "Airbnb Price Prediction",
     subtitle: "Machine Learning Price Intelligence",
     tag: "TECHNOLOGY · AI / ML",
@@ -453,10 +267,11 @@ const TECHNOLOGY = [
       "User-facing interface for generating price predictions.",
     ],
     gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992146/anni/custom/technology/image.png",
     dark: false },
   {
     id: "t3",
-    num: "03",
+    num: "02",
     title: "AI Crypto Primitive Identification",
     subtitle: "AI/ML Classification System",
     tag: "TECHNOLOGY · AI / ML",
@@ -470,10 +285,11 @@ const TECHNOLOGY = [
       "Foundation for scalable crypto intelligence tools.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992149/anni/custom/technology/Screenshot_2026-10-26_102634.png",
     dark: true },
   {
     id: "t4",
-    num: "04",
+    num: "03",
     title: "SaaS Product Platform",
     subtitle: "Turn a Software Idea Into a Product",
     tag: "TECHNOLOGY · SAAS",
@@ -487,10 +303,11 @@ const TECHNOLOGY = [
       "Analytics and scalable cloud infrastructure.",
     ],
     gradient: "linear-gradient(135deg,#0d1a0d 0%,#102010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992151/anni/custom/technology/ANNI_Neon_SaaS_Pricing_Dashboard.png",
     dark: true },
   {
     id: "t5",
-    num: "05",
+    num: "04",
     title: "AI Product Platform",
     subtitle: "Build AI Into the Product — Not Just the Marketing",
     tag: "TECHNOLOGY · AI PRODUCT",
@@ -504,10 +321,11 @@ const TECHNOLOGY = [
       "AI APIs integrated into existing products.",
     ],
     gradient: "linear-gradient(135deg,#f0f4ff 0%,#dde8ff 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992153/anni/custom/technology/ANNNI_AI_Analytics_Dashboard_Showcase.png",
     dark: false },
   {
     id: "t6",
-    num: "06",
+    num: "05",
     title: "Data & Analytics Platform",
     subtitle: "Make Complex Data Easier to Understand",
     tag: "TECHNOLOGY · ANALYTICS",
@@ -521,32 +339,15 @@ const TECHNOLOGY = [
       "API and database-based data pipelines.",
     ],
     gradient: "linear-gradient(135deg,#1a0a0a 0%,#2a1010 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992156/anni/custom/technology/Neon_Purple_SaaS_Analytics_Dashboard.png",
     dark: true },
 ];
 
 // ── LIFESTYLE & SERVICES ──────────────────────────────────────
 const LIFESTYLE = [
   {
-    id: "l1",
-    num: "01",
-    title: "Meditation Magic",
-    subtitle: "Wellness & Spiritual Platform",
-    tag: "LIFESTYLE · WELLNESS",
-    status: "live" as const,
-    liveUrl: "https://meditationmagic.in",
-    points: [
-      "Wellness courses, meditation programs and live sessions.",
-      "Community and member experience.",
-      "Course access and digital resource library.",
-      "Retreat and program booking workflows.",
-      "Practitioner profiles and program presentation.",
-      "Mobile-friendly wellness journey.",
-    ],
-    gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true },
-  {
     id: "l2",
-    num: "02",
+    num: "01",
     title: "Healthcare & Clinic Website",
     subtitle: "Make Healthcare Services Easier to Discover",
     tag: "LIFESTYLE · HEALTHCARE",
@@ -560,10 +361,11 @@ const LIFESTYLE = [
       "SEO-friendly pages around patient search queries.",
     ],
     gradient: "linear-gradient(135deg,#fef2f2 0%,#fde8e8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992159/anni/custom/lifestyle/ANNI_Healthcare_Doctor_Finder_Dashboard.png",
     dark: false },
   {
     id: "l3",
-    num: "03",
+    num: "02",
     title: "Restaurant & Café Website",
     subtitle: "Make Your Menu Discoverable",
     tag: "LIFESTYLE · FOOD & BEVERAGE",
@@ -577,10 +379,11 @@ const LIFESTYLE = [
       "Mobile-first experience for restaurant discovery.",
     ],
     gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992162/anni/custom/lifestyle/ANNI__Good_Food_Great_Company.png",
     dark: false },
   {
     id: "l4",
-    num: "04",
+    num: "03",
     title: "Hotel & Hospitality Website",
     subtitle: "Turn Your Property Into a Bookable Experience",
     tag: "LIFESTYLE · HOSPITALITY",
@@ -594,10 +397,11 @@ const LIFESTYLE = [
       "Fast, responsive experience for mobile travellers.",
     ],
     gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992165/anni/custom/lifestyle/ANNI_Selene_Bay_Resort_Booking.png",
     dark: true },
   {
     id: "l5",
-    num: "05",
+    num: "04",
     title: "On-Demand Services Platform",
     subtitle: "Connect Customers With the Services They Need",
     tag: "LIFESTYLE · SERVICE MARKETPLACE",
@@ -611,10 +415,11 @@ const LIFESTYLE = [
       "Notifications and service status tracking.",
     ],
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792993437/anni/custom/lifestyle/AN_Provider_Marketplace_Dashboard.png",
     dark: true },
   {
     id: "l6",
-    num: "06",
+    num: "05",
     title: "Fitness & Wellness App",
     subtitle: "Your Digital Wellness Platform",
     tag: "LIFESTYLE · FITNESS",
@@ -628,6 +433,7 @@ const LIFESTYLE = [
       "Trainer and member dashboards.",
     ],
     gradient: "linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1792992173/anni/custom/lifestyle/ANNI_Fitness_Dashboard_Trio.png",
     dark: false },
 ];
 
@@ -682,11 +488,14 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
     >
       {/* Image */}
       <div style={{ flex: "0 0 45%", borderRadius: "18px", overflow: "hidden", border: "1px solid #e8e8e8", boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}>
-        <MockImg gradient={product.gradient} dark={product.dark} />
+        {(product as any).imageUrl
+          ? <img src={(product as any).imageUrl} alt={product.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "320px" }} />
+          : <MockImg gradient={product.gradient} dark={product.dark} />
+        }
       </div>
 
       {/* Content */}
-      <div style={{ flex: 1 }}>
+      <div className="service-row-text" style={{ flex: 1 }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
           <span style={{ fontSize: "16px", fontWeight: 700, color: "#aaa", letterSpacing: "0.14em" }}>{product.num}</span>
           <span style={{ fontSize: "16px", fontWeight: 700, color: "#aaa", letterSpacing: "0.12em", textTransform: "uppercase" }}>{product.tag}</span>
@@ -738,7 +547,7 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
               Build This Solution
             </a>
           )}
-          <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
             style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#f5f5f5", color: "#111", borderRadius: "999px", padding: "10px 18px", fontSize: "16px", fontWeight: 600, textDecoration: "none" }}
             onMouseEnter={e => (e.currentTarget.style.background = "#ebebeb")} onMouseLeave={e => (e.currentTarget.style.background = "#f5f5f5")}
           >
@@ -845,7 +654,7 @@ const CustomisedSolutions = () => {
               </span>
               Tell Us What You Want to Build
             </a>
-            <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "999px", padding: "12px 24px", fontSize: "16px", fontWeight: 700, textDecoration: "none", border: "1px solid rgba(255,255,255,0.2)" }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")} onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
             >

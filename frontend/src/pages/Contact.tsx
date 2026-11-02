@@ -37,7 +37,7 @@ const inp: React.CSSProperties = {
 };
 
 const Contact = () => {
-  useSEO({ title: "Contact — Anni Web Solutions", description: "Tell us what you're building. We'll recommend the best way to work together." });
+  useSEO({ title: "Contact — Get a Free Quote", description: "Talk to Anni Web Solutions about your project. Web development, mobile apps, AI solutions in Bhopal & Sehore. Free consultation.", canonical: "https://anniwebsolutions.com/contact" });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -114,8 +114,8 @@ const Contact = () => {
 
             {/* Contact cards */}
             {[
-              { icon:<Mail size={16}/>,         label:"Email",      value:"contact@anniwebsolutions.com", href:"mailto:contact@anniwebsolutions.com", color:"#ef4444" },
-              { icon:<WhatsAppIcon size={16}/>,  label:"WhatsApp",   value:"+91 79741 35629",             href:"https://wa.me/917974135629",          color:"#22c55e" },
+              { icon:<Mail size={16}/>,         label:"Email",      value:"anniwebsolution@gmail.com", href:"mailto:anniwebsolution@gmail.com", color:"#ef4444" },
+              { icon:<WhatsAppIcon size={16}/>,  label:"WhatsApp",   value:"+91 79741 35629",             href:"https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F",          color:"#22c55e" },
               { icon:<Phone size={16}/>,         label:"Call",       value:"+91 79741 35629",             href:"tel:+917974135629",                   color:"#3b82f6" },
               { icon:<MapPin size={16}/>,        label:"Location",   value:"India — Serving worldwide",   href:"#",                                   color:"#6b7eff" },
             ].map((c,i) => (

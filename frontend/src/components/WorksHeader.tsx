@@ -72,7 +72,7 @@ const WorksHeader = () => {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        <FillButton href="/projects" variant="dark" size="lg">
+        <FillButton to="/work/custom" variant="dark" size="lg">
           All Projects
         </FillButton>
       </motion.div>

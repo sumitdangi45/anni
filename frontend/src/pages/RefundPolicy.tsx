@@ -7,7 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 
 const LAST_UPDATED = "1 January 2025";
 const COMPANY = "Anni Web Solutions";
-const EMAIL = "contact@anniwebsolutions.com";
+const EMAIL = "anniwebsolution@gmail.com";
 
 const Section = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => {
   const ref = useRef(null);

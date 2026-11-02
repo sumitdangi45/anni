@@ -78,7 +78,7 @@ const CTABanner = () => {
             style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}
           >
             {/* Email Us */}
-            <a href="mailto:contact@anniwebsolutions.com"
+            <a href="mailto:anniwebsolution@gmail.com"
               style={{
                 display: "inline-flex", alignItems: "center", gap: "8px",
                 background: "#fff", color: "#111",
@@ -95,7 +95,7 @@ const CTABanner = () => {
             </a>
 
             {/* WhatsApp */}
-            <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
               style={{
                 display: "inline-flex", alignItems: "center", gap: "8px",
                 background: "rgba(255,255,255,0.12)", color: "#fff",

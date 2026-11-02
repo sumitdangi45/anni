@@ -146,19 +146,20 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: 0.1 }}
+      className="service-row"
       style={{
         display: "flex", gap: "60px", alignItems: "center",
         flexDirection: imgLeft ? "row" : "row-reverse",
         padding: "60px 0",
         borderBottom: i < SERVICES.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden" }}>
         {(s as any).imageUrl
           ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
           : <MockImg gradient={s.gradient} dark={s.dark} />
         }
       </div>
-      <div style={{ flex: 1 }}>
+      <div className="service-row-text" style={{ flex: 1 }}>
         <h3 style={{ fontSize: "clamp(1.3rem, 2.5vw, 1.7rem)", fontWeight: 800, color: "#111", lineHeight: 1.2, letterSpacing: "-0.025em", marginBottom: "12px" }}>
           {s.title}
         </h3>
@@ -171,7 +172,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
             </div>
           ))}
         </div>
-        <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
           style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#111", color: "#fff", borderRadius: "999px", padding: "11px 22px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }} className="btn-fill btn-fill-dark"
           
         >
@@ -185,8 +186,10 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 // ── Page ──────────────────────────────────────────────────────
 const AIMLSolutions = () => {
   useSEO({
-    title: "AI / ML Solutions — Anni Web Solutions",
-    description: "Custom AI chatbots, predictive analytics, computer vision, NLP and intelligent automation solutions for businesses." });
+    title: "AI & ML Solutions Bhopal — Automation & Intelligence",
+    description: "AI and ML solutions for businesses in Bhopal & Sehore — chatbots, predictive analytics, computer vision, NLP and intelligent workflow automation.",
+    canonical: "https://anniwebsolutions.com/services/ai-ml",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -315,7 +318,7 @@ const AIMLSolutions = () => {
               >
                 Explore Pricing Plans →
               </a>
-              <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "12px", padding: "13px 24px", fontSize: "16px", fontWeight: 700, textDecoration: "none", border: "1px solid rgba(255,255,255,0.15)" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}

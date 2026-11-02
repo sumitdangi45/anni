@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
-import ContactModal from "./ContactModal";
+import { Link } from "react-router-dom";
 import heroTeam from "@/assets/hero1.png";
 import aiVideo from "@/assets/makemoneyalways2_ssspin.io_1790702019.mp4";
 import heroVideo from "@/assets/TrimEdit_ssspin.io_1790702904.mp4";
@@ -27,7 +26,6 @@ const LOGOS_BASE = [
 const LOGOS = [...LOGOS_BASE, ...LOGOS_BASE];
 
 const HeroSection = () => {
-  const [contactOpen, setContactOpen] = useState(false);
   const isMobile = useIsMobile();
 
   return (
@@ -37,41 +35,38 @@ const HeroSection = () => {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
         }
-        .marquee-wrap {
-          overflow: hidden;
-          width: 100%;
-        }
+        .marquee-wrap { overflow: hidden; width: 100%; }
         .marquee-inner {
-          display: flex;
-          width: max-content;
+          display: flex; width: max-content;
           animation: marquee-scroll 22s linear infinite;
           will-change: transform;
         }
-        .marquee-wrap:hover .marquee-inner {
-          animation-play-state: paused;
-        }
+        .marquee-wrap:hover .marquee-inner { animation-play-state: paused; }
       `}</style>
-
       <section
         id="home"
         className="w-full flex items-start justify-center"
         style={{
-          minHeight: "100vh",
-          paddingTop: "96px",
+          minHeight: isMobile ? "auto" : "100vh",
+          paddingTop: isMobile ? "72px" : "96px",
           paddingBottom: "0px",
-          paddingLeft: "20px",
-          paddingRight: "20px",
+          paddingLeft: isMobile ? "0px" : "20px",
+          paddingRight: isMobile ? "0px" : "20px",
           background: "hsl(0,0%,8%)" }}
       >
-        <div className="w-full flex flex-col lg:flex-row gap-3" style={{ maxWidth: "1320px" }}>
+        <div className="w-full flex flex-col lg:flex-row gap-3" style={{ maxWidth: isMobile ? "100%" : "1320px", width: "100%" }}>
 
           {/* ══════════════ LEFT CARD ══════════════ */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="relative flex flex-col overflow-hidden rounded-2xl hero-left-card"
-            style={{ flex: "1 1 0", minHeight: isMobile ? "480px" : "640px" }}
+            className="relative flex flex-col overflow-hidden hero-left-card"
+            style={{
+              flex: "1 1 0",
+              minHeight: isMobile ? "calc(100svh - 72px)" : "640px",
+              borderRadius: isMobile ? "24px" : "16px",
+            }}
           >
             {/* background video */}
             <video
@@ -87,32 +82,32 @@ const HeroSection = () => {
                   "linear-gradient(to top, rgba(247,247,245,0.98) 0%, rgba(247,247,245,0.82) 30%, rgba(247,247,245,0.3) 58%, transparent 100%)" }}
             />
 
-            <div className="relative z-10 flex flex-col h-full hero-left-inner" style={{ padding: isMobile ? "24px 20px" : "40px 44px 32px" }}>
+            <div className="relative z-10 flex flex-col h-full hero-left-inner" style={{ padding: isMobile ? "32px 20px 28px" : "40px 44px 32px" }}>
 
               {/* ── label ── */}
               <motion.p
                 custom={0} initial="hidden" animate="visible" variants={FADE_UP}
                 style={{
                   color: "#555",
-                  fontSize: "16px",
+                  fontSize: isMobile ? "10px" : "16px",
                   fontWeight: 600,
-                  letterSpacing: "0.2em",
+                  letterSpacing: isMobile ? "0.1em" : "0.2em",
                   textTransform: "uppercase",
-                  marginBottom: "26px" }}
+                  marginBottom: isMobile ? "16px" : "26px" }}
               >
                 FULL-SERVICE TECH PARTNER FOR AMBITIOUS STARTUPS
               </motion.p>
 
-              {/* ── headline — exact Beew: first 2 words bold black, rest normal weight colored ── */}
+              {/* ── headline ── */}
               <motion.h1
                 custom={1} initial="hidden" animate="visible" variants={FADE_UP}
                 style={{
-                  fontSize: "clamp(1.9rem, 3.5vw, 3.1rem)",
+                  fontSize: isMobile ? "clamp(1.8rem, 8vw, 2.4rem)" : "clamp(1.9rem, 3.5vw, 3.1rem)",
                   fontWeight: 400,
                   lineHeight: 1.1,
                   letterSpacing: "-0.025em",
                   color: "#111",
-                  marginBottom: "32px" }}
+                  marginBottom: isMobile ? "24px" : "32px" }}
               >
                 <span style={{ fontWeight: 800, color: "#111" }}>Tech partner </span>
                 <span style={{ fontWeight: 400, color: "#111" }}>for early-stage</span>
@@ -125,17 +120,17 @@ const HeroSection = () => {
               {/* ── CTAs ── */}
               <motion.div
                 custom={2} initial="hidden" animate="visible" variants={FADE_UP}
-                style={{ display: "flex", alignItems: "center", gap: "10px" }}
+                style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}
               >
-                <button
-                  onClick={() => setContactOpen(true)}
+                <Link
+                  to="/contact"
                   style={{
                     display: "inline-flex", alignItems: "center", gap: "8px",
                     background: "#111", color: "#fff",
                     borderRadius: "999px", padding: "10px 20px 10px 10px",
-                    fontSize: "16px", fontWeight: 600, border: "none", cursor: "pointer",
+                    fontSize: "15px", fontWeight: 600, border: "none", cursor: "pointer",
+                    textDecoration: "none",
                     transition: "background 0.2s" }}
-                  
                 >
                   <span style={{
                     width: "28px", height: "28px", borderRadius: "50%",
@@ -143,49 +138,69 @@ const HeroSection = () => {
                     <ArrowRight size={13} color="#fff" />
                   </span>
                   Contact now
-                </button>
+                </Link>
 
-                <a
-                  href="#work"
+                <Link
+                  to="/work/custom"
                   style={{
                     display: "inline-flex", alignItems: "center",
                     borderRadius: "999px", padding: "10px 20px",
-                    fontSize: "16px", fontWeight: 600,
+                    fontSize: "15px", fontWeight: 600,
                     color: "#222", border: "1.5px solid #c8c8c8", background: "transparent",
-                    cursor: "pointer", transition: "background 0.2s", textDecoration: "none" }}
+                    cursor: "pointer", textDecoration: "none",
+                    transition: "background 0.2s" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "rgba(0,0,0,0.05)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
                 >
                   Works
-                </a>
+                </Link>
+
+                {/* Badge inline on mobile — remove from here, shown below */}
               </motion.div>
 
+              {/* Badge — mobile: centered below CTAs */}
+              {isMobile && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+                >
+                  <img
+                    src={batchImg}
+                    alt="Trusted Partner Badge"
+                    style={{ width: "88px", height: "88px", objectFit: "contain" }}
+                  />
+                </motion.div>
+              )}
+
               {/* spacer */}
-              <div style={{ flex: 1 }} />
+              <div style={{ flex: 1, minHeight: isMobile ? "20px" : undefined }} />
 
               {/* ── bottom section ── */}
-              <div style={{ borderTop: "1px solid rgba(0,0,0,0.1)", paddingTop: "26px", marginTop: "26px" }}>
+              <div style={{ borderTop: "1px solid rgba(0,0,0,0.1)", paddingTop: "22px", marginTop: "22px" }}>
 
                 {/* description */}
                 <motion.p
                   custom={3} initial="hidden" animate="visible" variants={FADE_UP}
                   style={{
                     color: "#333",
-                    fontSize: "16px",
+                    fontSize: isMobile ? "14px" : "16px",
                     fontWeight: 500,
                     lineHeight: 1.7,
                     maxWidth: "500px",
-                    marginBottom: "22px" }}
+                    marginBottom: "20px" }}
                 >
                   Anni Web Solutions is a founder-friendly tech agency providing custom web
                   development, mobile apps, AI/ML solutions, SaaS products and automation
                   for startups and growing businesses worldwide.
                 </motion.p>
 
-                {/* ── Marquee — starts from left edge, moves right ── */}
+                {/* ── Marquee ── */}
                 <motion.div
                   custom={4} initial="hidden" animate="visible" variants={FADE_UP}
-                  style={{ marginLeft: "-44px", marginRight: "-44px" }}
+                  className="hero-marquee-bleed"
+                  style={{ marginLeft: isMobile ? "-20px" : "-44px", marginRight: isMobile ? "-20px" : "-44px" }}
                 >
                   <div className="marquee-wrap">
                     <div className="marquee-inner">
@@ -196,14 +211,14 @@ const HeroSection = () => {
                             display: "flex",
                             alignItems: "center",
                             gap: "6px",
-                            paddingLeft: "44px",
-                            paddingRight: "44px",
+                            paddingLeft: isMobile ? "20px" : "44px",
+                            paddingRight: isMobile ? "20px" : "44px",
                             flexShrink: 0,
                             opacity: 0.75 }}
                         >
                           <span style={{
                             color: "#111",
-                            fontSize: "16px",
+                            fontSize: isMobile ? "13px" : "16px",
                             fontWeight: 700,
                             letterSpacing: "-0.02em",
                             whiteSpace: "nowrap" }}>
@@ -218,21 +233,23 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* ── Badge — bottom-right, like Dribbble badge ── */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              style={{
-                position: "absolute", bottom: "24px", right: "24px",
-                zIndex: 20 }}
-            >
-              <img
-                src={batchImg}
-                alt="Trusted Partner Badge"
-                style={{ width: "120px", height: "120px", objectFit: "contain" }}
-              />
-            </motion.div>
+            {/* ── Badge — desktop only, bottom-right absolute ── */}
+            {!isMobile && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                style={{
+                  position: "absolute", bottom: "24px", right: "24px",
+                  zIndex: 20 }}
+              >
+                <img
+                  src={batchImg}
+                  alt="Trusted Partner Badge"
+                  style={{ width: "120px", height: "120px", objectFit: "contain" }}
+                />
+              </motion.div>
+            )}
 
           </motion.div>
 
@@ -320,8 +337,6 @@ const HeroSection = () => {
           )}
         </div>
       </section>
-
-      <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
     </>
   );
 };

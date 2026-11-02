@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Globe, CheckCircle } from "lucide-react";
 import blueVideo from "@/assets/dd/dariiakosova_ssspin.io_1791305497.mp4";
+import founderImg from "@/assets/cards_img/Contemplative Monochrome Portrait.png";
+import techVideo from "@/assets/cards_img/Animate_futuristic_technology_video_1080p_20261026120421.mp4";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const WhyAnniSection = () => {
@@ -52,8 +54,11 @@ const WhyAnniSection = () => {
             display: "flex", flexDirection: "column" }}>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg,#2a2a2a 0%,#0a0a0a 100%)" }} />
             <div style={{ position: "absolute", inset: 0, opacity: 0.05, backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.6) 1px,transparent 1px)", backgroundSize: "24px 24px" }} />
-            {/* silhouette */}
-            <div style={{ position: "absolute", bottom: "110px", left: "50%", transform: "translateX(-50%)", width: "170px", height: "240px", background: "linear-gradient(to bottom,rgba(255,255,255,0.18),rgba(255,255,255,0.03))", borderRadius: "50% 50% 0 0" }} />
+            {/* founder photo */}
+            <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+              <img src={founderImg} alt="Sumit Dangi" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 15%", opacity: 0.85 }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7) 100%)" }} />
+            </div>
             {/* twitter pill */}
             <div style={{ position: "relative", zIndex: 2, padding: "22px" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "rgba(255,255,255,0.1)", borderRadius: "999px", padding: "5px 12px 5px 8px" }}>
@@ -112,26 +117,15 @@ const WhyAnniSection = () => {
           <motion.div {...f(0.2)} style={{
             gridColumn: isMobile ? "auto" : "3", gridRow: isMobile ? "auto" : "1",
             borderRadius: "20px", overflow: "hidden",
-            background: "#f0f0f0", position: "relative" }}>
-            <div style={{ padding: "14px", height: "100%", display: "flex", flexDirection: "column", gap: "8px" }}>
-              {/* top mock UI bar */}
-              <div style={{ flex: 1, borderRadius: "12px", background: "linear-gradient(135deg,#e8e8ff,#d0d0ff)", padding: "14px", display: "flex", flexDirection: "column", gap: "6px" }}>
-                <div style={{ height: "7px", width: "55%", borderRadius: "4px", background: "rgba(100,80,255,0.35)" }} />
-                <div style={{ height: "5px", width: "38%", borderRadius: "4px", background: "rgba(100,80,255,0.2)" }} />
-                <div style={{ flex: 1, borderRadius: "8px", background: "rgba(100,80,255,0.12)", marginTop: "4px" }} />
-              </div>
-              {/* bottom dark mock */}
-              <div style={{ flex: 1, borderRadius: "12px", background: "linear-gradient(135deg,#111,#1a1a2e)", padding: "14px", display: "flex", alignItems: "flex-end" }}>
-                <div>
-                  <div style={{ height: "6px", width: "65%", borderRadius: "4px", background: "rgba(255,255,255,0.22)", marginBottom: "5px" }} />
-                  <div style={{ height: "5px", width: "45%", borderRadius: "4px", background: "rgba(255,255,255,0.1)" }} />
-                </div>
-              </div>
-            </div>
+            background: "#0a0a0a", position: "relative", minHeight: "240px" }}>
+            {/* animated tech video */}
+            <video src={techVideo} autoPlay loop muted playsInline
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75) 100%)" }} />
             {/* overlay label */}
-            <div style={{ position: "absolute", bottom: "14px", left: "14px", right: "14px", background: "#111", borderRadius: "10px", padding: "10px 14px" }}>
+            <div style={{ position: "absolute", bottom: "14px", left: "14px", right: "14px", background: "rgba(0,0,0,0.6)", backdropFilter: "blur(8px)", borderRadius: "10px", padding: "10px 14px", border: "1px solid rgba(255,255,255,0.1)" }}>
               <p style={{ fontSize: "12.5px", fontWeight: 700, color: "#fff", marginBottom: "3px" }}>Built to perform.</p>
-              <p style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.55)", lineHeight: 1.5 }}>Clean interfaces, scalable architecture and reliable technology.</p>
+              <p style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>Clean interfaces, scalable architecture and reliable technology.</p>
             </div>
           </motion.div>
 

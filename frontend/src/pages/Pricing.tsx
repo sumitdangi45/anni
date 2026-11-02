@@ -41,7 +41,7 @@ const PLANS = {
           { text: "Ongoing Maintenance, Backups & Security" },
         ],
         cta: "Start Basic at ₹999/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -67,7 +67,7 @@ const PLANS = {
           { text: "Priority Technical Support" },
         ],
         cta: "Get Standard at ₹2,499/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
     ],
     usd: [
       {
@@ -89,7 +89,7 @@ const PLANS = {
           { text: "Ongoing Maintenance, Backups & Security" },
         ],
         cta: "Start Basic at $15/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -111,7 +111,7 @@ const PLANS = {
           { text: "Priority Technical Support" },
         ],
         cta: "Get Standard at $30/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
     ] },
   yearly: {
     inr: [
@@ -134,7 +134,7 @@ const PLANS = {
           { text: "Ongoing Maintenance, Backups & Security" },
         ],
         cta: "Start Basic at ₹799/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -156,7 +156,7 @@ const PLANS = {
           { text: "Priority Technical Support" },
         ],
         cta: "Get Standard at ₹1,999/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
     ],
     usd: [
       {
@@ -177,7 +177,7 @@ const PLANS = {
           { text: "Maintenance & Security" },
         ],
         cta: "Start Basic at $12/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
       {
         id: "standard",
         name: "Standard Plan",
@@ -198,7 +198,7 @@ const PLANS = {
           { text: "SEO Setup" },
         ],
         cta: "Get Standard at $24/mo",
-        ctaHref: "https://wa.me/917974135629" },
+        ctaHref: "https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" },
     ] } };
 
 
@@ -226,8 +226,10 @@ const Feat = ({ text, note, highlight }: { text: string; note?: string; highligh
 
 const Pricing = () => {
   useSEO({
-    title: "Pricing — Anni Web Solutions",
-    description: "Simple, transparent pricing for web development, AI solutions and digital growth. Monthly and yearly plans available." });
+    title: "Pricing — Web Development & AI Services",
+    description: "Transparent pricing for web development, mobile apps and AI solutions in Bhopal & Sehore. Custom packages for every budget.",
+    canonical: "https://anniwebsolutions.com/pricing",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -237,7 +239,7 @@ const Pricing = () => {
   const plans = PLANS[billing][currency];
 
   return (
-    <div style={{ background: "#fff", minHeight: "100vh" }} className="page-light">
+    <div style={{ background: "#fff", minHeight: "100vh", overflowX: "hidden" }} className="page-light">
       <Navbar />
 
       <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "120px 20px 80px" }} ref={ref} className="pricing-header-wrap">
@@ -279,23 +281,23 @@ const Pricing = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "40px", flexWrap: "wrap" }}
+          style={{ display: "flex", alignItems: "flex-start", gap: "10px", marginBottom: "40px", flexWrap: "wrap" }}
           className="pricing-toggle-row"
         >
           {/* Billing toggle */}
-          <div style={{ display: "inline-flex", alignItems: "center", background: "#f5f5f5", borderRadius: "999px", padding: "5px", gap: "2px" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", background: "#f5f5f5", borderRadius: "999px", padding: "5px", gap: "2px", flexShrink: 0 }}>
             {([
               { key: "monthly", label: "Monthly Billing" },
               { key: "yearly", label: "Annual Billing", badge: "2 MOS FREE" },
             ] as { key: Billing; label: string; badge?: string }[]).map(({ key, label, badge }) => (
               <button key={key} onClick={() => setBilling(key)}
                 style={{
-                  display: "flex", alignItems: "center", gap: "6px", padding: "8px 18px",
-                  borderRadius: "999px", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 600,
+                  display: "flex", alignItems: "center", gap: "6px", padding: "8px 14px",
+                  borderRadius: "999px", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: 600,
                   background: billing === key ? "#fff" : "transparent",
                   color: billing === key ? "#111" : "#888",
                   boxShadow: billing === key ? "0 1px 6px rgba(0,0,0,0.1)" : "none",
-                  transition: "all 0.2s" }}
+                  transition: "all 0.2s", whiteSpace: "nowrap" }}
               >
                 {label}
                 {badge && <span style={{ fontSize: "9.5px", fontWeight: 700, padding: "2px 7px", borderRadius: "999px", background: billing === key ? "#111" : "#ddd", color: billing === key ? "#fff" : "#666" }}>{badge}</span>}
@@ -304,18 +306,18 @@ const Pricing = () => {
           </div>
 
           {/* Currency toggle */}
-          <div style={{ display: "inline-flex", alignItems: "center", background: "#f5f5f5", borderRadius: "999px", padding: "5px", gap: "2px" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", background: "#f5f5f5", borderRadius: "999px", padding: "5px", gap: "2px", flexShrink: 0 }}>
             {([
               { key: "inr", label: "IN INR (₹)" },
               { key: "usd", label: "US USD ($)" },
             ] as { key: Currency; label: string }[]).map(({ key, label }) => (
               <button key={key} onClick={() => setCurrency(key)}
                 style={{
-                  padding: "8px 16px", borderRadius: "999px", border: "none", cursor: "pointer",
-                  fontSize: "16.5px", fontWeight: 700,
+                  padding: "8px 14px", borderRadius: "999px", border: "none", cursor: "pointer",
+                  fontSize: "14px", fontWeight: 700,
                   background: currency === key ? "#111" : "transparent",
                   color: currency === key ? "#fff" : "#888",
-                  transition: "all 0.2s" }}
+                  transition: "all 0.2s", whiteSpace: "nowrap" }}
               >
                 {label}
               </button>
@@ -331,7 +333,7 @@ const Pricing = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px", alignItems: "start" }}
+            style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "16px", alignItems: "start" }}
             className="pricing-grid"
           >
             {/* Plan cards */}
@@ -408,7 +410,7 @@ const Pricing = () => {
                 <span style={{ fontSize: "16px", color: "rgba(255,255,255,0.65)", marginLeft: "4px" }}>/month</span>
               </div>
 
-              <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
                 style={{
                   display: "flex", alignItems: "center", justifyContent: "space-between",
                   background: "rgba(255,255,255,0.1)", color: "#fff",
@@ -480,7 +482,7 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="quad-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px" }}>
+          <div className="quad-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "12px" }}>
             {[
               { step: "01", icon: "🌐", title: "Discovery", desc: "Customers find you on Google, Social Media, or Referral" },
               { step: "02", icon: "🖥️", title: "Modern Website", desc: "High-converting, fast & mobile-friendly branded website" },
@@ -649,7 +651,7 @@ const Pricing = () => {
               </p>
             </div>
             <div style={{ display: "flex", gap: "12px", flexShrink: 0, flexWrap: "wrap" }}>
-              <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#22c55e", color: "#fff", borderRadius: "999px", padding: "12px 22px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }}>
                 <WhatsAppIcon size={15} /> Discuss on WhatsApp
               </a>

@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -9,7 +9,6 @@ import Lenis from "lenis";
 import { API_BASE } from "@/lib/api";
 import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
-import Projects from "./pages/Projects.tsx";
 import Blogs from "./pages/Blogs.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -40,16 +39,7 @@ import RefundPolicy from "./pages/RefundPolicy.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import NoiseBackground from "./components/NoiseBackground.tsx";
-import AdminLogin from "./pages/admin/AdminLogin";
-import AdminLayout from "./pages/admin/AdminLayout";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import AdminBlogs from "./pages/admin/AdminBlogs";
-import AdminProjects from "./pages/admin/AdminProjects";
-import AdminTestimonials from "./pages/admin/AdminTestimonials";
-import AdminContacts from "./pages/admin/AdminContacts";
-import AdminPhotos from "./pages/admin/AdminPhotos";
-import AdminResume from "./pages/admin/AdminResume";
-import ProtectedRoute from "./components/admin/ProtectedRoute";
+import OfferPopup from "./components/OfferPopup";
 
 const queryClient = new QueryClient();
 
@@ -58,7 +48,18 @@ const LenisProvider = ({ children }: { children: React.ReactNode }) => {
     const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
     const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
-    return () => lenis.destroy();
+
+    // Listen for scroll lock/unlock events from video cards
+    const onLock   = () => lenis.stop();
+    const onUnlock = () => lenis.start();
+    window.addEventListener("anni:scroll-lock",   onLock);
+    window.addEventListener("anni:scroll-unlock", onUnlock);
+
+    return () => {
+      lenis.destroy();
+      window.removeEventListener("anni:scroll-lock",   onLock);
+      window.removeEventListener("anni:scroll-unlock", onUnlock);
+    };
   }, []);
   return <>{children}</>;
 };
@@ -94,24 +95,15 @@ const App = () => (
         <OgImageUpdater />
         <BrowserRouter>
           <Routes>
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-              <Route index element={<AdminDashboard />} />
-              <Route path="blogs" element={<AdminBlogs />} />
-              <Route path="projects" element={<AdminProjects />} />
-              <Route path="testimonials" element={<AdminTestimonials />} />
-              <Route path="contacts" element={<AdminContacts />} />
-              <Route path="photos" element={<AdminPhotos />} />
-              <Route path="resume" element={<AdminResume />} />
-            </Route>
             <Route path="/*" element={
               <LenisProvider>
                 <NoiseBackground />
                 <ScrollToTop />
+                <OfferPopup />
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/projects" element={<Navigate to="/work/custom" replace />} />
                   <Route path="/blogs" element={<Blogs />} />
                   <Route path="/blogs/:id" element={<BlogDetail />} />
                   <Route path="/contact" element={<Contact />} />

@@ -309,7 +309,7 @@ const HeroBanner = () => (
         Start a Project
       </a>
       <a
-        href="https://wa.me/917974135629"
+        href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -382,7 +382,7 @@ const FAQ = () => {
         </p>
         <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
           <a
-            href="mailto:contact@anniwebsolutions.com"
+            href="mailto:anniwebsolution@gmail.com"
             style={{
               display: "inline-flex", alignItems: "center", gap: "8px",
               background: "var(--background)", color: "var(--foreground)",
@@ -393,7 +393,7 @@ const FAQ = () => {
             Email Us
           </a>
           <a
-            href="https://wa.me/917974135629"
+            href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F"
             target="_blank"
             rel="noopener noreferrer"
             style={{

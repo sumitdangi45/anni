@@ -14,7 +14,7 @@ const resend = new Resend(apiKey);
 resend.emails
   .send({
     from: "onboarding@resend.dev",
-    to: "sumitdangi8455@gmail.com",
+    to: "anniwebsolution@gmail.com",
     subject: "Test Email from Resend",
     html: `<h2>Test Email</h2>
            <p>This is a test email to verify Resend integration.</p>

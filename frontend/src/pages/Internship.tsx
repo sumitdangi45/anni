@@ -19,7 +19,7 @@ const INTERN_FAQ = [
   { q: "What will I actually work on?", a: "Real projects. You'll contribute to live client work — building features, designing interfaces, writing APIs, setting up automations or running marketing campaigns. This isn't a sandbox environment." },
   { q: "What roles are available?", a: "We hire interns for: Full Stack Development, Frontend Development, Mobile App Development, AI/ML Engineering, UI/UX Design, and Digital Marketing & SEO." },
   { q: "Will I receive a certificate and letter of recommendation?", a: "Yes. All interns who complete the programme receive a certificate of completion and a personalised letter of recommendation from the founder." },
-  { q: "How do I apply?", a: "Email us at contact@anniwebsolutions.com with the subject line 'Internship Application — [Your Role]', attach your resume or portfolio link, and tell us in 2–3 sentences why you want to work with us." },
+  { q: "How do I apply?", a: "Email us at anniwebsolution@gmail.com with the subject line 'Internship Application — [Your Role]', attach your resume or portfolio link, and tell us in 2–3 sentences why you want to work with us." },
 ];
 
 // ── USP ────────────────────────────────────────────────────────
@@ -46,6 +46,7 @@ const TRACKS = [
     ],
     img: "left",
     gradient: "linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)",
+    imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1793501368/anni/internship/internship_fullstack.png",
     dark: true },
   {
     title: "Frontend Development",
@@ -60,8 +61,7 @@ const TRACKS = [
       "Learn component structure, state management and best practices.",
     ],
     img: "right",
-    gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)",
-    dark: false },
+    gradient: "linear-gradient(135deg,#f5f5f3 0%,#e2e2dc 100%)", imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1793501371/anni/internship/internship_frontend.png", dark: false },
   {
     title: "Mobile App Development",
     subtitle: "Build cross-platform mobile apps that work on iOS and Android.",
@@ -75,8 +75,7 @@ const TRACKS = [
       "Understand the app store submission process.",
     ],
     img: "left",
-    gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)",
-    dark: true },
+    gradient: "linear-gradient(135deg,#0a1628 0%,#1a2744 100%)", imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1793501373/anni/internship/internship_mobile.png", dark: true },
   {
     title: "AI / ML Engineering",
     subtitle: "Build intelligent features and automation using AI.",
@@ -90,8 +89,7 @@ const TRACKS = [
       "Explore prompt engineering and fine-tuning concepts.",
     ],
     img: "right",
-    gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)",
-    dark: true },
+    gradient: "linear-gradient(135deg,#1a0a2e 0%,#0d0520 100%)", imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1793501377/anni/internship/internship_aiml.png", dark: true },
   {
     title: "UI / UX Design",
     subtitle: "Design real interfaces for real products and clients.",
@@ -105,8 +103,7 @@ const TRACKS = [
       "Deliver developer-ready design files and specifications.",
     ],
     img: "left",
-    gradient: "linear-gradient(135deg,#f0f0ff 0%,#dde0ff 100%)",
-    dark: false },
+    gradient: "linear-gradient(135deg,#f0f0ff 0%,#dde0ff 100%)", imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1793501380/anni/internship/internship_uiux.png", dark: false },
   {
     title: "Digital Marketing & SEO",
     subtitle: "Run real campaigns and grow real businesses.",
@@ -120,8 +117,7 @@ const TRACKS = [
       "Learn conversion optimization and growth tactics.",
     ],
     img: "right",
-    gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)",
-    dark: false },
+    gradient: "linear-gradient(135deg,#f5f0e8 0%,#ede8d8 100%)", imageUrl: "https://res.cloudinary.com/w3bsruq6/image/upload/v1793501381/anni/internship/internship_marketing.png", dark: false },
 ];
 
 // ── What you get ───────────────────────────────────────────────
@@ -165,13 +161,13 @@ const TrackRow = ({ s, i }: { s: typeof TRACKS[0]; i: number }) => {
     <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: 0.1 }}
       className="service-row" style={{ display: "flex", gap: "60px", alignItems: "center", flexDirection: imgLeft ? "row" : "row-reverse", padding: "60px 0", borderBottom: i < TRACKS.length - 1 ? "1px solid #f0f0f0" : "none" }}
     >
-      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden", border: "1px solid #ebebeb" }}>
+      <div className="service-row-img" style={{ flex: "0 0 42%", borderRadius: "18px", overflow: "hidden" }}>
         {(s as any).imageUrl
           ? <img src={(s as any).imageUrl} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: "260px" }} />
           : <MockImg gradient={s.gradient} dark={s.dark} />
         }
       </div>
-      <div style={{ flex: 1 }}>
+      <div className="service-row-text" style={{ flex: 1 }}>
         <p style={{ fontSize: "12px", fontWeight: 700, color: "#6b7eff", letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: "8px" }}>{s.subtitle}</p>
         <h3 style={{ fontSize: "clamp(1.3rem, 2.5vw, 1.7rem)", fontWeight: 800, color: "#111", lineHeight: 1.2, letterSpacing: "-0.025em", marginBottom: "12px" }}>{s.title}</h3>
         <p style={{ fontSize: "14.5px", color: "#777", lineHeight: 1.75, marginBottom: "24px" }}>{s.desc}</p>
@@ -183,7 +179,7 @@ const TrackRow = ({ s, i }: { s: typeof TRACKS[0]; i: number }) => {
             </div>
           ))}
         </div>
-        <a href="mailto:contact@anniwebsolutions.com"
+        <a href="mailto:anniwebsolution@gmail.com"
           style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#111", color: "#fff", borderRadius: "999px", padding: "11px 22px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }} className="btn-fill btn-fill-dark"
           
         >
@@ -240,7 +236,7 @@ const Internship = () => {
               The Anni Web Solutions Internship Catalyst is a hands-on programme where you work on real client projects, get mentored by senior builders and graduate with a portfolio that actually proves what you can do.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" as const }}>
-              <a href="mailto:contact@anniwebsolutions.com"
+              <a href="mailto:anniwebsolution@gmail.com"
                 style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#fff", color: "#111", borderRadius: "999px", padding: "12px 24px 12px 12px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#f0f0f0")}
                 onMouseLeave={e => (e.currentTarget.style.background = "#fff")}
@@ -355,7 +351,7 @@ const Internship = () => {
             Email us your resume and a short note about yourself. We respond within 48 hours and get started quickly.
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", flexWrap: "wrap" as const }}>
-            <a href="mailto:contact@anniwebsolutions.com"
+            <a href="mailto:anniwebsolution@gmail.com"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#fff", color: "#111", borderRadius: "999px", padding: "12px 24px 12px 12px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#f0f0f0")}
               onMouseLeave={e => (e.currentTarget.style.background = "#fff")}
@@ -363,7 +359,7 @@ const Internship = () => {
               <span style={{ width: "28px", height: "28px", borderRadius: "50%", background: "#111", display: "flex", alignItems: "center", justifyContent: "center" }}><ArrowRight size={13} color="#fff" /></span>
               Send Your Application
             </a>
-            <a href="https://wa.me/917974135629" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "999px", padding: "12px 24px", fontSize: "14px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(255,255,255,0.15)" }}
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
               onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
