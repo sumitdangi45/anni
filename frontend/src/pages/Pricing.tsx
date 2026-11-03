@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";

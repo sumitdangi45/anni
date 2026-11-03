@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿﻿import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -58,7 +58,9 @@ const TOC_ITEMS = [
 const PrivacyPolicy = () => {
   useSEO({
     title: "Privacy Policy — Anni Web Solutions",
-    description: "Learn how Anni Web Solutions collects, uses, and protects your personal data." });
+    description: "Learn how Anni Web Solutions collects, uses, and protects your personal data.",
+    canonical: "https://anniwebsolutions.com/privacy",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -228,7 +228,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const SaaSDevelopment = () => {
   useSEO({
     title: "SaaS Development — Anni Web Solutions",
-    description: "Build, launch and scale SaaS products — multi-tenant architecture, subscription billing, onboarding, integrations and AI-ready SaaS platforms." });
+    description: "Build, launch and scale SaaS products — multi-tenant architecture, subscription billing, onboarding, integrations and AI-ready SaaS platforms.",
+    canonical: "https://anniwebsolutions.com/services/saas",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

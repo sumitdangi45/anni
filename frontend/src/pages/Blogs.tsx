@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+﻿﻿import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Heart, MessageCircle, Eye, Search, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -131,7 +131,9 @@ const SkeletonCard = () => (
 );
 
 const Blogs = () => {
-  useSEO({ title: "Blog — Anni Web Solutions", description: "Insights, case studies, tutorials and tech deep-dives from the Anni Web Solutions team." });
+  useSEO({ title: "Blog — Anni Web Solutions", description: "Insights, case studies, tutorials and tech deep-dives from the Anni Web Solutions team.",
+    canonical: "https://anniwebsolutions.com/blogs",
+  });
 
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);

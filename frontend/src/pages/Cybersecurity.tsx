@@ -225,7 +225,7 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const Cybersecurity = () => {
   useSEO({
     title: "Cybersecurity & Digital Security — Anni Web Solutions",
-    description: "Website security, API security, VAPT, cloud security, MFA/RBAC implementation, security monitoring and AI application security for startups and growing businesses." });
+    description: "Website security, VAPT, cloud security, MFA/RBAC and AI application security for startups and growing businesses in Bhopal." });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

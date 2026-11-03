@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿﻿import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -66,7 +66,9 @@ const TOC_ITEMS = [
 const RefundPolicy = () => {
   useSEO({
     title: "Refund Policy — Anni Web Solutions",
-    description: "Understand Anni Web Solutions' refund and cancellation policy for custom development, retainers, and digital products." });
+    description: "Understand Anni Web Solutions' refund and cancellation policy for custom development, retainers, and digital products.",
+    canonical: "https://anniwebsolutions.com/refund-policy",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

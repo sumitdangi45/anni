@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -264,7 +264,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const EcommerceDevelopment = () => {
   useSEO({
     title: "E-commerce Development — Anni Web Solutions",
-    description: "Custom e-commerce development — storefront, checkout optimization, UPI payments, inventory, AI recommendations, ONDC integration and conversion-focused commerce systems." });
+    description: "Custom e-commerce development — storefront, checkout optimization, UPI payments, inventory, AI recommendations, ONDC integration and conversion-focused commerce systems.",
+    canonical: "https://anniwebsolutions.com/services/ecommerce",
+  });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

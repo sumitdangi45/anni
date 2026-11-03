@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -208,7 +208,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const DigitalMarketing = () => {
   useSEO({
     title: "Digital Marketing — Anni Web Solutions",
-    description: "SEO, social media, content marketing, paid ads, WhatsApp automation and brand growth — one connected digital growth system for startups and businesses." });
+    description: "SEO, social media, content marketing, paid ads, WhatsApp automation and brand growth — one connected digital growth system for startups and businesses.",
+    canonical: "https://anniwebsolutions.com/digital-marketing",
+  });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

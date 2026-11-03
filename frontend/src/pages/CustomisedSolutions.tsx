@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -563,7 +563,9 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
 const CustomisedSolutions = () => {
   useSEO({
     title: "Customised Solutions — Anni Web Solutions",
-    description: "Custom websites, applications and AI products built for education, business, e-commerce, technology and lifestyle — designed around your specific requirements." });
+    description: "Custom websites, apps and AI products for education, business and e-commerce � built around your specific needs in Bhopal & Sehore.",
+    canonical: "https://anniwebsolutions.com/work/custom",
+  });
 
   const [tab, setTab] = useState<Tab>("education");
   const ref = useRef(null);

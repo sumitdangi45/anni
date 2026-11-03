@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Sparkles, Users, Rocket, BookOpen, Briefcase, Globe, Cpu, Star } from "lucide-react";
@@ -194,7 +194,9 @@ const TrackRow = ({ s, i }: { s: typeof TRACKS[0]; i: number }) => {
 const Internship = () => {
   useSEO({
     title: "Internship Catalyst — Anni Web Solutions",
-    description: "Join the Anni Web Solutions Internship Catalyst — work on real client projects, get mentored by senior builders and grow your career in tech." });
+    description: "Join the Anni Web Solutions Internship Catalyst — work on real client projects, get mentored by senior builders and grow your career in tech.",
+    canonical: "https://anniwebsolutions.com/internship",
+  });
 
   const heroRef   = useRef(null);
   const heroInView = useInView(heroRef, { once: true, margin: "-60px" });

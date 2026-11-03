@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
@@ -287,8 +287,10 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 // ── Page ──────────────────────────────────────────────────────
 const AIAutomation = () => {
   useSEO({
-    title: "AI Agents & Automation — Anni Web Solutions",
-    description: "We build AI agents and automation workflows that handle repetitive tasks, communicate with customers and execute business processes — WhatsApp, voice, CRM, RAG and more." });
+    title: "AI Automation Services Bhopal — Automate Your Business",
+    description: "Automate repetitive workflows with AI — WhatsApp automation, CRM pipelines and custom AI for Bhopal businesses.",
+    canonical: "https://anniwebsolutions.com/ai-automation",
+  });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

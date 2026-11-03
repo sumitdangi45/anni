@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -209,7 +209,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0] & { imageUrl?: string }; i
 const MaintenanceSupport = () => {
   useSEO({
     title: "Website & App Maintenance — Anni Web Solutions",
-    description: "Ongoing website and app maintenance — security updates, bug fixes, performance monitoring, backups and technical support as a monthly subscription." });
+    description: "Ongoing website and app maintenance — security updates, bug fixes, performance monitoring, backups and technical support as a monthly subscription.",
+    canonical: "https://anniwebsolutions.com/services/maintenance",
+  });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

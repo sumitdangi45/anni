@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -183,7 +183,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const ChatbotDevelopment = () => {
   useSEO({
     title: "Chatbot Development — Anni Web Solutions",
-    description: "Custom AI chatbots for websites, WhatsApp, sales, support and e-commerce. Multilingual, CRM-integrated and always-on." });
+    description: "Custom AI chatbots for websites, WhatsApp, sales, support and e-commerce. Multilingual, CRM-integrated and always-on.",
+    canonical: "https://anniwebsolutions.com/services/chatbot",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

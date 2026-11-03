@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿﻿import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Globe, Cpu, TrendingUp, Users, Zap, Award, ArrowRight, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -351,7 +351,9 @@ const FounderSection = () => (
 const About = () => {
   useSEO({
     title: "About — Anni Web Solutions",
-    description: "Learn about Anni Web Solutions — our story, mission, values, and the team behind the products. Founded by Sumit Thakur." });
+    description: "Learn about Anni Web Solutions — our story, mission, values, and the team behind the products. Founded by Sumit Thakur.",
+    canonical: "https://anniwebsolutions.com/about",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

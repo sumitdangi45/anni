@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, LayoutDashboard, Users, BarChart2, Zap, Radio, Package, ShieldCheck, Cpu, Layers, GitBranch } from "lucide-react";
@@ -207,7 +207,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const WebApplications = () => {
   useSEO({
     title: "Web Application Development — Anni Web Solutions",
-    description: "Custom web applications — SaaS platforms, business management systems, customer portals, dashboards and real-time applications built around your workflow." });
+    description: "Custom web applications — SaaS platforms, business management systems, customer portals, dashboards and real-time applications built around your workflow.",
+    canonical: "https://anniwebsolutions.com/services/web-apps",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

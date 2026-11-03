@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -545,7 +545,9 @@ const ProductCard = ({
 const PrebuiltSolutions = () => {
   useSEO({
     title: "Pre-Built Solutions — Anni Web Solutions",
-    description: "Ready-made websites, business applications and AI products customized for your industry — launch faster without starting from scratch." });
+    description: "Ready-made websites, business applications and AI products customized for your industry — launch faster without starting from scratch.",
+    canonical: "https://anniwebsolutions.com/work/prebuilt",
+  });
 
   const [tab, setTab] = useState<Tab>("websites");
   const ref = useRef(null);

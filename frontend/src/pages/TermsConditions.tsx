@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿﻿import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -60,7 +60,9 @@ const TOC_ITEMS = [
 const TermsConditions = () => {
   useSEO({
     title: "Terms & Conditions — Anni Web Solutions",
-    description: "Read the Terms and Conditions for engaging Anni Web Solutions for web, mobile, AI, and digital services." });
+    description: "Read the Terms and Conditions for engaging Anni Web Solutions for web, mobile, AI, and digital services.",
+    canonical: "https://anniwebsolutions.com/terms",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground page-light">

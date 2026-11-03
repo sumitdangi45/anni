@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, ArrowRight, Phone } from "lucide-react";
@@ -331,7 +331,9 @@ const HeroBanner = () => (
 const FAQ = () => {
   useSEO({
     title: "FAQ — Anni Web Solutions",
-    description: "Frequently asked questions about working with Anni Web Solutions — services, pricing, process, AI, SaaS, support and more." });
+    description: "Frequently asked questions about working with Anni Web Solutions — services, pricing, process, AI, SaaS, support and more.",
+    canonical: "https://anniwebsolutions.com/faq",
+  });
 
   const [activeId, setActiveId] = useState(FAQ_CATEGORIES[0].id);
 

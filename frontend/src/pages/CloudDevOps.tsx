@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
@@ -227,7 +227,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const CloudDevOps = () => {
   useSEO({
     title: "Cloud & DevOps — Anni Web Solutions",
-    description: "Cloud deployment, CI/CD automation, Docker, Kubernetes, monitoring, cloud security, FinOps and AI cloud infrastructure for startups and growing businesses." });
+    description: "Cloud deployment, CI/CD automation, Docker, Kubernetes, monitoring, cloud security, FinOps and AI cloud infrastructure for startups and growing businesses.",
+    canonical: "https://anniwebsolutions.com/services/cloud-devops",
+  });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
   const uspRef = useRef(null); const uspInView = useInView(uspRef, { once: true, margin: "-60px" });

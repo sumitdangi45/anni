@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -206,7 +206,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const UIUXDesign = () => {
   useSEO({
     title: "UI/UX Design — Anni Web Solutions",
-    description: "Intuitive, modern and conversion-focused digital experiences for websites, SaaS products, mobile apps and business platforms." });
+    description: "Intuitive, modern and conversion-focused digital experiences for websites, SaaS products, mobile apps and business platforms.",
+    canonical: "https://anniwebsolutions.com/services/design",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

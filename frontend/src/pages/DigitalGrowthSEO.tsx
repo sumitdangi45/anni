@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -199,7 +199,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const DigitalGrowthSEO = () => {
   useSEO({
     title: "Digital Growth & SEO — Anni Web Solutions",
-    description: "Technical SEO, content strategy, local SEO, AI search optimization and growth analytics to improve search visibility and drive real business results." });
+    description: "Technical SEO, content strategy, local SEO, AI search optimization and growth analytics to improve search visibility and drive real business results.",
+    canonical: "https://anniwebsolutions.com/services/seo",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

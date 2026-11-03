@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 const whiteVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643090/anni/videos/white_video.mp4";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -193,7 +193,9 @@ const ServiceRow = ({ s, i }: { s: typeof SERVICES[0]; i: number }) => {
 const BrandingIdentity = () => {
   useSEO({
     title: "Branding & Identity — Anni Web Solutions",
-    description: "Complete brand systems — strategy, visual identity, messaging, brand guidelines and marketing assets for startups and growing businesses." });
+    description: "Complete brand systems — strategy, visual identity, messaging, brand guidelines and marketing assets for startups and growing businesses.",
+    canonical: "https://anniwebsolutions.com/services/branding",
+  });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
