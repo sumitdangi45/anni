@@ -40,8 +40,7 @@ app.use("/api/admin/projects",     require("./routes/admin/adminProjects"));
 app.use("/api/admin/testimonials", require("./routes/admin/adminTestimonials"));
 app.use("/api/admin/contacts",     require("./routes/admin/adminContacts"));
 app.use("/api/admin/upload",       require("./routes/admin/upload"));
-app.use("/api/admin/site-images",  require("./routes/admin/adminSiteImages"));
-app.use("/api/site-images",        require("./routes/admin/adminSiteImages"));
+app.use("/api/site-images",        require("./routes/siteImages"));
 
 // Static uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));

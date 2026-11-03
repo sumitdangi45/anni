@@ -216,7 +216,7 @@ const MegaDropdown = ({ onClose }: { onClose: () => void }) => {
 
         {/* Bottom row */}
         <div style={{ gridColumn: "1 / 5", borderTop: `1px solid ${divider}`, marginTop: "16px", padding: "14px 10px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link to="/services" onClick={onClose}
+          <Link to="/services/web-development" onClick={onClose}
             style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: 700, color: isHome ? "#fff" : "#111", textDecoration: "none", background: isHome ? "hsl(0,0%,14%)" : "#f0f0f0", padding: "10px 18px", borderRadius: "10px", transition: "background 0.15s" }}
             onMouseEnter={e => (e.currentTarget.style.background = isHome ? "hsl(0,0%,18%)" : "#e4e4e4")}
             onMouseLeave={e => (e.currentTarget.style.background = isHome ? "hsl(0,0%,14%)" : "#f0f0f0")}
