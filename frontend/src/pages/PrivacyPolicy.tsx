@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
   useSEO({
     title: "Privacy Policy — Anni Web Solutions",
     description: "Learn how Anni Web Solutions collects, uses, and protects your personal data.",
-    canonical: "https://anniwebsolutions.com/privacy",
+    canonical: "https://anniwebsolution.vercel.app/privacy",
   });
 
   return (

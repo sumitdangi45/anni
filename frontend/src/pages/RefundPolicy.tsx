@@ -67,7 +67,7 @@ const RefundPolicy = () => {
   useSEO({
     title: "Refund Policy — Anni Web Solutions",
     description: "Understand Anni Web Solutions' refund and cancellation policy for custom development, retainers, and digital products.",
-    canonical: "https://anniwebsolutions.com/refund-policy",
+    canonical: "https://anniwebsolution.vercel.app/refund-policy",
   });
 
   return (

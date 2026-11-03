@@ -332,7 +332,7 @@ const FAQ = () => {
   useSEO({
     title: "FAQ — Anni Web Solutions",
     description: "Frequently asked questions about working with Anni Web Solutions — services, pricing, process, AI, SaaS, support and more.",
-    canonical: "https://anniwebsolutions.com/faq",
+    canonical: "https://anniwebsolution.vercel.app/faq",
   });
 
   const [activeId, setActiveId] = useState(FAQ_CATEGORIES[0].id);

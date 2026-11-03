@@ -132,7 +132,7 @@ const SkeletonCard = () => (
 
 const Blogs = () => {
   useSEO({ title: "Blog — Anni Web Solutions", description: "Insights, case studies, tutorials and tech deep-dives from the Anni Web Solutions team.",
-    canonical: "https://anniwebsolutions.com/blogs",
+    canonical: "https://anniwebsolution.vercel.app/blogs",
   });
 
   const [blogs, setBlogs] = useState<Blog[]>([]);

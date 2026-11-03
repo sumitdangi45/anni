@@ -194,7 +194,7 @@ const BrandingIdentity = () => {
   useSEO({
     title: "Branding & Identity — Anni Web Solutions",
     description: "Complete brand systems — strategy, visual identity, messaging, brand guidelines and marketing assets for startups and growing businesses.",
-    canonical: "https://anniwebsolutions.com/services/branding",
+    canonical: "https://anniwebsolution.vercel.app/services/branding",
   });
 
   const ref = useRef(null);

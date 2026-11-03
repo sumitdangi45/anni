@@ -195,7 +195,7 @@ const Internship = () => {
   useSEO({
     title: "Internship Catalyst — Anni Web Solutions",
     description: "Join the Anni Web Solutions Internship Catalyst — work on real client projects, get mentored by senior builders and grow your career in tech.",
-    canonical: "https://anniwebsolutions.com/internship",
+    canonical: "https://anniwebsolution.vercel.app/internship",
   });
 
   const heroRef   = useRef(null);

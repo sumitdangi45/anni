@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /admin
@@ -16,4 +16,4 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-Sitemap: https://anniwebsolutions.com/sitemap.xml
+Sitemap: https://anniwebsolution.vercel.app/sitemap.xml

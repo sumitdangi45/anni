@@ -227,7 +227,7 @@ const MobileAppDevelopment = () => {
   useSEO({
     title: "Mobile App Development Bhopal — Android & iOS",
     description: "Custom mobile app development in Bhopal — Android, iOS and cross-platform apps for startups and businesses. React Native, Flutter and native development.",
-    canonical: "https://anniwebsolutions.com/services/mobile",
+    canonical: "https://anniwebsolution.vercel.app/services/mobile",
   });
 
   const ref = useRef(null);

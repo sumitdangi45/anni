@@ -1,4 +1,4 @@
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+﻿import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
@@ -37,7 +37,7 @@ const inp: React.CSSProperties = {
 };
 
 const Contact = () => {
-  useSEO({ title: "Contact — Get a Free Quote", description: "Talk to Anni Web Solutions about your project. Web development, mobile apps, AI solutions in Bhopal & Sehore. Free consultation.", canonical: "https://anniwebsolutions.com/contact" });
+  useSEO({ title: "Contact — Get a Free Quote", description: "Talk to Anni Web Solutions about your project. Web development, mobile apps, AI solutions in Bhopal & Sehore. Free consultation.", canonical: "https://anniwebsolution.vercel.app/contact" });
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });

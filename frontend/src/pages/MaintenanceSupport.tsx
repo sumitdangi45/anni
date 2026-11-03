@@ -210,7 +210,7 @@ const MaintenanceSupport = () => {
   useSEO({
     title: "Website & App Maintenance — Anni Web Solutions",
     description: "Ongoing website and app maintenance — security updates, bug fixes, performance monitoring, backups and technical support as a monthly subscription.",
-    canonical: "https://anniwebsolutions.com/services/maintenance",
+    canonical: "https://anniwebsolution.vercel.app/services/maintenance",
   });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });

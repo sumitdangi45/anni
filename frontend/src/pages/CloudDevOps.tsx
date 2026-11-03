@@ -228,7 +228,7 @@ const CloudDevOps = () => {
   useSEO({
     title: "Cloud & DevOps — Anni Web Solutions",
     description: "Cloud deployment, CI/CD automation, Docker, Kubernetes, monitoring, cloud security, FinOps and AI cloud infrastructure for startups and growing businesses.",
-    canonical: "https://anniwebsolutions.com/services/cloud-devops",
+    canonical: "https://anniwebsolution.vercel.app/services/cloud-devops",
   });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });

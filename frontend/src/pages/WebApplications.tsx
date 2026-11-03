@@ -208,7 +208,7 @@ const WebApplications = () => {
   useSEO({
     title: "Web Application Development — Anni Web Solutions",
     description: "Custom web applications — SaaS platforms, business management systems, customer portals, dashboards and real-time applications built around your workflow.",
-    canonical: "https://anniwebsolutions.com/services/web-apps",
+    canonical: "https://anniwebsolution.vercel.app/services/web-apps",
   });
 
   const ref = useRef(null);

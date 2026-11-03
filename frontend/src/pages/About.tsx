@@ -352,7 +352,7 @@ const About = () => {
   useSEO({
     title: "About — Anni Web Solutions",
     description: "Learn about Anni Web Solutions — our story, mission, values, and the team behind the products. Founded by Sumit Thakur.",
-    canonical: "https://anniwebsolutions.com/about",
+    canonical: "https://anniwebsolution.vercel.app/about",
   });
 
   return (

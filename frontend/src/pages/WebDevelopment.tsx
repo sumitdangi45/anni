@@ -209,7 +209,7 @@ const WebDevelopment = () => {
   useSEO({
     title: "Custom Web Development in Bhopal & Sehore",
     description: "Custom website development in Bhopal & Sehore — landing pages, business websites, web applications and e-commerce built around your goals.",
-    canonical: "https://anniwebsolutions.com/services/web-development",
+    canonical: "https://anniwebsolution.vercel.app/services/web-development",
   });
 
   const ref = useRef(null);

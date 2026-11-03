@@ -265,7 +265,7 @@ const EcommerceDevelopment = () => {
   useSEO({
     title: "E-commerce Development — Anni Web Solutions",
     description: "Custom e-commerce development — storefront, checkout optimization, UPI payments, inventory, AI recommendations, ONDC integration and conversion-focused commerce systems.",
-    canonical: "https://anniwebsolutions.com/services/ecommerce",
+    canonical: "https://anniwebsolution.vercel.app/services/ecommerce",
   });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });

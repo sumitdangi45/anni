@@ -289,7 +289,7 @@ const AIAgents = () => {
   useSEO({
     title: "AI Agents Development Bhopal — Custom AI Agents",
     description: "Custom AI agents for lead capture, support, WhatsApp bots and intelligent workflows for startups in Bhopal.",
-    canonical: "https://anniwebsolutions.com/services/ai-agents",
+    canonical: "https://anniwebsolution.vercel.app/services/ai-agents",
   });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });

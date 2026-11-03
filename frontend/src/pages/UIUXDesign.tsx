@@ -207,7 +207,7 @@ const UIUXDesign = () => {
   useSEO({
     title: "UI/UX Design — Anni Web Solutions",
     description: "Intuitive, modern and conversion-focused digital experiences for websites, SaaS products, mobile apps and business platforms.",
-    canonical: "https://anniwebsolutions.com/services/design",
+    canonical: "https://anniwebsolution.vercel.app/services/design",
   });
 
   const ref = useRef(null);

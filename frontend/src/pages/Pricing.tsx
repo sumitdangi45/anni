@@ -228,7 +228,7 @@ const Pricing = () => {
   useSEO({
     title: "Pricing — Web Development & AI Services",
     description: "Transparent pricing for web development, mobile apps and AI solutions in Bhopal & Sehore. Custom packages for every budget.",
-    canonical: "https://anniwebsolutions.com/pricing",
+    canonical: "https://anniwebsolution.vercel.app/pricing",
   });
 
   const ref = useRef(null);

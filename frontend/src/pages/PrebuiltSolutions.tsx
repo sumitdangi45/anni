@@ -546,7 +546,7 @@ const PrebuiltSolutions = () => {
   useSEO({
     title: "Pre-Built Solutions — Anni Web Solutions",
     description: "Ready-made websites, business applications and AI products customized for your industry — launch faster without starting from scratch.",
-    canonical: "https://anniwebsolutions.com/work/prebuilt",
+    canonical: "https://anniwebsolution.vercel.app/work/prebuilt",
   });
 
   const [tab, setTab] = useState<Tab>("websites");

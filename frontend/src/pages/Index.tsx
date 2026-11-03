@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+﻿import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import WorkSection from "@/components/WorkSection";
@@ -20,7 +20,7 @@ const Index = () => {
   useSEO({
     title: "Anni Web Solutions — Web Development Agency Bhopal & Sehore",
     description: "Anni Web Solutions — full-service tech agency in Bhopal & Sehore. Custom websites, mobile apps, AI solutions and SaaS for startups and growing businesses.",
-    canonical: "https://anniwebsolutions.com/",
+    canonical: "https://anniwebsolution.vercel.app/",
   });
 
   return (

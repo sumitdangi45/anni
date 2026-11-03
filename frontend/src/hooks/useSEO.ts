@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 
 interface SEOProps {
   title: string;
@@ -8,7 +8,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = "Anni Web Solutions Pvt. Ltd.";
-const BASE_URL  = "https://anniwebsolutions.com";
+const BASE_URL  = "https://anniwebsolution.vercel.app";
 const OG_IMAGE  = `${BASE_URL}/og-image.png`;
 
 export function useSEO({ title, description, ogImage, canonical }: SEOProps) {

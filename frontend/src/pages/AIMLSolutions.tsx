@@ -188,7 +188,7 @@ const AIMLSolutions = () => {
   useSEO({
     title: "AI & ML Solutions Bhopal — Automation & Intelligence",
     description: "AI and ML solutions for businesses in Bhopal & Sehore — chatbots, predictive analytics, computer vision, NLP and intelligent workflow automation.",
-    canonical: "https://anniwebsolutions.com/services/ai-ml",
+    canonical: "https://anniwebsolution.vercel.app/services/ai-ml",
   });
 
   const ref = useRef(null);

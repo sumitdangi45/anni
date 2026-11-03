@@ -564,7 +564,7 @@ const CustomisedSolutions = () => {
   useSEO({
     title: "Customised Solutions — Anni Web Solutions",
     description: "Custom websites, apps and AI products for education, business and e-commerce � built around your specific needs in Bhopal & Sehore.",
-    canonical: "https://anniwebsolutions.com/work/custom",
+    canonical: "https://anniwebsolution.vercel.app/work/custom",
   });
 
   const [tab, setTab] = useState<Tab>("education");

@@ -184,7 +184,7 @@ const ChatbotDevelopment = () => {
   useSEO({
     title: "Chatbot Development — Anni Web Solutions",
     description: "Custom AI chatbots for websites, WhatsApp, sales, support and e-commerce. Multilingual, CRM-integrated and always-on.",
-    canonical: "https://anniwebsolutions.com/services/chatbot",
+    canonical: "https://anniwebsolution.vercel.app/services/chatbot",
   });
 
   const ref = useRef(null);

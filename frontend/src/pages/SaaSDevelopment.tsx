@@ -229,7 +229,7 @@ const SaaSDevelopment = () => {
   useSEO({
     title: "SaaS Development — Anni Web Solutions",
     description: "Build, launch and scale SaaS products — multi-tenant architecture, subscription billing, onboarding, integrations and AI-ready SaaS platforms.",
-    canonical: "https://anniwebsolutions.com/services/saas",
+    canonical: "https://anniwebsolution.vercel.app/services/saas",
   });
 
   const ref = useRef(null);

@@ -200,7 +200,7 @@ const DigitalGrowthSEO = () => {
   useSEO({
     title: "Digital Growth & SEO — Anni Web Solutions",
     description: "Technical SEO, content strategy, local SEO, AI search optimization and growth analytics to improve search visibility and drive real business results.",
-    canonical: "https://anniwebsolutions.com/services/seo",
+    canonical: "https://anniwebsolution.vercel.app/services/seo",
   });
 
   const ref = useRef(null);

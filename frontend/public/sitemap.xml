@@ -1,155 +1,155 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Core pages -->
   <url>
-    <loc>https://anniwebsolutions.com/</loc>
+    <loc>https://anniwebsolution.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/about</loc>
+    <loc>https://anniwebsolution.vercel.app/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/contact</loc>
+    <loc>https://anniwebsolution.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/pricing</loc>
+    <loc>https://anniwebsolution.vercel.app/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/projects</loc>
+    <loc>https://anniwebsolution.vercel.app/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/blogs</loc>
+    <loc>https://anniwebsolution.vercel.app/blogs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Work pages -->
   <url>
-    <loc>https://anniwebsolutions.com/work/custom</loc>
+    <loc>https://anniwebsolution.vercel.app/work/custom</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/work/prebuilt</loc>
+    <loc>https://anniwebsolution.vercel.app/work/prebuilt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Service pages -->
   <url>
-    <loc>https://anniwebsolutions.com/services/web-development</loc>
+    <loc>https://anniwebsolution.vercel.app/services/web-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/web-apps</loc>
+    <loc>https://anniwebsolution.vercel.app/services/web-apps</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/mobile</loc>
+    <loc>https://anniwebsolution.vercel.app/services/mobile</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/saas</loc>
+    <loc>https://anniwebsolution.vercel.app/services/saas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/design</loc>
+    <loc>https://anniwebsolution.vercel.app/services/design</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/ai-ml</loc>
+    <loc>https://anniwebsolution.vercel.app/services/ai-ml</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/ai-agents</loc>
+    <loc>https://anniwebsolution.vercel.app/services/ai-agents</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/chatbot</loc>
+    <loc>https://anniwebsolution.vercel.app/services/chatbot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/ecommerce</loc>
+    <loc>https://anniwebsolution.vercel.app/services/ecommerce</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/seo</loc>
+    <loc>https://anniwebsolution.vercel.app/services/seo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/branding</loc>
+    <loc>https://anniwebsolution.vercel.app/services/branding</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/cybersecurity</loc>
+    <loc>https://anniwebsolution.vercel.app/services/cybersecurity</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/cloud-devops</loc>
+    <loc>https://anniwebsolution.vercel.app/services/cloud-devops</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/services/maintenance</loc>
+    <loc>https://anniwebsolution.vercel.app/services/maintenance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/ai-automation</loc>
+    <loc>https://anniwebsolution.vercel.app/ai-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/digital-marketing</loc>
+    <loc>https://anniwebsolution.vercel.app/digital-marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Company pages -->
   <url>
-    <loc>https://anniwebsolutions.com/internship</loc>
+    <loc>https://anniwebsolution.vercel.app/internship</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/faq</loc>
+    <loc>https://anniwebsolution.vercel.app/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/terms</loc>
+    <loc>https://anniwebsolution.vercel.app/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/privacy</loc>
+    <loc>https://anniwebsolution.vercel.app/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://anniwebsolutions.com/refund-policy</loc>
+    <loc>https://anniwebsolution.vercel.app/refund-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

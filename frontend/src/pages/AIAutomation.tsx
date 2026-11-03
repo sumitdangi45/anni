@@ -289,7 +289,7 @@ const AIAutomation = () => {
   useSEO({
     title: "AI Automation Services Bhopal — Automate Your Business",
     description: "Automate repetitive workflows with AI — WhatsApp automation, CRM pipelines and custom AI for Bhopal businesses.",
-    canonical: "https://anniwebsolutions.com/ai-automation",
+    canonical: "https://anniwebsolution.vercel.app/ai-automation",
   });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });

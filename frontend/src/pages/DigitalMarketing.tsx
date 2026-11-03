@@ -209,7 +209,7 @@ const DigitalMarketing = () => {
   useSEO({
     title: "Digital Marketing — Anni Web Solutions",
     description: "SEO, social media, content marketing, paid ads, WhatsApp automation and brand growth — one connected digital growth system for startups and businesses.",
-    canonical: "https://anniwebsolutions.com/digital-marketing",
+    canonical: "https://anniwebsolution.vercel.app/digital-marketing",
   });
 
   const ref = useRef(null); const inView = useInView(ref, { once: true, margin: "-60px" });
