@@ -549,6 +549,7 @@
   .pricing-toggle-row { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
   .pricing-toggle-row > div { max-width: 100% !important; }
   .pricing-custom-note { flex-direction: column !important; gap: 16px !important; }
+  .pricing-info-cards  { grid-template-columns: 1fr !important; }
   .pricing-table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
   .pricing-table-wrap table { min-width: 580px !important; }
   /* Pricing custom architecture section stacks on mobile */

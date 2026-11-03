@@ -587,7 +587,7 @@ const Pricing = () => {
         <div style={{ maxWidth: "1320px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "16px" }}>
 
           {/* Two info cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+          <div className="pricing-info-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             {/* Third party costs */}
             <div style={{ background: "#fff", border: "1.5px solid #ebebeb", borderRadius: "16px", padding: "28px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
