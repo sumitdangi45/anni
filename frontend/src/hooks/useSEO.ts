@@ -9,7 +9,7 @@ interface SEOProps {
 
 const SITE_NAME = "Anni Web Solutions Pvt. Ltd.";
 const BASE_URL  = "https://anniwebsolution.vercel.app";
-const OG_IMAGE  = `${BASE_URL}/og-image.png`;
+const OG_IMAGE  = "https://res.cloudinary.com/w3bsruq6/image/upload/v1793705762/anni/og_image.png";
 
 export function useSEO({ title, description, ogImage, canonical }: SEOProps) {
   useEffect(() => {
