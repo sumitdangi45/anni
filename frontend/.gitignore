@@ -28,3 +28,8 @@ src/assets/cards_img/*.mp4
 src/assets/cards_img/*.MP4
 src/assets/*.mp4
 src/assets/dd/*.mp4
+
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.production
