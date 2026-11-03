@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import ContactModal from "./ContactModal";
 import logoImg from "@/assets/logow.png";
 import logoBlack from "@/assets/Anni Web Solutions Logo.png";
 const faalVideo = "https://res.cloudinary.com/w3bsruq6/video/upload/v1793643084/anni/videos/nav_faal_video.mp4";
@@ -271,7 +270,6 @@ const MegaDropdown = ({ onClose }: { onClose: () => void }) => {
 // ── Main Navbar ────────────────────────────────────────────────
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [hidden, setHidden] = useState(false);
@@ -470,16 +468,14 @@ const Navbar = () => {
             </div>
 
             <div style={{ padding: "20px 24px", borderTop: "1px solid hsl(0,0%,12%)" }}>
-              <button onClick={() => { setMobileOpen(false); setContactOpen(true); }}
-                style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", background: "#fff", color: "#111", borderRadius: "12px", padding: "14px", fontSize: "16px", fontWeight: 700, border: "none", cursor: "pointer" }}>
+              <Link to="/contact" onClick={() => setMobileOpen(false)}
+                style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", background: "#fff", color: "#111", borderRadius: "12px", padding: "14px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }}>
                 <ArrowRight size={16} /> Let's Talk
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
     </>
   );
 };
