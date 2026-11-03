@@ -374,7 +374,11 @@
   .why-bento > * {
     grid-column: auto !important;
     grid-row: auto !important;
-    min-height: 200px !important;
+    min-height: 320px !important;
+  }
+  /* founder photo card taller on mobile */
+  .why-bento > *:first-child {
+    min-height: 420px !important;
   }
   .why-bento-row2 { grid-template-columns: 1fr !important; }
 
@@ -541,11 +545,20 @@
   .legal-sidebar { display: none !important; }
   .pricing-grid { grid-template-columns: 1fr !important; }
   .pricing-grid > div { grid-column: auto !important; grid-row: auto !important; }
-  .pricing-header-wrap { padding: 80px 16px 48px !important; }
+  .pricing-header-wrap { padding: 80px 16px 48px !important; overflow-x: hidden !important; }
   .pricing-toggle-row { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
-  .pricing-toggle-row > div { width: 100% !important; justify-content: center !important; }
-  .pricing-custom-note { flex-direction: column !important; }
-  .pricing-table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+  .pricing-toggle-row > div { max-width: 100% !important; }
+  .pricing-custom-note { flex-direction: column !important; gap: 16px !important; }
+  .pricing-table-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
+  .pricing-table-wrap table { min-width: 580px !important; }
+  /* Pricing custom architecture section stacks on mobile */
+  .pricing-architecture { flex-direction: column !important; gap: 16px !important; }
+  .pricing-architecture > div:first-child { flex: none !important; }
+  .pricing-architecture > div:last-child { width: 100% !important; flex-shrink: 0 !important; }
+  .pricing-header-wrap > * { max-width: 100% !important; }
+  .pricing-workflow-grid { grid-template-columns: 1fr 1fr !important; }
+  .why-bento .stat-card { min-height: 120px !important; }
+  .why-bento { gap: 10px !important; }
 
   /* ── General section padding reduction ── */
   .mobile-section-pad { padding-top: 60px !important; padding-bottom: 60px !important; }

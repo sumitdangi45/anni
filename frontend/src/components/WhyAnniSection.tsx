@@ -51,6 +51,7 @@ const WhyAnniSection = () => {
             gridColumn: isMobile ? "auto" : "1", gridRow: isMobile ? "auto" : "1 / 3",
             borderRadius: "20px", overflow: "hidden",
             background: "#111", position: "relative",
+            minHeight: isMobile ? "420px" : "auto",
             display: "flex", flexDirection: "column" }}>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg,#2a2a2a 0%,#0a0a0a 100%)" }} />
             <div style={{ position: "absolute", inset: 0, opacity: 0.05, backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.6) 1px,transparent 1px)", backgroundSize: "24px 24px" }} />
@@ -101,6 +102,7 @@ const WhyAnniSection = () => {
             gridColumn: isMobile ? "auto" : "2", gridRow: isMobile ? "auto" : "2",
             borderRadius: "20px", overflow: "hidden",
             position: "relative",
+            minHeight: isMobile ? "280px" : "auto",
             background: "#0a0a1a" }}>
             <video src={blueVideo} autoPlay loop muted playsInline
               style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", opacity:0.75 }} />

@@ -635,7 +635,7 @@ const Pricing = () => {
           </div>
 
           {/* Dark CTA card */}
-          <div style={{
+          <div className="pricing-architecture" style={{
             background: "linear-gradient(135deg, #1a0a0a 0%, #2a0a0a 50%, #0a0a0a 100%)",
             borderRadius: "20px", padding: "36px 40px",
             display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap" }}>
@@ -650,13 +650,13 @@ const Pricing = () => {
                 Every business is unique. Whether you need multi-branch operations, specific appointment slots, customized intake forms, or ERP integration — we tailor the entire system to match your daily workflow.
               </p>
             </div>
-            <div style={{ display: "flex", gap: "12px", flexShrink: 0, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "12px", flexShrink: 0, flexWrap: "wrap", width: "100%" }}>
               <a href="https://wa.me/917974135629?text=Hi%20Anni%20Web%20Solutions%2C%20I%20am%20interested%20in%20your%20services.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer"
-                style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#22c55e", color: "#fff", borderRadius: "999px", padding: "12px 22px", fontSize: "16px", fontWeight: 700, textDecoration: "none" }}>
+                style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#22c55e", color: "#fff", borderRadius: "999px", padding: "12px 22px", fontSize: "15px", fontWeight: 700, textDecoration: "none", flex: "1 1 auto", justifyContent: "center" }}>
                 <WhatsAppIcon size={15} /> Discuss on WhatsApp
               </a>
               <a href="tel:+917974135629"
-                style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "999px", padding: "12px 22px", fontSize: "16px", fontWeight: 700, textDecoration: "none", border: "1px solid rgba(255,255,255,0.15)" }}>
+                style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "999px", padding: "12px 22px", fontSize: "15px", fontWeight: 700, textDecoration: "none", border: "1px solid rgba(255,255,255,0.15)", flex: "1 1 auto", justifyContent: "center" }}>
                 📞 Call: +91 79741 35629
               </a>
             </div>
