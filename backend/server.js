@@ -15,8 +15,10 @@ app.use(cors({
       "http://localhost:8080",
       "http://localhost:8081",
       "http://localhost:8082",
+      "https://anniwebsolution.vercel.app",
+      "https://www.anniwebsolutions.com",
+      "https://anniwebsolutions.com",
     ].filter(Boolean);
-    // allow requests with no origin (mobile apps, curl, etc.)
     if (!origin || allowed.some(o => origin.startsWith(o))) return callback(null, true);
     callback(new Error("Not allowed by CORS"));
   },
